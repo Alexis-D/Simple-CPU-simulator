@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple: Référence du fichier Examples/prog_simple-bin.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('prog__simple-bin_8c.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier prog_simple-bin.c</div>  </div>
+</div>
+<div class="contents">
+
+<p><a href="prog__simple-bin_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionInstruction.html">Instruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d">text</a> []</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Segment de texte.  <a href="#a53ae7c86b11d9a664628491ba41ca09d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48">textsize</a> = 20</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille utile du programme.  <a href="#a09c9805cec0364d715497e6564245c48"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">data</a> []</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Premier exemple de segment de données initial.  <a href="#a0a1a7765b8d407ad9c19649d5a9dd699"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33">datasize</a> = 10</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille utile du segment de données.  <a href="#a5c7949e884a8b9b3d1ab9f070267bf33"></a><br/></td></tr>
+</table>
+<hr/><h2>Documentation des variables</h2>
+<a class="anchor" id="a0a1a7765b8d407ad9c19649d5a9dd699"></a><!-- doxytag: member="prog_simple&#45;bin.c::data" ref="a0a1a7765b8d407ad9c19649d5a9dd699" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a> <a class="el" href="test__simul_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">data</a>[]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><pre class="fragment"> {
+    0x0000000a, 0x00000005, 0x00000000, 0x00000000, 
+    0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+    0x00000000, 0x00000000, 
+}
+</pre></div>
+<p>Premier exemple de segment de données initial. </p>
+
+<p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00010">10</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c7949e884a8b9b3d1ab9f070267bf33"></a><!-- doxytag: member="prog_simple&#45;bin.c::datasize" ref="a5c7949e884a8b9b3d1ab9f070267bf33" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="test__simul_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">datasize</a> = 10</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Taille utile du segment de données. </p>
+
+<p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00015">15</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53ae7c86b11d9a664628491ba41ca09d"></a><!-- doxytag: member="prog_simple&#45;bin.c::text" ref="a53ae7c86b11d9a664628491ba41ca09d" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unionInstruction.html">Instruction</a> <a class="el" href="test__simul_8c.html#a53ae7c86b11d9a664628491ba41ca09d">text</a>[]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><pre class="fragment"> {
+    0x00000002, 0x00001102, 0x00001145, 0x00007606, 
+    0x00000004, 0x00001145, 0x00003006, 0x00002003, 
+    0x0000000b, 0x00000000, 0x00000000, 0x00000000, 
+    0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+    0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+}
+</pre></div>
+<p>Segment de texte. </p>
+
+<p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00001">1</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09c9805cec0364d715497e6564245c48"></a><!-- doxytag: member="prog_simple&#45;bin.c::textsize" ref="a09c9805cec0364d715497e6564245c48" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="test__simul_8c.html#ab06365569505a01a31c5b0da6227d724">textsize</a> = 20</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Taille utile du programme. </p>
+
+<p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00008">8</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="prog__simple-bin_8c.html">prog_simple-bin.c</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

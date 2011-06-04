@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple: Portée globale</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li class="current"><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li><a href="globals.html"><span>Tout</span></a></li>
+      <li class="current"><a href="globals_func.html"><span>Fonctions</span></a></li>
+      <li><a href="globals_vars.html"><span>Variables</span></a></li>
+      <li><a href="globals_type.html"><span>Définition&#160;de&#160;type</span></a></li>
+      <li><a href="globals_enum.html"><span>Énumérations</span></a></li>
+      <li><a href="globals_eval.html"><span>Valeurs&#160;énumérées</span></a></li>
+      <li><a href="globals_defs.html"><span>Macros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('globals.html','');
+</script>
+<div id="doc-content">
+<div class="contents">
+&#160;<ul>
+<li>debug_ask()
+: <a class="el" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab">debug.h</a>
+</li>
+<li>decode_execute()
+: <a class="el" href="exec_8h.html#a41471ced34d27777447c2609173af7de">exec.h</a>
+</li>
+<li>dump_memory()
+: <a class="el" href="machine_8h.html#aa69650bbdba0125402a22c4451755412">machine.h</a>
+</li>
+<li>error()
+: <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error.h</a>
+</li>
+<li>load_program()
+: <a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">machine.h</a>
+</li>
+<li>main()
+: <a class="el" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">test_simul.c</a>
+</li>
+<li>print_cpu()
+: <a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">machine.h</a>
+</li>
+<li>print_data()
+: <a class="el" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">machine.h</a>
+</li>
+<li>print_instruction()
+: <a class="el" href="instruction_8h.html#a437080d5e8c504588a47d0dba468492f">instruction.h</a>
+</li>
+<li>print_program()
+: <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">machine.h</a>
+</li>
+<li>read_program()
+: <a class="el" href="machine_8h.html#ac59b88844961c2479108151e24dd555a">machine.h</a>
+</li>
+<li>simul()
+: <a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.h</a>
+</li>
+<li>trace()
+: <a class="el" href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">exec.h</a>
+</li>
+<li>warning()
+: <a class="el" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">error.h</a>
+</li>
+</ul>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

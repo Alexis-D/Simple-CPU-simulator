@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple: Référence de l&#39;union Instruction</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;structures&#160;de&#160;données</span></a></li>
+      <li><a href="functions.html"><span>Champs&#160;de&#160;donnée</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('unionInstruction.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Champs de données</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de l'union Instruction</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Instruction" -->
+<p>Structure d'une instruction.  
+ <a href="unionInstruction.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="instruction_8h_source.html">instruction.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionInstruction.html#a08ef7213c93af0699643ef2473e8ab6e">_raw</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Format brut : un mot de 32 bits.  <a href="#a08ef7213c93af0699643ef2473e8ab6e"></a><br/></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération.  <a href="#a991f5de1b86b38840c83c9d0e5f9fd80"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ?  <a href="#a8fd37949d84ff028fbb3cb8d86152a40"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ?  <a href="#acc9e18b662bae4bcaa33591fe09c3cf5"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition.  <a href="#aee23fda77de4e952ca9f29344d780aa4"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#ab956d518131bd4518b4c850be49e4025">_pad</a>: 20</td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération.  <a href="#a2285452516ff539e103b86997138b7b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ?  <a href="#a42c45d11b14cf20f74bd4e1fc0fa34ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ?  <a href="#af51e2ea3b0afac54210da3d5df84be53"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition.  <a href="#af50d72344d0756f7b99d9f841499f98b"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b">_address</a>: 20</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adresse absolue.  <a href="#a652d3d02c2c80b2db6c1546a555547b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération.  <a href="#ad107fea981ef2263be41041a0612d080"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ?  <a href="#a6484ef130098e8c8c053aa7ba845e820"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ?  <a href="#a78e0eaf221e018ae59e37c0fd19dbea7"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition.  <a href="#a2dc21dad2b4169dd37adc4ab336f9496"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;signed int&#160;&#160;&#160;<a class="el" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a">_value</a>: 20</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur immédiate.  <a href="#aba7fd2458f36a765f4ddb89def796ab9"></a><br/></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération.  <a href="#a71cbce79502a7cce05305cc2a05c9e5c"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ?  <a href="#aec8195b4a8c52105cd201b61e89299ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ?  <a href="#a191aa18d7a8c4f98c36bafb02327c1c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition.  <a href="#a72390665fe6f6a92f653e60cffa3f965"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164">_rindex</a>: 4</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro du registre d'index.  <a href="#aaccc29eff69fc5e54e3fdb77f0d40cd9"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;signed int&#160;&#160;&#160;<a class="el" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50">_offset</a>: 16</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacement.  <a href="#a5491d8e0ee4624f9cebb246473106aa8"></a><br/></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Structure d'une instruction. </p>
+<p>Toutes les instrcutions occupent un mot machine de 32 bits. Il y a différents formats possibles selon le type de l'instruction et de ses opérandes.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Bien entendu, on aurait pu se contenter de décrire une instruction comme un mot de 32 bits (<code>uint32_t</code>) et extraire les différents champs à coup de masquage, d'opérations bit à bit ou autres décalages. Mais pourquoi ne pas laisser le compilateur faire toutes ces horreurs à notre place ? Pour cela nous utilisons une union pour représenter les différents formats et des champs de bits pour représenter les différents constituants de l'instruction.</dd>
+<dd>
+Ceci a un inconvénient (léger) : les champs de bits ne s'appliquent qu'à des types de nature entière et pas à des structures ni des unions. Ceci nous oblige donc à avoir une union de structures, chaque structure reprenant les champs communs. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00052">52</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+</div><hr/><h2>Documentation des champs</h2>
+<a class="anchor" id="a46298af10c7133abf77f4d86f44b549b"></a><!-- doxytag: member="Instruction::_address" ref="a46298af10c7133abf77f4d86f44b549b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b">Instruction::_address</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adresse absolue. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00074">74</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5682ffc6f762bda7a50e41ea9042cb39"></a><!-- doxytag: member="Instruction::_cop" ref="a5682ffc6f762bda7a50e41ea9042cb39" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a> <a class="el" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39">Instruction::_cop</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Code opération. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00060">60</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a350ef9c256c24b90297798b15164db13"></a><!-- doxytag: member="Instruction::_immediate" ref="a350ef9c256c24b90297798b15164db13" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13">Instruction::_immediate</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adressage immédiat ? </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00061">61</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d3ae850423e6d91f7fe54111c3f766c"></a><!-- doxytag: member="Instruction::_indexed" ref="a5d3ae850423e6d91f7fe54111c3f766c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c">Instruction::_indexed</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adressage indirect ? </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00062">62</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb5834e4f338c8e0411467130a1a4b50"></a><!-- doxytag: member="Instruction::_offset" ref="abb5834e4f338c8e0411467130a1a4b50" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed int <a class="el" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50">Instruction::_offset</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Déplacement. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00095">95</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab956d518131bd4518b4c850be49e4025"></a><!-- doxytag: member="Instruction::_pad" ref="ab956d518131bd4518b4c850be49e4025" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="unionInstruction.html#ab956d518131bd4518b4c850be49e4025">Instruction::_pad</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00064">64</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08ef7213c93af0699643ef2473e8ab6e"></a><!-- doxytag: member="Instruction::_raw" ref="a08ef7213c93af0699643ef2473e8ab6e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="unionInstruction.html#a08ef7213c93af0699643ef2473e8ab6e">Instruction::_raw</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Format brut : un mot de 32 bits. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00055">55</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f5f38c91d2c3443dcd962101bfe19e2"></a><!-- doxytag: member="Instruction::_regcond" ref="a8f5f38c91d2c3443dcd962101bfe19e2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">Instruction::_regcond</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Numéro de registre ou condition. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00063">63</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a057a22a377dd83f2e63a8b6e34df7164"></a><!-- doxytag: member="Instruction::_rindex" ref="a057a22a377dd83f2e63a8b6e34df7164" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164">Instruction::_rindex</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Numéro du registre d'index. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00094">94</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0cc705f1610955cf6ac0b15efbcca8a"></a><!-- doxytag: member="Instruction::_value" ref="aa0cc705f1610955cf6ac0b15efbcca8a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed int <a class="el" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a">Instruction::_value</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Valeur immédiate. </p>
+
+<p>Définition à la ligne <a class="el" href="instruction_8h_source.html#l00084">84</a> du fichier <a class="el" href="instruction_8h_source.html">instruction.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a076d47129f335050439808b57f8c6e6e"></a><!-- doxytag: member="Instruction::instr_absolute" ref="a076d47129f335050439808b57f8c6e6e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">Instruction::instr_absolute</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5903d65905a4fd4f8c917ed17d9d9211"></a><!-- doxytag: member="Instruction::instr_generic" ref="a5903d65905a4fd4f8c917ed17d9d9211" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe0842841a99720d36796e4ab9baafe0"></a><!-- doxytag: member="Instruction::instr_immediate" ref="abe0842841a99720d36796e4ab9baafe0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a095e13c73c8bba3d15603a390804d09b"></a><!-- doxytag: member="Instruction::instr_indexed" ref="a095e13c73c8bba3d15603a390804d09b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">Instruction::instr_indexed</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette union a été générée à partir du fichier suivant :<ul>
+<li><a class="el" href="instruction_8h_source.html">instruction.h</a></li>
+</ul>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="unionInstruction.html">Instruction</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de test_simul.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('test__simul_8c.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">test_simul.c</div>  </div>
+</div>
+<div class="contents">
+<a href="test__simul_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire.">machine.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html" title="Fonctions de mise au point interactive.">debug.h</a>&quot;</span>
+<a name="l00011"></a>00011 
+<a name="l00013"></a>00013 <span class="keyword">extern</span> <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> <a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a>[];
+<a name="l00014"></a>00014 
+<a name="l00016"></a>00016 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48" title="Taille utile du programme.">textsize</a>;
+<a name="l00017"></a>00017 
+<a name="l00019"></a>00019 <span class="keyword">extern</span> <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> <a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>[];
+<a name="l00020"></a>00020 
+<a name="l00022"></a>00022 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple_8c.html#ad74734ae58f284f6cc955dfecf50f0d0" title="Fin de la zone de données utiles.">dataend</a>;
+<a name="l00023"></a>00023 
+<a name="l00025"></a>00025 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a>;  
+<a name="l00026"></a>00026 
+<a name="l00028"></a>00028 
+<a name="l00031"></a>00031 <span class="keyword">static</span> <span class="keywordtype">void</span> usage()
+<a name="l00032"></a>00032 {
+<a name="l00033"></a>00033     printf(<span class="stringliteral">&quot;Usage: test_simul [options] [binfile]\n&quot;</span>);
+<a name="l00034"></a>00034     printf(<span class="stringliteral">&quot;where options are:\n&quot;</span>
+<a name="l00035"></a>00035            <span class="stringliteral">&quot;\t-d\tDebug mode (interactive execution)\n&quot;</span>
+<a name="l00036"></a>00036            <span class="stringliteral">&quot;\t-b\tA binary file is provided\n&quot;</span>
+<a name="l00037"></a>00037            <span class="stringliteral">&quot;\t-l\tDo not execute; just display the listing\n&quot;</span>
+<a name="l00038"></a>00038            <span class="stringliteral">&quot;\t-h\tprint this help message\n&quot;</span>
+<a name="l00039"></a>00039            <span class="stringliteral">&quot;If -b is given, the next argument must be a file name containing\n&quot;</span>
+<a name="l00040"></a>00040            <span class="stringliteral">&quot;a valid program in binary format. Otherwise an internally defined\n&quot;</span>
+<a name="l00041"></a>00041            <span class="stringliteral">&quot;example program is used; the program is also dumped in binary into\n&quot;</span>
+<a name="l00042"></a>00042            <span class="stringliteral">&quot;the file dump.bin\n&quot;</span>);
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00046"></a>00046 
+<a name="l00058"></a><a class="code" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">00058</a> <span class="keywordtype">int</span> <a class="code" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test.">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<a name="l00059"></a>00059 {
+<a name="l00060"></a>00060     <span class="keywordtype">bool</span> debug = <span class="keyword">false</span>;
+<a name="l00061"></a>00061     <span class="keywordtype">bool</span> binfile = <span class="keyword">false</span>;
+<a name="l00062"></a>00062     <span class="keywordtype">bool</span> no_exec = <span class="keyword">false</span>;
+<a name="l00063"></a>00063     <span class="keywordtype">char</span> *programfile = NULL;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keywordflow">if</span> (argc &gt; 1) 
+<a name="l00066"></a>00066     {
+<a name="l00067"></a>00067         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iarg = 1; iarg &lt; argc; ++iarg)
+<a name="l00068"></a>00068         {
+<a name="l00069"></a>00069             <span class="keywordflow">if</span> (argv[iarg][0] == <span class="charliteral">&#39;-&#39;</span>)
+<a name="l00070"></a>00070                 <span class="keywordflow">switch</span> (argv[iarg][1])
+<a name="l00071"></a>00071                 {
+<a name="l00072"></a>00072                 <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:
+<a name="l00073"></a>00073                     debug = <span class="keyword">true</span>;
+<a name="l00074"></a>00074                     <span class="keywordflow">break</span>;
+<a name="l00075"></a>00075                 <span class="keywordflow">case</span> <span class="charliteral">&#39;b&#39;</span>: 
+<a name="l00076"></a>00076                     binfile = <span class="keyword">true</span>;
+<a name="l00077"></a>00077                     <span class="keywordflow">break</span>;
+<a name="l00078"></a>00078                  <span class="keywordflow">case</span> <span class="charliteral">&#39;l&#39;</span>: 
+<a name="l00079"></a>00079                     no_exec = <span class="keyword">true</span>;
+<a name="l00080"></a>00080                     <span class="keywordflow">break</span>;
+<a name="l00081"></a>00081                   <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:
+<a name="l00082"></a>00082                     usage();
+<a name="l00083"></a>00083                     exit(EXIT_SUCCESS);
+<a name="l00084"></a>00084                 <span class="keywordflow">default</span>:
+<a name="l00085"></a>00085                     fprintf(stderr, <span class="stringliteral">&quot;Unknown option: %s\n&quot;</span>, argv[iarg]);
+<a name="l00086"></a>00086                     usage();
+<a name="l00087"></a>00087                     exit(EXIT_FAILURE);
+<a name="l00088"></a>00088                 }
+<a name="l00089"></a>00089             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (binfile)
+<a name="l00090"></a>00090                 programfile = argv[iarg];
+<a name="l00091"></a>00091             <span class="keywordflow">else</span> 
+<a name="l00092"></a>00092                 fprintf(stderr, <span class="stringliteral">&quot;Trailing options ignored...\n&quot;</span>);
+<a name="l00093"></a>00093         }
+<a name="l00094"></a>00094     }
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096     <a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> mach;
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     <span class="keywordflow">if</span> (!binfile) 
+<a name="l00099"></a>00099         <a class="code" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df" title="Chargement d&#39;un programme.">load_program</a>(&amp;mach, <a class="code" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48" title="Taille utile du programme.">textsize</a>, text, <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a>, <a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>, <a class="code" href="prog__simple_8c.html#ad74734ae58f284f6cc955dfecf50f0d0" title="Fin de la zone de données utiles.">dataend</a>);
+<a name="l00100"></a>00100     <span class="keywordflow">else</span> 
+<a name="l00101"></a>00101         <a class="code" href="machine_8h.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire.">read_program</a>(&amp;mach, programfile);   
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103     printf(<span class="stringliteral">&quot;\n*** Sauvegarde des programmes et données initiales en format binaire ***\n\n&quot;</span>);
+<a name="l00104"></a>00104     <a class="code" href="machine_8h.html#aa69650bbdba0125402a22c4451755412" title="Affichage du programme et des données.">dump_memory</a>(&amp;mach);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106     printf(<span class="stringliteral">&quot;\n*** Machine state before execution ***\n&quot;</span>);
+<a name="l00107"></a>00107     <a class="code" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme.">print_program</a>(&amp;mach);
+<a name="l00108"></a>00108     <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
+<a name="l00109"></a>00109     <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111     <span class="keywordflow">if</span> (no_exec) 
+<a name="l00112"></a>00112         <span class="keywordflow">return</span> 0;
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114     printf(<span class="stringliteral">&quot;\n*** Execution trace ***\n\n&quot;</span>);
+<a name="l00115"></a>00115     <a class="code" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation.">simul</a>(&amp;mach, debug);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117     printf(<span class="stringliteral">&quot;\n*** Machine state after execution ***\n&quot;</span>);
+<a name="l00118"></a>00118     <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
+<a name="l00119"></a>00119     <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121     <span class="keywordflow">return</span> 0; 
+<a name="l00122"></a>00122 }
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="test__simul_8c.html">test_simul.c</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

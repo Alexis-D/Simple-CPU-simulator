@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de Examples/prog_subroutine-bin.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('prog__subroutine-bin_8c.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">prog_subroutine-bin.c</div>  </div>
+</div>
+<div class="contents">
+<a href="prog__subroutine-bin_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="prog__subroutine-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d">00001</a> <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> <a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a>[] = {
+<a name="l00002"></a>00002     0x00002f09, 0x00003f09, 0x0000a007, 0x00002f44, 
+<a name="l00003"></a>00003     0x00002003, 0x0000000b, 0x00000001, 0x00000001, 
+<a name="l00004"></a>00004     0x00000001, 0x00000001, 0x0003f082, 0x0002f182, 
+<a name="l00005"></a>00005     0x00001145, 0x00011606, 0x0003f084, 0x00001145, 
+<a name="l00006"></a>00006     0x0000d006, 0x00000008, 
+<a name="l00007"></a>00007 };
+<a name="l00008"></a><a class="code" href="prog__subroutine-bin_8c.html#a09c9805cec0364d715497e6564245c48">00008</a> <span class="keywordtype">int</span> <a class="code" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48" title="Taille utile du programme.">textsize</a> = 18;
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="prog__subroutine-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">00010</a> <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> <a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>[] = {
+<a name="l00011"></a>00011     0x00000000, 0x00000000, 0x00000014, 0x00000005, 
+<a name="l00012"></a>00012     0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+<a name="l00013"></a>00013     0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+<a name="l00014"></a>00014     0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+<a name="l00015"></a>00015     0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+<a name="l00016"></a>00016 };
+<a name="l00017"></a><a class="code" href="prog__subroutine-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33">00017</a> <span class="keywordtype">int</span> <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a> = 20;
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="prog__subroutine-bin_8c.html">prog_subroutine-bin.c</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

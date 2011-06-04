@@ -1,0 +1,161 @@
+/*!
+
+\mainpage Simulation du jeu d'instruction d'un processeur simple
+
+Cet exercice produit un simulateur pour un processeur hypothétique et
+extrêmement simplifié. Le processeur lui-même est décrit dans la structure
+Machine et ses formats d'instructions dans la structure Instruction.
+
+\section code Organisation des fichiers source et objets
+
+Le code est fourni sous forme de fichiers d'entête (\c .h) et d'une
+bibliothèque binaire (\b libsimul.a). Le seul fichier \c .c fourni
+(\c test_simul.c) contient la fonction main().
+
+Le code original complet est composé de 5 modules. Chaque module comporte un
+fichier \c .h et un \c .c de même nom. Le fichier-source \c .c n'est pas fourni
+mais le fichier-objet correspondant figure dans la bibliothèque \c libsimul.a.
+
+<dl> 
+
+<dt>Module \c machine (machine.h, machine.c, machine.o)</dt>
+
+<dd>Ce module décrit la structure générale de la machine préchargée avec un
+programme et des données. Ce module décrit et permet d'initialiser les mémoires
+d'instruction et de données et d'imprimer l'état courant de la machine
+(instruction, données, registres). </dd>
+
+<dt>Module \c instruction (instruction.h, instruction.c, instruction.o)</dt>
+
+<dd>La structure (le format) des instructions de la machine est décrit dans ce
+module qui fournit aussi une fonction de "désassemblage" (print_instruction())
+c'est-à-dire d'impression d'une instruction sous une forme humainement
+sympathique.  </dd>
+
+<dt>Module \c exec (exec.h, exec.c, exec.o)</dt>
+
+<dd>On trouve dans ce module le code permettant le décodage et l'exécution des
+instructions. </dd>
+
+<dt>Module \c error (error.h, error.c, error.o)</dt>
+
+<dd>C'est le module d'affichage (en clair) des messages d'erreurs et autre \e
+warnings. </dd>
+
+<dt>Module \c debug (debug.h, debug.c, debug.o)</dt>
+
+<dd>Ce module permet l'exécution interactive en pas à pas. Sa fonction
+debug_ask() est invoquée après l'exécution de chaque instruction de la machine
+et gère un dialogue permettant à l'utilisateur d'afficher l'état de la machine
+(contenu des mémoires et des registres) ou de passer à l'exécution de
+l'instruction suivante. </dd>
+
+<dt>Fichier \c test_simul.c </dt>
+
+<dd>Ce fichier source contient la fonction main() qui
+
+    - décode les options de ligne de commande (voir plus loin)
+
+    - initialise la machine avec le programme et les données initiales
+
+    - affiche l'état (mémoires, registres) initial de la machine
+
+    - exécute complètement le programme
+
+    - affiche l'état (mémoires, registres) final de la machine
+
+Les options de la ligne de commande sont
+
+    <dl>
+    <dt>-h</dt>
+    <dd>Affiche un message d'aide ("help").</dd>
+
+    <dt>-d</dt>
+    <dd>Lance l'exécution en mode interactif pas à pas ("debug").</dd>
+    
+    <dt>-b</dt> 
+    <dd>Le dernier argument de la ligne de commande doit être le nom d'un
+    fichier \e binaire contenant une représentation du programme et de ses
+    données. Le format de ce fichier est décrit avec la fonction
+    read_program(). On en trouvera des exemples dans le repertoire Examples
+    (fichiers \c .bin).
+
+    Sans option \b -b la fonction main() choisit et exécute un programme
+    prédéfini (dans le fichier \c prog.o de la bibliothèque \c libsimul.a).
+
+    </dd>
+    
+    <dl>
+
+</dd>
+
+</dl>
+
+\attention <em>Le code est écrit en langage C et utilise la norme C99 (option \b
+-std=c99 de \b gcc). Il ne compile pas en mode C90 !</em>
+
+\section make Utilisation de la Makefile 
+
+<dl> 
+
+<dt>make</dt>
+<dd>Reconstruit l'exécutable de test, \b test_simul. </dd>
+
+<dt>make doc</dt>
+<dd>Reconstruit la documentation html dans doc/html. Requiert <a
+href="http://www.doxygen.org">\b doxygen. </a></dd>
+
+<dt>make clean </dt>
+<dd>Détruit tous les fichiers objets générés mais pas l'exécutable de test 
+ni la documentation.</dd>
+
+<dt>make clobber </dt>
+<dd>Détruit tous les fichiers générés y compris l'exécutable de test (mais pas la
+documentation).</dd>
+
+<dt>make clean_doc</dt>
+<dd>Détruit la documentation générée par \b doxygen. </dd>
+</dl>
+
+\section build Construction et utilisation du simulateur
+
+\subsection build_init Construction du simulateur initial 
+
+Initialement il suffit de faire sous un \b  shell quelconque 
+\code
+make
+\endcode
+puis
+\code
+test_simul
+\endcode
+pour exécuter le programme prédéfini. Ou alors
+\code
+test_simul -d -b Examples/prog_subroutine.bin
+\endcode
+ pour exécuter le programme dont le nom est indiqué en mode interactif.
+
+\subsection build_yours Intégration de votre propre code
+
+Pour intégrer votre propre code, il suffit d'éditer la Makefile pour ajouter vos propres fichiers \c .c ; pour cela il vous
+suffit de définir la variable de \b make nommée \c USEROBJ en y mettant la
+liste de vos propres fichiers \c .c (elle est initialement vide) ; par exemple
+
+\code 
+USEROBJ = machine.c debug.c 
+\endcode 
+
+puis de faire \b make pour
+reconstruire l'exécutable \b test_simul. Cela
+compilera vos \c .c et l'éditeur de liens choisira les \c .o correspondants 
+de préférence à ceux qui sont dans la bibliothèque \c libsimul.a. Si vous
+ajoutez des \c .h ils seront pris en compte par la regénération des 
+dépendances (\c depend.out). 
+
+\attention <i><b>Ne modifiez pas les fichiers \c .h fournis car les objets de \c libsimul.a
+en dépendent</b></i>. 
+
+\author Jean-Paul Rigault
+\date Avril 2011
+
+*/

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de Examples/prog_simple.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('prog__simple_8c.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">prog_simple.c</div>  </div>
+</div>
+<div class="contents">
+<a href="prog__simple_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire.">machine.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00004"></a>00004 
+<a name="l00009"></a><a class="code" href="prog__simple_8c.html#a53ae7c86b11d9a664628491ba41ca09d">00009</a> <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> <a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a>[] = {
+<a name="l00010"></a>00010 <span class="comment">//   type        cop    imm ind regcond operand</span>
+<a name="l00011"></a>00011 <span class="comment">//-------------------------------------------------------------</span>
+<a name="l00012"></a>00012     {.<a class="code" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a> =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391" title="Chargement d&#39;un registre.">LOAD</a>,      <span class="keyword">false</span>, <span class="keyword">false</span>,  0,  0   }},  <span class="comment">// 0</span>
+<a name="l00013"></a>00013     {.instr_absolute =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391" title="Chargement d&#39;un registre.">LOAD</a>,      <span class="keyword">false</span>, <span class="keyword">false</span>,  1,  1   }},  <span class="comment">// 1</span>
+<a name="l00014"></a>00014     {.instr_immediate = {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da" title="Soustraction d&#39;un registre.">SUB</a>,    <span class="keyword">true</span>,  <span class="keyword">false</span>,  1,  1   }},  <span class="comment">// 2</span>
+<a name="l00015"></a>00015     {.instr_absolute =  {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e" title="Branchement conditionnel ou non.">BRANCH</a>, <span class="keyword">false</span>, <span class="keyword">false</span>,  <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61" title="Négatif ou null.">LE</a>,     7   }},  <span class="comment">// 3</span>
+<a name="l00016"></a>00016     {.instr_indexed =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>,    <span class="keyword">false</span>, <span class="keyword">false</span>,  0,  0   }},  <span class="comment">// 4</span>
+<a name="l00017"></a>00017     {.instr_immediate = {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da" title="Soustraction d&#39;un registre.">SUB</a>,    <span class="keyword">true</span>,  <span class="keyword">false</span>,  1,  1   }},  <span class="comment">// 5 </span>
+<a name="l00018"></a>00018     {.instr_absolute =  {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e" title="Branchement conditionnel ou non.">BRANCH</a>, <span class="keyword">false</span>, <span class="keyword">false</span>,  <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a>,     3   }},  <span class="comment">// 6   </span>
+<a name="l00019"></a>00019     {.instr_absolute =  {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480" title="Rangement du contenu d&#39;un registre.">STORE</a>,  <span class="keyword">false</span>, <span class="keyword">false</span>,  0,  2   }},  <span class="comment">// 7</span>
+<a name="l00020"></a>00020     {.instr_generic =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c" title="Arrêt (normal) du programme.">HALT</a>,                  }},  <span class="comment">// 5</span>
+<a name="l00021"></a>00021     {.instr_generic =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2" title="Instruction illégale.">ILLOP</a>,                 }},  <span class="comment">// 5</span>
+<a name="l00022"></a>00022     {.instr_generic =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2" title="Instruction illégale.">ILLOP</a>,                 }},  <span class="comment">// 5</span>
+<a name="l00023"></a>00023     {.instr_generic =   {<a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2" title="Instruction illégale.">ILLOP</a>,                 }},  <span class="comment">// 5</span>
+<a name="l00024"></a>00024 };
+<a name="l00025"></a>00025 
+<a name="l00027"></a><a class="code" href="prog__simple_8c.html#ab06365569505a01a31c5b0da6227d724">00027</a> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48" title="Taille utile du programme.">textsize</a> = <span class="keyword">sizeof</span>(<a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a>) / <span class="keyword">sizeof</span>(<a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>);
+<a name="l00028"></a>00028 
+<a name="l00030"></a><a class="code" href="prog__simple_8c.html#a5373e8edb39eef8de190ed6dcdcc7338">00030</a> <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> <a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>[20] = {
+<a name="l00031"></a>00031     10, <span class="comment">// 0: premier opérande</span>
+<a name="l00032"></a>00032     5,  <span class="comment">// 1: second opérande</span>
+<a name="l00033"></a>00033     20, <span class="comment">// 2: résultat</span>
+<a name="l00034"></a>00034     0,  <span class="comment">// 3</span>
+<a name="l00035"></a>00035 };
+<a name="l00036"></a>00036 
+<a name="l00038"></a><a class="code" href="test__simul_8c.html#ad74734ae58f284f6cc955dfecf50f0d0">00038</a> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple_8c.html#ad74734ae58f284f6cc955dfecf50f0d0" title="Fin de la zone de données utiles.">dataend</a> = 5;
+<a name="l00039"></a>00039 
+<a name="l00041"></a><a class="code" href="prog__simple_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">00041</a> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a> = <span class="keyword">sizeof</span>(<a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>) / <span class="keyword">sizeof</span>(<a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a>);  
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="prog__simple_8c.html">prog_simple.c</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

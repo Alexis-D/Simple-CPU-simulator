@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple: Référence de la structure Machine</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;structures&#160;de&#160;données</span></a></li>
+      <li><a href="functions.html"><span>Champs&#160;de&#160;donnée</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('structMachine.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Champs de données</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure Machine</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Machine" -->
+<p>Structure générale de la machine.  
+ <a href="structMachine.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="machine_8h_source.html">machine.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Graphe de collaboration de Machine:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="structMachine__coll__graph.png" border="0" usemap="#Machine_coll__map" alt="Collaboration graph"/></div>
+<map name="Machine_coll__map" id="Machine_coll__map">
+<area shape="rect" id="node2" href="unionInstruction.html" title="Structure d&#39;une instruction." alt="" coords="5,6,152,317"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#a052e945d3eab840b58171c53a873aec3">_text</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mémoire pour les instructions.  <a href="#a052e945d3eab840b58171c53a873aec3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#a6a405b4b09d4e566cf27f0bed3505b11">_textsize</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille utilisée pour les instructions.  <a href="#a6a405b4b09d4e566cf27f0bed3505b11"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0">_data</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mémoire de données.  <a href="#ac2949056c217e69a8efe6a114d2ac2b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8">_datasize</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille utilisée pour les données.  <a href="#a8a50815b359c1602c95edd3459ad05c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0">_dataend</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Première adresse libre après les données statiques.  <a href="#a4cf57550abe18e1dece177fb8794d6c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675">_pc</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compteur ordinal.  <a href="#a1b3345874b1ade4324f16f3e03944675"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c">_cc</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code condition : signe de la dernière opération.  <a href="#adbb793b4331ed11783001895c76b6d4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4">_registers</a> [NREGISTERS]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registres généraux (accumulateurs)  <a href="#ab4a927b1e214bd40d2406f1080eaa6c4"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Structure générale de la machine. </p>
+<p>Cette machine simple est composée de mémoire et d'un processeur.</p>
+<p>Pour simplifier, une adresse machine référence un mot de 32 bits (et non un octet comme dans la plupart des machines actuelles !). La mémoire est découpée en deux segments : <b>texte</b> contenant les instructions du programme; <b>données</b> contenant les données manipulées ou calculées par le programme. L'adresse de début de chacun de ces segments est 0 ; ils sont donc adressés indépendemment. Le segment de données contient les données statiques dans ses adresses basses et la <em>pile d'exécution</em> dans ses adresses hautes. Le sommet de la pile d'exécution est à l'adresse contenue dans le registre <code>R15</code> (<code>SP</code>). Chacun de ces segments a une taille maximale. En outre on conserve la taille utile de chaque segment.</p>
+<p>Le processeur comporte</p>
+<ul>
+<li>un registre servant de <b>compteur ordinal</b> (<em>program counter</em>) qui contient l'adresse (dans le segment de texte) de la prochaine instruction à exécuter ;</li>
+</ul>
+<ul>
+<li>un registre contenant le code condition (voir <a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a>) ;</li>
+</ul>
+<ul>
+<li>un ensemble de 16 <b>registres généraux</b> servant d'accumulateurs (registres de calcul). Tous ces registres sont identiques et supportent les mêmes opérations. Cependant, le registre 15 (connu aussi sous le nom <code>_sp</code>) joue un rôle spécial, celui de pointeur de la pile d'exécution : il doit contenir en permanence l'adresse du sommet de pile (premier élément libre de la pile). </li>
+</ul>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00070">70</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+</div><hr/><h2>Documentation des champs</h2>
+<a class="anchor" id="adbb793b4331ed11783001895c76b6d4c"></a><!-- doxytag: member="Machine::_cc" ref="adbb793b4331ed11783001895c76b6d4c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a> <a class="el" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c">Machine::_cc</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Code condition : signe de la dernière opération. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00083">83</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2949056c217e69a8efe6a114d2ac2b0"></a><!-- doxytag: member="Machine::_data" ref="ac2949056c217e69a8efe6a114d2ac2b0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a>* <a class="el" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0">Machine::_data</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mémoire de données. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00076">76</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4cf57550abe18e1dece177fb8794d6c0"></a><!-- doxytag: member="Machine::_dataend" ref="a4cf57550abe18e1dece177fb8794d6c0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0">Machine::_dataend</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Première adresse libre après les données statiques. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00079">79</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a50815b359c1602c95edd3459ad05c8"></a><!-- doxytag: member="Machine::_datasize" ref="a8a50815b359c1602c95edd3459ad05c8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8">Machine::_datasize</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Taille utilisée pour les données. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00077">77</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b3345874b1ade4324f16f3e03944675"></a><!-- doxytag: member="Machine::_pc" ref="a1b3345874b1ade4324f16f3e03944675" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675">Machine::_pc</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compteur ordinal. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00082">82</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4a927b1e214bd40d2406f1080eaa6c4"></a><!-- doxytag: member="Machine::_registers" ref="ab4a927b1e214bd40d2406f1080eaa6c4" args="[NREGISTERS]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a> <a class="el" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4">Machine::_registers</a>[NREGISTERS]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Registres généraux (accumulateurs) </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00084">84</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a052e945d3eab840b58171c53a873aec3"></a><!-- doxytag: member="Machine::_text" ref="a052e945d3eab840b58171c53a873aec3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unionInstruction.html">Instruction</a>* <a class="el" href="structMachine.html#a052e945d3eab840b58171c53a873aec3">Machine::_text</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mémoire pour les instructions. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00073">73</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a405b4b09d4e566cf27f0bed3505b11"></a><!-- doxytag: member="Machine::_textsize" ref="a6a405b4b09d4e566cf27f0bed3505b11" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="structMachine.html#a6a405b4b09d4e566cf27f0bed3505b11">Machine::_textsize</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Taille utilisée pour les instructions. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00074">74</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+<li><a class="el" href="machine_8h_source.html">machine.h</a></li>
+</ul>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="structMachine.html">Machine</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

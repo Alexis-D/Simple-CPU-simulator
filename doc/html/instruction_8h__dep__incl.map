@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="200,83,291,112"/>
+<area shape="rect" id="node5" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="5,160,80,189"/>
+<area shape="rect" id="node7" href="$test__simul_8c.html" title="Test du simulateur." alt="" coords="28,237,132,267"/>
+<area shape="rect" id="node9" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="155,160,336,189"/>
+<area shape="rect" id="node11" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="360,160,571,189"/>
+<area shape="rect" id="node13" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="595,160,661,189"/>
+</map>

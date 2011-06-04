@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de instruction.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('instruction_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">instruction.h</div>  </div>
+</div>
+<div class="contents">
+<a href="instruction_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _INSTRUCTION_H_</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _INSTRUCTION_H_</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;stdbool.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;stdint.h&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00013"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">00013</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> 
+<a name="l00014"></a>00014 {
+<a name="l00015"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2">00015</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2" title="Instruction illégale.">ILLOP</a> = 0,  
+<a name="l00016"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026">00016</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026" title="Instruction sans effet.">NOP</a>,    
+<a name="l00017"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391">00017</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391" title="Chargement d&#39;un registre.">LOAD</a>,   
+<a name="l00018"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480">00018</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480" title="Rangement du contenu d&#39;un registre.">STORE</a>,  
+<a name="l00019"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909">00019</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>,    
+<a name="l00020"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da">00020</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da" title="Soustraction d&#39;un registre.">SUB</a>,    
+<a name="l00021"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e">00021</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e" title="Branchement conditionnel ou non.">BRANCH</a>, 
+<a name="l00022"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8">00022</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8" title="Appel de sous-programme.">CALL</a>,   
+<a name="l00023"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464">00023</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464" title="Retour de sous-programme.">RET</a>,    
+<a name="l00024"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493">00024</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493" title="Empilement sur la pile d&#39;exécution.">PUSH</a>,   
+<a name="l00025"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa">00025</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa" title="Dépilement de la pile d&#39;exécution.">POP</a>,    
+<a name="l00026"></a><a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c">00026</a>     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c" title="Arrêt (normal) du programme.">HALT</a>,   
+<a name="l00027"></a>00027 } <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a>;
+<a name="l00028"></a>00028 
+<a name="l00030"></a>00030 <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">unsigned</span> LAST_COP = <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c" title="Arrêt (normal) du programme.">HALT</a>;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 
+<a name="l00034"></a>00034 
+<a name="l00052"></a><a class="code" href="unionInstruction.html">00052</a> <span class="keyword">typedef</span> <span class="keyword">union </span><a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>
+<a name="l00053"></a>00053 { 
+<a name="l00055"></a><a class="code" href="unionInstruction.html#a08ef7213c93af0699643ef2473e8ab6e">00055</a>     uint32_t <a class="code" href="unionInstruction.html#a08ef7213c93af0699643ef2473e8ab6e" title="Format brut : un mot de 32 bits.">_raw</a>;
+<a name="l00056"></a>00056 
+<a name="l00058"></a>00058     <span class="keyword">struct </span>
+<a name="l00059"></a>00059     { 
+<a name="l00060"></a><a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39">00060</a>         <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a> <a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> : 6;   
+<a name="l00061"></a><a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13">00061</a>         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a> : 1;    
+<a name="l00062"></a><a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c">00062</a>         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> : 1;  
+<a name="l00063"></a><a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">00063</a>         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> : 4;  
+<a name="l00064"></a><a class="code" href="unionInstruction.html#ab956d518131bd4518b4c850be49e4025">00064</a>         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#ab956d518131bd4518b4c850be49e4025">_pad</a> : 20;     <span class="comment">//&lt;! Format variable...</span>
+<a name="l00065"></a>00065     } <a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>;
+<a name="l00066"></a>00066 
+<a name="l00068"></a>00068     <span class="keyword">struct </span>
+<a name="l00069"></a>00069     {
+<a name="l00070"></a>00070         <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a> <a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> : 6;   
+<a name="l00071"></a>00071         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a> : 1;    
+<a name="l00072"></a>00072         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> : 1;  
+<a name="l00073"></a>00073         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> : 4;  
+<a name="l00074"></a><a class="code" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b">00074</a>         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b" title="Adresse absolue.">_address</a> : 20; 
+<a name="l00075"></a>00075     } <a class="code" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a>;
+<a name="l00076"></a>00076 
+<a name="l00078"></a>00078     <span class="keyword">struct </span>
+<a name="l00079"></a>00079     {
+<a name="l00080"></a>00080         <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a> <a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> : 6;   
+<a name="l00081"></a>00081         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a> : 1;    
+<a name="l00082"></a>00082         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> : 1;  
+<a name="l00083"></a>00083         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> : 4;  
+<a name="l00084"></a><a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a">00084</a>         <span class="keywordtype">signed</span> <span class="keywordtype">int</span> <a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a> : 20; 
+<a name="l00085"></a>00085     } <a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>;
+<a name="l00086"></a>00086 
+<a name="l00088"></a>00088     <span class="keyword">struct </span>
+<a name="l00089"></a>00089     {
+<a name="l00090"></a>00090         <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a> <a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> : 6;   
+<a name="l00091"></a>00091         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a> : 1;    
+<a name="l00092"></a>00092         <span class="keywordtype">bool</span> <a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> : 1;  
+<a name="l00093"></a>00093         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> : 4;  
+<a name="l00094"></a><a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164">00094</a>         <span class="keywordtype">unsigned</span> <a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a> : 4;   
+<a name="l00095"></a><a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50">00095</a>         <span class="keywordtype">signed</span> <span class="keywordtype">int</span> <a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a> : 16;
+<a name="l00096"></a>00096     } <a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>;
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 } <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>;
+<a name="l00099"></a>00099 
+<a name="l00101"></a>00101 
+<a name="l00109"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8">00109</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> 
+<a name="l00110"></a>00110 {
+<a name="l00111"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01">00111</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a>, 
+<a name="l00112"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f">00112</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f" title="Égal à 0.">EQ</a>, 
+<a name="l00113"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db">00113</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db" title="Différent de 0.">NE</a>, 
+<a name="l00114"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892">00114</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892" title="Strictement positif.">GT</a>, 
+<a name="l00115"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce">00115</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce" title="Positif ou nul.">GE</a>, 
+<a name="l00116"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571">00116</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571" title="Strictement négatif.">LT</a>, 
+<a name="l00117"></a><a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61">00117</a>     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61" title="Négatif ou null.">LE</a>, 
+<a name="l00118"></a>00118 } <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8" title="Conditions.">Condition</a>;
+<a name="l00119"></a>00119 
+<a name="l00121"></a>00121 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> LAST_CONDITION = <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61" title="Négatif ou null.">LE</a>;
+<a name="l00122"></a>00122 
+<a name="l00124"></a><a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">00124</a> <span class="keyword">typedef</span> uint32_t <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a>;
+<a name="l00125"></a>00125 
+<a name="l00127"></a>00127 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="instruction_8h.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3" title="Forme imprimable des codes opérations.">cop_names</a>[];
+<a name="l00128"></a>00128 
+<a name="l00130"></a>00130 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="instruction_8h.html#a4cf35570c7b75e596c642031544688e0" title="Forme imprimable des conditions.">condition_names</a>[];
+<a name="l00131"></a>00131 
+<a name="l00133"></a>00133 
+<a name="l00137"></a>00137 <span class="keywordtype">void</span> <a class="code" href="instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction</a>(<a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr, <span class="keywordtype">unsigned</span> addr);
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="instruction_8h.html">instruction.h</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

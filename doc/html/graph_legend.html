@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple: Légende du graphe</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('graph_legend.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Légende du graphe</div>  </div>
+</div>
+<div class="contents">
+<p>Cette page explique comment interpréter les graphes générés par doxygen.</p>
+<p>Considérez l'exemple suivant : </p>
+<div class="fragment"><pre class="fragment"><span class="comment">/*! Classe invisible à cause d&#39;une troncature */</span>
+<span class="keyword">class </span>Invisible { };
+<span class="comment"></span>
+<span class="comment">/*! Classe tronquée, la relation d&#39;héritage est masquée */</span>
+<span class="keyword">class </span>Truncated : <span class="keyword">public</span> Invisible { };
+<span class="comment"></span>
+<span class="comment">/*! Classe non documentée avec des commentaires Doxygen */</span>
+<span class="keyword">class </span>Undocumented { };
+<span class="comment"></span>
+<span class="comment">/*! Classe dérivée par héritage public */</span>
+<span class="keyword">class </span>PublicBase : <span class="keyword">public</span> Truncated { };
+<span class="comment"></span>
+<span class="comment">/*! Un modèle de classe */</span>
+<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span>Templ { };
+<span class="comment"></span>
+<span class="comment">/*! Classe dérivée par héritage protégé */</span>
+<span class="keyword">class </span>ProtectedBase { };
+<span class="comment"></span>
+<span class="comment">/*! Classe dérivée par héritage privé */</span>
+<span class="keyword">class </span>PrivateBase { };
+<span class="comment"></span>
+<span class="comment">/*! Classe utilisée par la classe dérivée */</span>
+<span class="keyword">class </span>Used { };
+<span class="comment"></span>
+<span class="comment">/*! Super-classe qui hérite de plusieurs autres classes */</span>
+<span class="keyword">class </span>Inherited : <span class="keyword">public</span> PublicBase,
+                  <span class="keyword">protected</span> ProtectedBase,
+                  <span class="keyword">private</span> PrivateBase,
+                  <span class="keyword">public</span> Undocumented,
+                  <span class="keyword">public</span> Templ&lt;int&gt;
+{
+  <span class="keyword">private</span>:
+    Used *m_usedClass;
+};
+</pre></div><p> Si la valeur 240 est attribuée au tag <code>MAX_DOT_GRAPH_HEIGHT</code> du fichier de configuration, cela génèrera le graphe suivant :</p>
+<center><div class="image">
+<img src="graph_legend.png" alt="graph_legend.png"/>
+</div>
+</center> <p>Les rectangles du graphe ci-dessus ont la signification suivante : </p>
+<ul>
+<li>
+Un rectangle plein noir représente la structure ou la classe pour laquelle le graphe est généré. </li>
+<li>
+Un rectangle avec un bord noir indique une classe ou une structure documentée. </li>
+<li>
+Un rectangle avec un bord gris indique une classe ou une structure non documentée. </li>
+<li>
+Un rectangle avec un bord rouge indique une structure ou une classe documentée pour laquelle des relations d'héritage ou de collaboration manquent. Un graphe est tronqué s'il n'entre pas dans les limites spécifiées.</li>
+</ul>
+<p>Les flèches ont la signification suivante : </p>
+<ul>
+<li>
+Une flèche bleu foncé est utilisée pour visualiser une relation d'héritage public entre deux classes. </li>
+<li>
+Une flèche vert foncé est utilisée pour une relation d'héritage protégé. </li>
+<li>
+Une flèche rouge foncé est utilisée pour une relation d'héritage privé. </li>
+<li>
+Une flèche violette en pointillés est utilisée si une classe est contenue ou utilisée par une autre classe. La flèche est étiquetée avec la ou les variable(s) qui permettent d'accéder à la classe ou structure pointée. </li>
+<li>
+Une flèche verte en pointillés indique une relation entre une classe instanciée et le modèle de classe utilisé. La flèche est étiquetée avec les paramètres de modèle de la classe instanciée. </li>
+</ul>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>

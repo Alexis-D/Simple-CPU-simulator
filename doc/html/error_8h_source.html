@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de error.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('error_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">error.h</div>  </div>
+</div>
+<div class="contents">
+<a href="error_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _ERROR_H_</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _ERROR_H_</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00005"></a>00005 
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00018"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">00018</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> 
+<a name="l00019"></a>00019 {
+<a name="l00020"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82">00020</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82" title="Pas d&#39;erreur.">ERR_NOERROR</a> = 0,    
+<a name="l00021"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1">00021</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1" title="Instruction inconnue.">ERR_UNKNOWN</a>,    
+<a name="l00022"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e">00022</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e" title="Instruction illégale.">ERR_ILLEGAL</a>,    
+<a name="l00023"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab">00023</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab" title="Condition illégale.">ERR_CONDITION</a>,  
+<a name="l00024"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021">00024</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021" title="Valeur immédiate interdite.">ERR_IMMEDIATE</a>,  
+<a name="l00025"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c">00025</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c" title="Violation de taille du segment de texte.">ERR_SEGTEXT</a>,    
+<a name="l00026"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915">00026</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915" title="Violation de taille du segment de données.">ERR_SEGDATA</a>,    
+<a name="l00027"></a><a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7">00027</a>     <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7" title="Violation de taille du segment de pile.">ERR_SEGSTACK</a>,   
+<a name="l00028"></a>00028 } <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5" title="Erreur d&#39;exécution.">Error</a>; 
+<a name="l00029"></a>00029 
+<a name="l00031"></a>00031 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> LAST_ERROR = <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7" title="Violation de taille du segment de pile.">ERR_SEGSTACK</a>;
+<a name="l00032"></a>00032 
+<a name="l00034"></a>00034 
+<a name="l00038"></a><a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">00038</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> 
+<a name="l00039"></a>00039 {
+<a name="l00040"></a><a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">00040</a>     <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" title="Fin normale du programme (sur HALT)">WARN_HALT</a>,      
+<a name="l00041"></a>00041 } <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed" title="Codes d&#39;avertissement.">Warning</a>;
+<a name="l00042"></a>00042 
+<a name="l00044"></a>00044 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> LAST_WARNING = <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" title="Fin normale du programme (sur HALT)">WARN_HALT</a>;
+<a name="l00045"></a>00045 
+<a name="l00047"></a>00047 
+<a name="l00055"></a>00055 <span class="preprocessor">#ifdef __GNUC__</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5" title="Erreur d&#39;exécution.">Error</a> err, <span class="keywordtype">unsigned</span> addr) __attribute__((noreturn));
+<a name="l00057"></a>00057 <span class="preprocessor">#else</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5" title="Erreur d&#39;exécution.">Error</a> err, <span class="keywordtype">unsigned</span> addr);
+<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>
+<a name="l00061"></a>00061 
+<a name="l00063"></a>00063 
+<a name="l00067"></a>00067 <span class="keywordtype">void</span> <a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed" title="Codes d&#39;avertissement.">Warning</a> warn, <span class="keywordtype">unsigned</span> addr);
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="error_8h.html">error.h</a>      </li>
+      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>
