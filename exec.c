@@ -281,7 +281,7 @@ bool decode_execute(Machine *pmach, Instruction instr) {
         ret_func,
         push_func,
         pop_func,
-        halt_func
+        halt_func,
         };
 
     return func[instr.instr_generic._cop](pmach, instr);
