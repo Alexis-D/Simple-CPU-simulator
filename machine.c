@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "machine.h"
-#include "instruction.h"
 #include "exec.h"
 #include "debug.h"
 
@@ -151,7 +150,7 @@ void print_program(Machine *pmach)
 	int i;
 	for(i = 0; i < pmach->_textsize; ++i)
 	{
-		printf("0x%04x: %0x\t",i,pmach->_text[i]._raw);
+		printf("0x%04x: 0x%08x\t",i,pmach->_text[i]._raw);
 		print_instruction(pmach->_text[i],i);
 		printf("\n");
 	}
@@ -163,7 +162,7 @@ void print_data(Machine *pmach)
 	int i;
 	for(i = 0; i < pmach->_datasize; ++i)
   {
-		printf("0x%04x: 0x%0x %i.\n",i,pmach->_data[i],pmach->_data[i]);
+		printf("0x%04x: 0x%08x %i\t",i,pmach->_data[i],pmach->_data[i]);
 		if(i%3 == 2) printf("\n");
   }
 	printf("\n");
@@ -193,7 +192,7 @@ void print_cpu(Machine *pmach)
 	int i;
 	for(i = 0; i < NREGISTERS; ++i)
 	{
-		printf("R%02i:\tOx%04x %i",i,pmach->_registers[i],pmach->_registers[i]);
+		printf("R%02i:\tOx%08x %i",i,pmach->_registers[i],pmach->_registers[i]);
 		if(i%3 == 2) printf("\n");
 	}
 	printf("\n");
@@ -205,11 +204,11 @@ void simul(Machine *pmach, bool debug)
 	{
 		if(debug)
 		{
-			debug = ask_debug(pmach);
+			debug = debug_ask(pmach);
 		}
-	} while(exec(pmach,pmach->_text[pmach->_pc++]));
+	} while(decode_execute(pmach,pmach->_text[pmach->_pc++]));
 
-	free(pmach->_text);
-	free(pmach->_data);
+	//free(pmach->_text);
+	//free(pmach->_data);
   printf("exécution terminée, sortie normale...\n");
 }
