@@ -5,6 +5,14 @@
 #include "exec.h"
 #include "debug.h"
 
+const char *condition_code_names[] =
+{
+    "U",
+    "Z",
+    "P",
+    "N",
+};
+
 void create_binary_file(Machine *pmach)
 {
     FILE *file;
@@ -169,24 +177,7 @@ void print_data(Machine *pmach)
 
 void print_cpu(Machine *pmach)
 {
-    printf("\n*** CPU ***\nPC:  0x%08x   CC: ", pmach->_pc);
-    switch (pmach->_cc)
-    {
-        case CC_U :
-            printf("U");
-            break;
-        case CC_Z :
-            printf("Z");
-            break;
-        case CC_P :
-            printf("P");
-            break;
-        case CC_N :
-            printf("N");
-            break;
-    }
-
-    printf("\n\n");
+    printf("\n*** CPU ***\nPC:  0x%08x   CC: %s\n\n", pmach->_pc, condition_code_names[pmach->_cc]);
 
     for(int i = 0; i < NREGISTERS; ++i)
     {

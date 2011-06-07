@@ -173,4 +173,7 @@ void print_cpu(Machine *pmach);
  */
 void simul(Machine *pmach, bool debug);
 
+//! Forme imprimable des codes conditions
+extern const char *condition_code_names[];
+
 #endif
