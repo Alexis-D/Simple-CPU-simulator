@@ -53,7 +53,7 @@ void load_program(Machine *pmach,
   pmach->_data = &data[0];
   pmach->_pc = 0;
   pmach->_cc = LAST_CC;
-  pmach->_registers[NREGISTERS-1]=((pmach->_data)[pmach->_datasize]);
+	pmach->_sp = pmach->_datasize - 1;
   for(int i = 0 ; i < NREGISTERS-1 ; i++){
     pmach->_registers[i] = 0;
   } 
@@ -79,7 +79,7 @@ void read_program(Machine *mach, const char *programfile)
     fclose(file);
     mach->_pc = 0;
     mach->_cc = LAST_CC;
-    mach->_registers[NREGISTERS-1]=(mach->_data)[mach->_datasize];
+    mach->_sp = mach->_datasize - 1;
     for(int i = 0 ; i < NREGISTERS-1 ; i++){
       mach->_registers[i] = 0;
     } 
@@ -198,7 +198,7 @@ void print_cpu(Machine *pmach)
 	int i;
 	for(i = 0; i < NREGISTERS; ++i)
 	{
-		printf("R%02i:\tOx%08x %i",i,pmach->_registers[i],pmach->_registers[i]);
+		printf("R%02i:\tOx%08x %i\t",i,pmach->_registers[i],pmach->_registers[i]);
 		if(i%3 == 2) printf("\n");
 	}
 	printf("\n");
@@ -208,6 +208,7 @@ void simul(Machine *pmach, bool debug)
 {
   do
 	{
+		trace("Executing",pmach,pmach->_text[pmach->_pc],pmach->_pc);
 		if(debug)
 		{
 			debug = debug_ask(pmach);
