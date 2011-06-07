@@ -1,4 +1,5 @@
 depend.out
-test_simul.o
+test_simul
+*.o
 dump.bin
 Makefile
