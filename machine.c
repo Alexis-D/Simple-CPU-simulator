@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include "machine.h"
 #include "exec.h"
 #include "debug.h"
 
@@ -81,9 +79,6 @@ void read_program(Machine *mach, const char *programfile)
     {
         unsigned sizes[3];
         fread(sizes, sizeof(unsigned), 3, file); //Lecture des tailles des segments à allouer
-
-        printf("%d - %d - %d\n", sizes[0], sizes[1], sizes[2]);
-
         Instruction *text = malloc(sizes[0] * sizeof(Instruction));
         Word *data = malloc(sizes[1] * sizeof(Word));
         fread(text, sizeof(Instruction), sizes[0], file);
@@ -160,7 +155,7 @@ void print_program(Machine *pmach)
 
 void print_data(Machine *pmach)
 {
-    printf("*** DATA (size: %i, end = Ox%08x (%i)) ***\n", pmach->_datasize, pmach->_dataend, pmach->_dataend);
+    printf("*** DATA (size: %i, end = 0x%08x (%i)) ***\n", pmach->_datasize, pmach->_dataend, pmach->_dataend);
 
     for(int i = 0; i < pmach->_datasize; ++i)
     {
@@ -181,7 +176,7 @@ void print_cpu(Machine *pmach)
 
     for(int i = 0; i < NREGISTERS; ++i)
     {
-        printf("R%02i: Ox%08x %-6i ", i, pmach->_registers[i], pmach->_registers[i]);
+        printf("R%02i: 0x%08x %-6i ", i, pmach->_registers[i], pmach->_registers[i]);
         if(i % 3 == 2)
             printf("\n");
     }
