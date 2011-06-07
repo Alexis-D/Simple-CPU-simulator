@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="129,56,199,83"/>
+<area shape="rect" id="node16" href="$exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="253,107,347,133"/>
+<area shape="rect" id="node19" href="$exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="263,157,337,184"/>
+<area shape="rect" id="node22" href="$exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="261,208,339,235"/>
+<area shape="rect" id="node25" href="$exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="127,259,201,285"/>
+<area shape="rect" id="node28" href="$exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="123,309,205,336"/>
+<area shape="rect" id="node31" href="$exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="123,360,205,387"/>
+<area shape="rect" id="node5" href="$exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="263,5,337,32"/>
+<area shape="rect" id="node13" href="$exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="263,56,337,83"/>
+<area shape="rect" id="node7" href="$exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="395,183,512,209"/>
+<area shape="rect" id="node9" href="$machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="560,183,613,209"/>
+<area shape="rect" id="node11" href="$test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="661,183,712,209"/>
+</map>

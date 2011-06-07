@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="119,56,190,83"/>
+<area shape="rect" id="node16" href="$exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="115,107,194,133"/>
+<area shape="rect" id="node5" href="$exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="243,5,317,32"/>
+<area shape="rect" id="node13" href="$exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="243,56,317,83"/>
+<area shape="rect" id="node7" href="$exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="365,56,483,83"/>
+<area shape="rect" id="node9" href="$machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="531,56,584,83"/>
+<area shape="rect" id="node11" href="$test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="632,56,683,83"/>
+</map>
