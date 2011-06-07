@@ -110,7 +110,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8h__incl.png" border="0" usemap="#exec_8h" alt=""/></div>
 <map name="exec_8h" id="exec_8h">
-<area shape="rect" id="node3" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="47,83,137,112"/><area shape="rect" id="node7" href="instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="84,160,191,189"/></map>
+<area shape="rect" id="node3" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="43,80,124,107"/><area shape="rect" id="node7" href="instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="80,155,173,181"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
@@ -171,11 +171,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>faux après l'exécution de <code>HALT</code> ; vrai sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00373">373</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00364">364</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="exec_8c_source.html#l00199">add_func()</a>, <a class="el" href="exec_8c_source.html#l00272">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00290">call_func()</a>, <a class="el" href="exec_8c_source.html#l00367">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00099">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00123">load_func()</a>, <a class="el" href="exec_8c_source.html#l00112">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00347">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00323">push_func()</a>, <a class="el" href="exec_8c_source.html#l00309">ret_func()</a>, <a class="el" href="exec_8c_source.html#l00147">store_func()</a>, et <a class="el" href="exec_8c_source.html#l00210">sub_func()</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="exec_8c_source.html#l00198">add_func()</a>, <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="exec_8c_source.html#l00358">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00111">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00338">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, <a class="el" href="exec_8c_source.html#l00300">ret_func()</a>, <a class="el" href="exec_8c_source.html#l00146">store_func()</a>, et <a class="el" href="exec_8c_source.html#l00209">sub_func()</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00195">simul()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00190">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     bool (*funcs[])(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>) =
     {
@@ -269,11 +269,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00394">394</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00385">385</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8c_source.html#l00031">print_instruction()</a>.</p>
+<p>Références <a class="el" href="instruction_8c_source.html#l00032">print_instruction()</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00195">simul()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00190">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     printf(<span class="stringliteral">&quot;TRACE: %s: 0x%04x: &quot;</span>, msg, addr);
     <a class="code" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction</a>(instr, addr);
@@ -309,7 +309,7 @@ Fonctions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="exec_8h.html">exec.h</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 17:12:17 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 23:13:38 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

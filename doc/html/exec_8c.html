@@ -105,7 +105,6 @@ function toggleVisibility(linkObj) {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="error_8h_source.html">error.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="exec_8h_source.html">exec.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="instruction_8h_source.html">instruction.h</a>&quot;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png"/> Graphe des dépendances par inclusion de exec.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -113,7 +112,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c__incl.png" border="0" usemap="#exec_8c" alt=""/></div>
 <map name="exec_8c" id="exec_8c">
-<area shape="rect" id="node5" href="error_8h.html" title="Messages et codes d&#39;erreurs." alt="" coords="91,80,148,107"/><area shape="rect" id="node9" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="173,80,235,107"/><area shape="rect" id="node15" href="instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="236,229,329,256"/><area shape="rect" id="node11" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="163,155,244,181"/></map>
+<area shape="rect" id="node5" href="error_8h.html" title="Messages et codes d&#39;erreurs." alt="" coords="91,80,148,107"/><area shape="rect" id="node9" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="176,80,237,107"/><area shape="rect" id="node11" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="169,155,251,181"/><area shape="rect" id="node15" href="instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="205,229,299,256"/></map>
 </div>
 </div>
 <p><a href="exec_8c_source.html">Aller au code source de ce fichier.</a></p>
@@ -205,11 +204,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00199">199</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00198">198</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="exec_8c_source.html#l00166">add_sub()</a>.</p>
+<p>Références <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(pmach, instr);
 }
@@ -273,11 +272,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00166">166</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00165">165</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="instruction_8h_source.html#l00019">ADD</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00071">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00017">set_cc()</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="instruction_8h_source.html#l00019">ADD</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00016">set_cc()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00199">add_func()</a>, et <a class="el" href="exec_8c_source.html#l00210">sub_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00198">add_func()</a>, et <a class="el" href="exec_8c_source.html#l00209">sub_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
 
@@ -363,11 +362,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>l'adresse absolu en mode absolu, l'adresse indexée sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00045">45</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00044">44</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
 <p>Références <a class="el" href="instruction_8h_source.html#l00074">Instruction::_address</a>, <a class="el" href="instruction_8h_source.html#l00062">Instruction::_indexed</a>, <a class="el" href="instruction_8h_source.html#l00095">Instruction::_offset</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00094">Instruction::_rindex</a>, <a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">Instruction::instr_absolute</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, et <a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">Instruction::instr_indexed</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00166">add_sub()</a>, <a class="el" href="exec_8c_source.html#l00272">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00290">call_func()</a>, <a class="el" href="exec_8c_source.html#l00123">load_func()</a>, <a class="el" href="exec_8c_source.html#l00347">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00323">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00147">store_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>, <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00338">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00146">store_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> ?
         pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a>] + instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a> :
@@ -422,11 +421,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00272">272</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00263">263</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00057">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00221">should_jump()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
 
@@ -497,11 +496,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00290">290</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00281">281</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00057">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00221">should_jump()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
 
@@ -573,11 +572,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>faux après l'exécution de <code>HALT</code> ; vrai sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00373">373</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00364">364</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="exec_8c_source.html#l00199">add_func()</a>, <a class="el" href="exec_8c_source.html#l00272">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00290">call_func()</a>, <a class="el" href="exec_8c_source.html#l00367">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00099">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00123">load_func()</a>, <a class="el" href="exec_8c_source.html#l00112">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00347">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00323">push_func()</a>, <a class="el" href="exec_8c_source.html#l00309">ret_func()</a>, <a class="el" href="exec_8c_source.html#l00147">store_func()</a>, et <a class="el" href="exec_8c_source.html#l00210">sub_func()</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="exec_8c_source.html#l00198">add_func()</a>, <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="exec_8c_source.html#l00358">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00111">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00338">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, <a class="el" href="exec_8c_source.html#l00300">ret_func()</a>, <a class="el" href="exec_8c_source.html#l00146">store_func()</a>, et <a class="el" href="exec_8c_source.html#l00209">sub_func()</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00195">simul()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00190">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     bool (*funcs[])(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>) =
     {
@@ -656,11 +655,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00057">57</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00056">56</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00024">ERR_IMMEDIATE</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, <a class="el" href="exec_8c_source.html#l00033">free_segments()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00024">ERR_IMMEDIATE</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00272">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00290">call_func()</a>, <a class="el" href="exec_8c_source.html#l00347">pop_func()</a>, et <a class="el" href="exec_8c_source.html#l00147">store_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="exec_8c_source.html#l00338">pop_func()</a>, et <a class="el" href="exec_8c_source.html#l00146">store_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
     {
@@ -727,11 +726,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00071">71</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00070">70</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00026">ERR_SEGDATA</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, et <a class="el" href="exec_8c_source.html#l00033">free_segments()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00026">ERR_SEGDATA</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, et <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00166">add_sub()</a>, <a class="el" href="exec_8c_source.html#l00123">load_func()</a>, <a class="el" href="exec_8c_source.html#l00323">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00147">store_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00146">store_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(addr &gt;= pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>)
     {
@@ -787,11 +786,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00084">84</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00083">83</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00027">ERR_SEGSTACK</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, et <a class="el" href="exec_8c_source.html#l00033">free_segments()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00027">ERR_SEGSTACK</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, et <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00347">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00323">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00309">ret_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00338">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00300">ret_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(pmach-&gt;_sp &lt; 0 || pmach-&gt;_sp &gt;= pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>)
     {
@@ -847,11 +846,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00033">33</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00032">32</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, et <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00057">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00071">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00084">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00099">illop_func()</a>, et <a class="el" href="exec_8c_source.html#l00221">should_jump()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     free(pmach-&gt;<a class="code" href="structMachine.html#a052e945d3eab840b58171c53a873aec3" title="Mémoire pour les instructions.">_text</a>);
     free(pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>);
@@ -905,11 +904,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>false </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00367">367</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00358">358</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00040">WARN_HALT</a>, et <a class="el" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">warning()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" title="Fin normale du programme (sur HALT)">WARN_HALT</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
     <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -974,11 +973,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>cette fonction ne retourne jamais, puisqu'error non plus </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00099">99</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00098">98</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, et <a class="el" href="exec_8c_source.html#l00033">free_segments()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, et <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
     <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e" title="Instruction illégale.">ERR_ILLEGAL</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
@@ -1044,11 +1043,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00123">123</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00122">122</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00071">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00017">set_cc()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00016">set_cc()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
 
@@ -1125,9 +1124,9 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00112">112</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00111">111</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
@@ -1180,11 +1179,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00347">347</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00338">338</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00057">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00084">error_if_segstack()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ++pmach-&gt;_sp;
     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
@@ -1257,11 +1256,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00323">323</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00314">314</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00071">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00084">error_if_segstack()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, et <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, et <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
 
@@ -1338,11 +1337,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00309">309</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00300">300</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, et <a class="el" href="exec_8c_source.html#l00084">error_if_segstack()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, et <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ++pmach-&gt;_sp;
     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
@@ -1408,11 +1407,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00017">17</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00016">16</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00031">CC_N</a>, <a class="el" href="machine_8h_source.html#l00030">CC_P</a>, et <a class="el" href="machine_8h_source.html#l00029">CC_Z</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00166">add_sub()</a>, et <a class="el" href="exec_8c_source.html#l00123">load_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>, et <a class="el" href="exec_8c_source.html#l00122">load_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(res &lt; 0)
         pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> = <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>;
@@ -1472,53 +1471,45 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si on doit sauter, false sinon, ne retourne pas si erreur (CC_U) </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00221">221</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00220">220</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00031">CC_N</a>, <a class="el" href="machine_8h_source.html#l00030">CC_P</a>, <a class="el" href="machine_8h_source.html#l00028">CC_U</a>, <a class="el" href="machine_8h_source.html#l00029">CC_Z</a>, <a class="el" href="instruction_8h_source.html#l00112">EQ</a>, <a class="el" href="error_8h_source.html#l00023">ERR_CONDITION</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, <a class="el" href="exec_8c_source.html#l00033">free_segments()</a>, <a class="el" href="instruction_8h_source.html#l00115">GE</a>, <a class="el" href="instruction_8h_source.html#l00114">GT</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="instruction_8h_source.html#l00117">LE</a>, <a class="el" href="instruction_8h_source.html#l00116">LT</a>, <a class="el" href="instruction_8h_source.html#l00111">NC</a>, et <a class="el" href="instruction_8h_source.html#l00113">NE</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00031">CC_N</a>, <a class="el" href="machine_8h_source.html#l00030">CC_P</a>, <a class="el" href="machine_8h_source.html#l00028">CC_U</a>, <a class="el" href="machine_8h_source.html#l00029">CC_Z</a>, <a class="el" href="instruction_8h_source.html#l00112">EQ</a>, <a class="el" href="error_8h_source.html#l00023">ERR_CONDITION</a>, <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error()</a>, <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>, <a class="el" href="instruction_8h_source.html#l00115">GE</a>, <a class="el" href="instruction_8h_source.html#l00114">GT</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="instruction_8h_source.html#l00117">LE</a>, <a class="el" href="instruction_8h_source.html#l00116">LT</a>, <a class="el" href="instruction_8h_source.html#l00111">NC</a>, et <a class="el" href="instruction_8h_source.html#l00113">NE</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00272">branch_func()</a>, et <a class="el" href="exec_8c_source.html#l00290">call_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, et <a class="el" href="exec_8c_source.html#l00281">call_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8" title="Conditions.">Condition</a> regcond = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
-    <span class="keywordtype">bool</span> jump = <span class="keyword">false</span>;
-
-    <span class="keywordflow">if</span>(regcond != <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a> &amp;&amp; pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc" title="Signe du résultat inconnu.">CC_U</a>)
+    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> != <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a> &amp;&amp; pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc" title="Signe du résultat inconnu.">CC_U</a>)
     {
         <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
         <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab" title="Condition illégale.">ERR_CONDITION</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
     }
 
-    <span class="keywordflow">switch</span>(regcond)
+    <span class="keywordflow">switch</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>)
     {
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a>:
-            jump = <span class="keyword">true</span>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> <span class="keyword">true</span>;
 
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f" title="Égal à 0.">EQ</a>:
-            jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
 
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db" title="Différent de 0.">NE</a>:
-            jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> != <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> != <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
 
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892" title="Strictement positif.">GT</a>:
-            jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a>;
 
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce" title="Positif ou nul.">GE</a>:
-            jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
 
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571" title="Strictement négatif.">LT</a>:
-            jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>;
 
         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61" title="Négatif ou null.">LE</a>:
-            jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
-            <span class="keywordflow">break</span>;
+            <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
+        
+        <span class="keywordflow">default</span>:
+            <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+            <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab" title="Condition illégale.">ERR_CONDITION</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
     }
-
-    <span class="keywordflow">return</span> jump;
 }
 </pre></div>
 <p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1580,11 +1571,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00147">147</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00146">146</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="exec_8c_source.html#l00045">address()</a>, <a class="el" href="exec_8c_source.html#l00057">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00071">error_if_segdata()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
 
@@ -1656,11 +1647,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00210">210</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00209">209</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="exec_8c_source.html#l00166">add_sub()</a>.</p>
+<p>Références <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00373">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(pmach, instr);
 }
@@ -1738,11 +1729,11 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00394">394</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00385">385</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8c_source.html#l00031">print_instruction()</a>.</p>
+<p>Références <a class="el" href="instruction_8c_source.html#l00032">print_instruction()</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00195">simul()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00190">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     printf(<span class="stringliteral">&quot;TRACE: %s: 0x%04x: &quot;</span>, msg, addr);
     <a class="code" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction</a>(instr, addr);
@@ -1778,7 +1769,7 @@ Fonctions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="exec_8c.html">exec.c</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 17:12:17 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 23:13:38 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

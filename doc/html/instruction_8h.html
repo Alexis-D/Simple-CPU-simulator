@@ -114,6 +114,8 @@ function toggleVisibility(linkObj) {
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="instruction_8h__incl.png" border="0" usemap="#instruction_8h" alt=""/></div>
+<map name="instruction_8h" id="instruction_8h">
+</map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
@@ -122,7 +124,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="instruction_8h__dep__incl.png" border="0" usemap="#instruction_8hdep" alt=""/></div>
 <map name="instruction_8hdep" id="instruction_8hdep">
-<area shape="rect" id="node3" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="387,80,468,107"/><area shape="rect" id="node17" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="644,229,705,256"/><area shape="rect" id="node23" href="instruction_8c.html" title="instruction.c" alt="" coords="732,80,825,107"/><area shape="rect" id="node5" href="debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="54,155,121,181"/><area shape="rect" id="node7" href="machine_8c.html" title="machine.c" alt="" coords="517,229,599,256"/><area shape="rect" id="node9" href="test__simul_8c.html" title="Test du simulateur." alt="" coords="5,229,99,256"/><area shape="rect" id="node11" href="prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="145,155,309,181"/><area shape="rect" id="node13" href="prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="335,155,521,181"/><area shape="rect" id="node15" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="596,155,657,181"/></map>
+<area shape="rect" id="node3" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="187,80,268,107"/><area shape="rect" id="node21" href="instruction_8c.html" title="instruction.c" alt="" coords="293,80,387,107"/><area shape="rect" id="node5" href="debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="54,155,121,181"/><area shape="rect" id="node9" href="test__simul_8c.html" title="Test du simulateur." alt="" coords="5,229,99,256"/><area shape="rect" id="node11" href="prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="145,155,309,181"/><area shape="rect" id="node13" href="prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="335,155,521,181"/><area shape="rect" id="node15" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="545,155,607,181"/><area shape="rect" id="node7" href="machine_8c.html" title="machine.c" alt="" coords="281,229,363,256"/><area shape="rect" id="node17" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="545,229,607,256"/></map>
 </div>
 </div>
 <p><a href="instruction_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -360,11 +362,11 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="instruction_8c_source.html#l00031">31</a> du fichier <a class="el" href="instruction_8c_source.html">instruction.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="instruction_8c_source.html#l00032">32</a> du fichier <a class="el" href="instruction_8c_source.html">instruction.c</a>.</p>
 
 <p>Références <a class="el" href="instruction_8h_source.html#l00074">Instruction::_address</a>, <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00062">Instruction::_indexed</a>, <a class="el" href="instruction_8h_source.html#l00095">Instruction::_offset</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="instruction_8h_source.html#l00094">Instruction::_rindex</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="instruction_8h_source.html#l00021">BRANCH</a>, <a class="el" href="instruction_8h_source.html#l00022">CALL</a>, <a class="el" href="instruction_8c_source.html#l00021">condition_names</a>, <a class="el" href="instruction_8c_source.html#l00005">cop_names</a>, <a class="el" href="instruction_8h_source.html#l00026">HALT</a>, <a class="el" href="instruction_8h_source.html#l00015">ILLOP</a>, <a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">Instruction::instr_absolute</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, <a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">Instruction::instr_indexed</a>, <a class="el" href="instruction_8h_source.html#l00016">NOP</a>, <a class="el" href="instruction_8h_source.html#l00024">PUSH</a>, et <a class="el" href="instruction_8h_source.html#l00023">RET</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00148">print_program()</a>, et <a class="el" href="exec_8c_source.html#l00394">trace()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00143">print_program()</a>, et <a class="el" href="exec_8c_source.html#l00385">trace()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a> op = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a>;
 
@@ -430,7 +432,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="instruction_8c_source.html#l00021">21</a> du fichier <a class="el" href="instruction_8c_source.html">instruction.c</a>.</p>
 
-<p>Référencé par <a class="el" href="instruction_8c_source.html#l00031">print_instruction()</a>.</p>
+<p>Référencé par <a class="el" href="instruction_8c_source.html#l00032">print_instruction()</a>.</p>
 
 </div>
 </div>
@@ -449,7 +451,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="instruction_8c_source.html#l00005">5</a> du fichier <a class="el" href="instruction_8c_source.html">instruction.c</a>.</p>
 
-<p>Référencé par <a class="el" href="instruction_8c_source.html#l00031">print_instruction()</a>.</p>
+<p>Référencé par <a class="el" href="instruction_8c_source.html#l00032">print_instruction()</a>.</p>
 
 </div>
 </div>
@@ -458,7 +460,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="instruction_8h.html">instruction.h</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 17:12:17 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 23:13:38 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
