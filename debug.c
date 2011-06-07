@@ -65,10 +65,10 @@ bool debug_ask(Machine *pmach) {
 				print_data(pmach);
 				break;
 			case 't':
-				print - program(pmach);
+				print_program(pmach);
 				break;
 			case 'p':
-				print - program(pmach);
+				print_program(pmach);
 				break;
 			case 'm':
 				print_data(mach);
