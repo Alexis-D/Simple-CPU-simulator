@@ -180,18 +180,18 @@ function toggleVisibility(linkObj) {
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106     printf(<span class="stringliteral">&quot;\n*** Machine state before execution ***\n&quot;</span>);
 <a name="l00107"></a>00107     <a class="code" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme.">print_program</a>(&amp;mach);
-<a name="l00108"></a>00108     <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
-<a name="l00109"></a>00109     <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
+<a name="l00108"></a>00108     <a class="code" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
+<a name="l00109"></a>00109     <a class="code" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
 <a name="l00110"></a>00110 
 <a name="l00111"></a>00111     <span class="keywordflow">if</span> (no_exec) 
 <a name="l00112"></a>00112         <span class="keywordflow">return</span> 0;
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114     printf(<span class="stringliteral">&quot;\n*** Execution trace ***\n\n&quot;</span>);
-<a name="l00115"></a>00115     <a class="code" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation.">simul</a>(&amp;mach, debug);
+<a name="l00115"></a>00115     <a class="code" href="machine_8c.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation.">simul</a>(&amp;mach, debug);
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117     printf(<span class="stringliteral">&quot;\n*** Machine state after execution ***\n&quot;</span>);
-<a name="l00118"></a>00118     <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
-<a name="l00119"></a>00119     <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
+<a name="l00118"></a>00118     <a class="code" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
+<a name="l00119"></a>00119     <a class="code" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
 <a name="l00120"></a>00120 
 <a name="l00121"></a>00121     <span class="keywordflow">return</span> 0; 
 <a name="l00122"></a>00122 }
@@ -200,7 +200,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="test__simul_8c.html">test_simul.c</a>      </li>
-      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 11:51:34 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

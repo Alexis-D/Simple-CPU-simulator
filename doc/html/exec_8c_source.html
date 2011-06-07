@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de exec.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Généré par Doxygen 1.7.4 -->
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d'instructions d'un processeur simple</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li><a href="dirs.html"><span>Répertoires</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('exec_8c.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">exec.c</div>  </div>
+</div>
+<div class="contents">
+<a href="exec_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;<a class="code" href="error_8h.html" title="Messages et codes d&#39;erreurs.">error.h</a>&quot;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="instruction_8h.html" title="Description du jeu d&#39;instruction.">instruction.h</a>&quot;</span>
+<a name="l00006"></a>00006 
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00017"></a><a class="code" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412">00017</a> <span class="keywordtype">void</span> <a class="code" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC.">set_cc</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <span class="keywordtype">int</span> res)
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019     <span class="keywordflow">if</span>(res &lt; 0)
+<a name="l00020"></a>00020         pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> = <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(res == 0)
+<a name="l00023"></a>00023         pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> = <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025     <span class="keywordflow">else</span> <span class="comment">//res &gt; 0</span>
+<a name="l00026"></a>00026         pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> = <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a>;
+<a name="l00027"></a>00027 }
+<a name="l00028"></a>00028 
+<a name="l00030"></a>00030 
+<a name="l00033"></a><a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea">00033</a> <span class="keywordtype">void</span> <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach)
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035     free(pmach-&gt;<a class="code" href="structMachine.html#a052e945d3eab840b58171c53a873aec3" title="Mémoire pour les instructions.">_text</a>);
+<a name="l00036"></a>00036     free(pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>);
+<a name="l00037"></a>00037 }
+<a name="l00038"></a>00038 
+<a name="l00040"></a>00040 
+<a name="l00045"></a><a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3">00045</a> <span class="keywordtype">unsigned</span> <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <span class="keywordflow">return</span> instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> ?
+<a name="l00048"></a>00048                 pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a>] + instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a> :
+<a name="l00049"></a>00049                 instr.<a class="code" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a>.<a class="code" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b" title="Adresse absolue.">_address</a>;
+<a name="l00050"></a>00050 }
+<a name="l00051"></a>00051 
+<a name="l00053"></a>00053 
+<a name="l00057"></a><a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940">00057</a> <span class="keywordtype">void</span> <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+<a name="l00060"></a>00060     {
+<a name="l00061"></a>00061         <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+<a name="l00062"></a>00062         <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021" title="Valeur immédiate interdite.">ERR_IMMEDIATE</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00067"></a>00067 
+<a name="l00071"></a><a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506">00071</a> <span class="keywordtype">void</span> <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <span class="keywordtype">unsigned</span> addr)
+<a name="l00072"></a>00072 {
+<a name="l00073"></a>00073     <span class="keywordflow">if</span>(addr &gt;= pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>)
+<a name="l00074"></a>00074     {
+<a name="l00075"></a>00075         <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+<a name="l00076"></a>00076         <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915" title="Violation de taille du segment de données.">ERR_SEGDATA</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078 }
+<a name="l00079"></a>00079 
+<a name="l00081"></a>00081 
+<a name="l00084"></a><a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1">00084</a> <span class="keywordtype">void</span> <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach)
+<a name="l00085"></a>00085 {
+<a name="l00086"></a>00086     <span class="keywordflow">if</span>(pmach-&gt;_sp &lt; 0 || pmach-&gt;_sp &gt;= pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>)
+<a name="l00087"></a>00087     {
+<a name="l00088"></a>00088         <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+<a name="l00089"></a>00089         <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7" title="Violation de taille du segment de pile.">ERR_SEGSTACK</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
+<a name="l00090"></a>00090     }
+<a name="l00091"></a>00091 }
+<a name="l00092"></a>00092 
+<a name="l00094"></a>00094 
+<a name="l00099"></a><a class="code" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09">00099</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine.">illop_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00100"></a>00100 {
+<a name="l00101"></a>00101     <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+<a name="l00102"></a>00102     <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e" title="Instruction illégale.">ERR_ILLEGAL</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
+<a name="l00103"></a>00103     <span class="comment">//never reached</span>
+<a name="l00104"></a>00104 }
+<a name="l00105"></a>00105 
+<a name="l00107"></a>00107 
+<a name="l00112"></a><a class="code" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866">00112</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine.">nop_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00113"></a>00113 {
+<a name="l00114"></a>00114     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00115"></a>00115 }
+<a name="l00116"></a>00116 
+<a name="l00118"></a>00118 
+<a name="l00123"></a><a class="code" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f">00123</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine.">load_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00124"></a>00124 {
+<a name="l00125"></a>00125     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127     <span class="keywordflow">if</span>(!instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+<a name="l00128"></a>00128     {
+<a name="l00129"></a>00129         <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00130"></a>00130         <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
+<a name="l00131"></a>00131         pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
+<a name="l00132"></a>00132     }
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134     <span class="keywordflow">else</span>
+<a name="l00135"></a>00135         pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] = instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137     <a class="code" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC.">set_cc</a>(pmach, pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r]);
+<a name="l00138"></a>00138     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00139"></a>00139 }
+<a name="l00140"></a>00140 
+<a name="l00142"></a>00142 
+<a name="l00147"></a><a class="code" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c">00147</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine.">store_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00148"></a>00148 {
+<a name="l00149"></a>00149     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
+<a name="l00152"></a>00152     <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154     <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
+<a name="l00155"></a>00155     pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr] = pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r];
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00158"></a>00158 }
+<a name="l00159"></a>00159 
+<a name="l00161"></a>00161 
+<a name="l00166"></a><a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d">00166</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00167"></a>00167 {
+<a name="l00168"></a>00168     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170     <span class="keywordflow">if</span>(!instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+<a name="l00171"></a>00171     {
+<a name="l00172"></a>00172         <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00173"></a>00173         <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175         <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>)
+<a name="l00176"></a>00176             pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] += pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178         <span class="keywordflow">else</span>
+<a name="l00179"></a>00179             pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] -= pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
+<a name="l00180"></a>00180     }
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182     <span class="keywordflow">else</span>
+<a name="l00183"></a>00183         <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>)
+<a name="l00184"></a>00184             pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] += instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186         <span class="keywordflow">else</span>
+<a name="l00187"></a>00187             pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] -= instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189     <a class="code" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC.">set_cc</a>(pmach, pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r]);
+<a name="l00190"></a>00190     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00191"></a>00191 }
+<a name="l00192"></a>00192 
+<a name="l00194"></a>00194 
+<a name="l00199"></a><a class="code" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7">00199</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine.">add_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00200"></a>00200 {
+<a name="l00201"></a>00201     <span class="keywordflow">return</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(pmach, instr);
+<a name="l00202"></a>00202 }
+<a name="l00203"></a>00203 
+<a name="l00205"></a>00205 
+<a name="l00210"></a><a class="code" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a">00210</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine.">sub_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00211"></a>00211 {
+<a name="l00212"></a>00212     <span class="keywordflow">return</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(pmach, instr);
+<a name="l00213"></a>00213 }
+<a name="l00214"></a>00214 
+<a name="l00216"></a>00216 
+<a name="l00221"></a><a class="code" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e">00221</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon.">should_jump</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00222"></a>00222 {
+<a name="l00223"></a>00223     <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8" title="Conditions.">Condition</a> regcond = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
+<a name="l00224"></a>00224     <span class="keywordtype">bool</span> jump = <span class="keyword">false</span>;
+<a name="l00225"></a>00225 
+<a name="l00226"></a>00226     <span class="keywordflow">switch</span>(regcond)
+<a name="l00227"></a>00227     {
+<a name="l00228"></a>00228         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a>:
+<a name="l00229"></a>00229             jump = <span class="keyword">true</span>;
+<a name="l00230"></a>00230             <span class="keywordflow">break</span>;
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f" title="Égal à 0.">EQ</a>:
+<a name="l00233"></a>00233             jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
+<a name="l00234"></a>00234             <span class="keywordflow">break</span>;
+<a name="l00235"></a>00235 
+<a name="l00236"></a>00236         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db" title="Différent de 0.">NE</a>:
+<a name="l00237"></a>00237             jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> != <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
+<a name="l00238"></a>00238             <span class="keywordflow">break</span>;
+<a name="l00239"></a>00239 
+<a name="l00240"></a>00240         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892" title="Strictement positif.">GT</a>:
+<a name="l00241"></a>00241             jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a>;
+<a name="l00242"></a>00242             <span class="keywordflow">break</span>;
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce" title="Positif ou nul.">GE</a>:
+<a name="l00245"></a>00245             jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
+<a name="l00246"></a>00246             <span class="keywordflow">break</span>;
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571" title="Strictement négatif.">LT</a>:
+<a name="l00249"></a>00249             jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>;
+<a name="l00250"></a>00250             <span class="keywordflow">break</span>;
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252         <span class="keywordflow">case</span> <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61" title="Négatif ou null.">LE</a>:
+<a name="l00253"></a>00253             jump = pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
+<a name="l00254"></a>00254             <span class="keywordflow">break</span>;
+<a name="l00255"></a>00255     }
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257     <span class="keywordflow">return</span> jump;
+<a name="l00258"></a>00258 }
+<a name="l00259"></a>00259 
+<a name="l00261"></a>00261 
+<a name="l00266"></a><a class="code" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c">00266</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine.">branch_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00267"></a>00267 {
+<a name="l00268"></a>00268     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
+<a name="l00269"></a>00269 
+<a name="l00270"></a>00270     <span class="keywordflow">if</span>(<a class="code" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon.">should_jump</a>(pmach, instr))
+<a name="l00271"></a>00271     {
+<a name="l00272"></a>00272         pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00273"></a>00273     }
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00276"></a>00276 }
+<a name="l00277"></a>00277 
+<a name="l00279"></a>00279 
+<a name="l00284"></a><a class="code" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2">00284</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine.">call_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00285"></a>00285 {
+<a name="l00286"></a>00286     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288     <span class="keywordflow">if</span>(<a class="code" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon.">should_jump</a>(pmach, instr))
+<a name="l00289"></a>00289     {
+<a name="l00290"></a>00290         pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp--] = pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>;
+<a name="l00291"></a>00291         pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00292"></a>00292     }
+<a name="l00293"></a>00293 
+<a name="l00294"></a>00294     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00295"></a>00295 }
+<a name="l00296"></a>00296 
+<a name="l00298"></a>00298 
+<a name="l00303"></a><a class="code" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8">00303</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine.">ret_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00304"></a>00304 {
+<a name="l00305"></a>00305     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(++pmach-&gt;_sp);
+<a name="l00306"></a>00306     pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp];
+<a name="l00307"></a>00307     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00308"></a>00308 }
+<a name="l00309"></a>00309 
+<a name="l00311"></a>00311 
+<a name="l00316"></a><a class="code" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b">00316</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine.">push_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00317"></a>00317 {
+<a name="l00318"></a>00318     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
+<a name="l00319"></a>00319 
+<a name="l00320"></a>00320     <span class="keywordflow">if</span>(!instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+<a name="l00321"></a>00321     {
+<a name="l00322"></a>00322         <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00323"></a>00323         <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
+<a name="l00324"></a>00324         pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
+<a name="l00325"></a>00325     }
+<a name="l00326"></a>00326 
+<a name="l00327"></a>00327     <span class="keywordflow">else</span>
+<a name="l00328"></a>00328         pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330     --pmach-&gt;_sp;
+<a name="l00331"></a>00331     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00332"></a>00332 }
+<a name="l00333"></a>00333 
+<a name="l00335"></a>00335 
+<a name="l00340"></a><a class="code" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3">00340</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine.">pop_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00341"></a>00341 {
+<a name="l00342"></a>00342     ++pmach-&gt;_sp;
+<a name="l00343"></a>00343     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
+<a name="l00344"></a>00344     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346     <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348     <span class="keywordflow">if</span>(addr &lt; pmach-&gt;_datasize)
+<a name="l00349"></a>00349         pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp];
+<a name="l00350"></a>00350 
+<a name="l00351"></a>00351     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00352"></a>00352 }
+<a name="l00353"></a>00353 
+<a name="l00355"></a>00355 
+<a name="l00360"></a><a class="code" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f">00360</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine.">halt_func</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr)
+<a name="l00361"></a>00361 {
+<a name="l00362"></a>00362     <a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" title="Fin normale du programme (sur HALT)">WARN_HALT</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
+<a name="l00363"></a>00363     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00364"></a>00364 }
+<a name="l00365"></a>00365 
+<a name="l00366"></a><a class="code" href="exec_8h.html#a41471ced34d27777447c2609173af7de">00366</a> <span class="keywordtype">bool</span> <a class="code" href="exec_8c.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction.">decode_execute</a>(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr) {
+<a name="l00367"></a>00367     bool (*func[])(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>) =
+<a name="l00368"></a>00368         {
+<a name="l00369"></a>00369         <a class="code" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine.">illop_func</a>,
+<a name="l00370"></a>00370         <a class="code" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine.">nop_func</a>,
+<a name="l00371"></a>00371         <a class="code" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine.">load_func</a>,
+<a name="l00372"></a>00372         <a class="code" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine.">store_func</a>,
+<a name="l00373"></a>00373         <a class="code" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine.">add_func</a>,
+<a name="l00374"></a>00374         <a class="code" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine.">sub_func</a>,
+<a name="l00375"></a>00375         <a class="code" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine.">branch_func</a>,
+<a name="l00376"></a>00376         <a class="code" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine.">call_func</a>,
+<a name="l00377"></a>00377         <a class="code" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine.">ret_func</a>,
+<a name="l00378"></a>00378         <a class="code" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine.">push_func</a>,
+<a name="l00379"></a>00379         <a class="code" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine.">pop_func</a>,
+<a name="l00380"></a>00380         <a class="code" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine.">halt_func</a>
+<a name="l00381"></a>00381         };
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383     <span class="keywordflow">return</span> func[instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a>](pmach, instr);
+<a name="l00384"></a>00384 }
+<a name="l00385"></a>00385 
+<a name="l00386"></a><a class="code" href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">00386</a> <span class="keywordtype">void</span> <a class="code" href="exec_8c.html#aae353f8fd7ccdbebd6c37fc0f75d12d3" title="Trace de l&#39;exécution.">trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *pmach, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr, <span class="keywordtype">unsigned</span> addr)
+<a name="l00387"></a>00387 {
+<a name="l00388"></a>00388     printf(<span class="stringliteral">&quot;TRACE: %s: 0x%04x: &quot;</span>, msg, addr);
+<a name="l00389"></a>00389     <a class="code" href="instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction</a>(instr, addr);
+<a name="l00390"></a>00390     printf(<span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00391"></a>00391 }
+<a name="l00392"></a>00392 
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="exec_8c.html">exec.c</a>      </li>
+      <li class="footer">Généré le Tue Jun 7 2011 11:51:34 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
+    </ul>
+  </div>
+
+</body>
+</html>
