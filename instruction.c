@@ -28,6 +28,7 @@ const char *condition_names[] =
     "LT",
     "LE",
 };
+
 void print_instruction(Instruction instr, unsigned addr)
 {
     Code_Op op = instr.instr_generic._cop;
