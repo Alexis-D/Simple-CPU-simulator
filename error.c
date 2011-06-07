@@ -19,12 +19,14 @@ const char *warning_names[] =
     "HALT",
 }; 
 
-void error(Error err, unsigned addr){
+void error(Error err, unsigned addr)
+{
     fprintf(stderr, "ERROR: %s reached at address 0x%x\n", error_names[err], addr);
     exit(1);
 }
 
-void warning(Warning warn, unsigned addr){
+void warning(Warning warn, unsigned addr)
+{
     fprintf(stderr, "WARNING: %s reached at address 0x%x\n", warning_names[warn], addr);
 }
 
