@@ -3,13 +3,18 @@
 
 #include <stdio.h>
 
+void print_program(Machine *pmach)
+{
+	
+}
+
 void print_data(Machine *pmach)
 {
 	printf("***   DATA (size: %i, end = Ox%x (%i))   ***\n\n",pmach->_datasize,pmach->_dataend,pmach->_dataend);
 	int i;
 	for(i = 0; i < pmach->_datasize; ++i)
   {
-		printf("0x%4x: 0x%x %i.\n",i,pmach->_data[i],pmach->_data[i]);
+		printf("0x%04x: 0x%0x %i.\n",i,pmach->_data[i],pmach->_data[i]);
 		if(i%3 == 2) printf("\n");
   }
 	printf("\n");
@@ -39,7 +44,7 @@ void print_cpu(Machine *pmach)
 	int i;
 	for(i = 0; i < NREGISTERS; ++i)
 	{
-		printf("R%2i:\tOx%4x %i",i,pmach->_registers[i],pmach->_registers[i]);
+		printf("R%02i:\tOx%04x %i",i,pmach->_registers[i],pmach->_registers[i]);
 		if(i%3 == 2) printf("\n");
 	}
 	printf("\n");
@@ -51,12 +56,9 @@ void simul(Machine *pmach, bool debug)
 	{
 		if(debug)
 		{
-			//printf("Valeur de PC : %i.\nValeur de SP : %i.\n\n",pmach->_pc,pmach->_sp);
-			print_program(&pmach);
-			print_data(&pmach);
-			print_cpu(&pmach);
+			ask_debug(&pmach);
 		}
-	} while(exec(&mach,pmach->_text[pmach->_pc])
+	} while(exec(&mach,pmach->_text[pmach->_pc++])
 
 	printf("exécution terminée, sortie normale...\n");
 
