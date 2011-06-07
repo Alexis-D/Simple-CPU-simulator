@@ -5,41 +5,60 @@
 #include "exec.h"
 #include "debug.h"
 
+//! Ecriture du programme et des données dans le fichier dump.prog
+/*!
+ * On écrit le programme qui va être simulé dans un fichier binaire
+ * Si le fichier pr 
+ * \param pmach la machine en cours d'exécution
+ */
 void create_binary_file(Machine *pmach)
 {
   FILE *file;
-  if((file = fopen("dump.bin", "w+")) == NULL){
+  //On ouvre le fichier dump.prog avec les droits en lecture et en écriture. Si le fichier n'existe pas il sera créé. S'il existe déjà son contenu sera effacé.
+  if((file = fopen("dump.prog", "w+")) == NULL){
+    //Problème survenu lors de l'ouverture ou de la création du fichier. On affiche l'erreur sur la sortie standart et on sort de la fonction
     perror("Ecriture du fichier dump.bin impossible !");
     exit(1);
   }
 
+  //On commence par écrire la taille du segment de texte.
   if(fwrite(&(pmach->_textsize), sizeof(unsigned int), 1, file) != 1){
+    //Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
     fwrite("Erreur a l'ecriture de textesize\n", 33, 1, stderr);
     exit(2);
   }
   
+  //Ecriture de la taille du segment de données.
   if(fwrite(&(pmach->_datasize), sizeof(unsigned int), 1, file) != 1){
+    //Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
     fwrite("Erreur a l'ecriture de datasize\n", 32, 1, stderr);
     exit(2);
   }
 
+  //Ecriture du dataend
   if(fwrite(&(pmach->_dataend), sizeof(unsigned int), 1, file) != 1){
+    //Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
     fwrite("Erreur a l'ecriture de dataend\n", 31, 1, stderr);
     exit(2);
   }
 
+  //Ecriture des instructions
   if(fwrite(&(pmach->_text->_raw), sizeof(uint32_t), pmach->_textsize, file) != pmach->_textsize){
+    //Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
     fwrite("Erreur a l'ecriture des instructions\n", 37, 1, stderr);
     exit(2);
   }
 
+  //Ecriture des données
   if(fwrite(pmach->_data, sizeof(uint32_t), pmach->_datasize, file) != pmach->_datasize){
+    //Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
     fwrite("Erreur a l'ecriture des donnees\n", 32, 1, stderr);
     exit(2);
   }
-
+  //On ferme le fichier
   fclose(file);
 }
+
 
 void load_program(Machine *pmach,
                   unsigned textsize, Instruction text[textsize],
@@ -79,7 +98,6 @@ void read_program(Machine *mach, const char *programfile)
     fclose(file);
     mach->_pc = 0;
     mach->_cc = LAST_CC;
-    //mach->_registers[NREGISTERS-1]=(mach->_data)[(mach->_datasize)-1];
     mach->_sp = mach->_datasize-1;
     for(int i = 0 ; i < NREGISTERS-1 ; i++){
       mach->_registers[i] = 0;
@@ -207,15 +225,15 @@ void print_cpu(Machine *pmach)
 
 void simul(Machine *pmach, bool debug)
 {
-  do
-    {
-      if(debug)
-	{
-	  debug = debug_ask(pmach);
-	}
-    } while(decode_execute(pmach,pmach->_text[pmach->_pc++]));
+  do{
+    trace("Executing",pmach,pmach->_text[pmach->_pc],pmach->_pc);
+    if(debug)
+      {
+	debug = debug_ask(pmach);
+      }
+  } while(decode_execute(pmach,pmach->_text[pmach->_pc++]));
 
-  //free(pmach->_text);
-  //free(pmach->_data);
+	//free(pmach->_text);
+	//free(pmach->_data);
   printf("exécution terminée, sortie normale...\n");
 }
