@@ -2,26 +2,37 @@
 
 #include "instruction.h"
 
+const char *cop_names[] =
+{
+    "ILLOP",
+    "NOP",
+    "LOAD",
+    "STORE",
+    "ADD",
+    "SUB",
+    "BRANCH",
+    "CALL",
+    "RET",
+    "PUSH",
+    "POP",
+    "HALT",
+};
+
+const char *condition_names[] =
+{
+    "NC",
+    "EQ",
+    "NE",
+    "GT",
+    "GE",
+    "LT",
+    "LE",
+};
 void print_instruction(Instruction instr, unsigned addr)
 {
-    char *ops[] =
-        {
-        "ILLOP",
-        "NOP",
-        "LOAD",
-        "STORE",
-        "ADD",
-        "SUB",
-        "BRANCH",
-        "CALL",
-        "RET",
-        "PUSH",
-        "POP",
-        "HALT",
-        };
     Code_Op op = instr.instr_generic._cop;
 
-    printf("%s ", ops[op]);
+    printf("%s ", cop_names[op]);
 
     if(op == RET || op == HALT || op == NOP || op == ILLOP)
     {
@@ -30,18 +41,7 @@ void print_instruction(Instruction instr, unsigned addr)
 
     else if(op == BRANCH || op == CALL)
     {
-        char *conds[] =
-            {
-            "NC",
-            "EQ",
-            "NE",
-            "GT",
-            "GE",
-            "LT",
-            "LE",
-            };
-
-        printf("%s, ", conds[instr.instr_generic._regcond]);
+        printf("%s, ", condition_names[instr.instr_generic._regcond]);
     }
 
     else if(op != PUSH)
