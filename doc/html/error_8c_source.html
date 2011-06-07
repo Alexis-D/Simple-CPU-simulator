@@ -97,12 +97,42 @@ function toggleVisibility(linkObj) {
 <div class="title">error.c</div>  </div>
 </div>
 <div class="contents">
-<a href="error_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"></pre></div></div>
+<a href="error_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;<a class="code" href="error_8h.html" title="Messages et codes d&#39;erreurs.">error.h</a>&quot;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a><a class="code" href="error_8h.html#afe6ae39b65175368d8e12772e950f6ca">00005</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[] =
+<a name="l00006"></a>00006 {
+<a name="l00007"></a>00007     <span class="stringliteral">&quot;NOERRROR&quot;</span>,
+<a name="l00008"></a>00008     <span class="stringliteral">&quot;UNKNOWN&quot;</span>,
+<a name="l00009"></a>00009     <span class="stringliteral">&quot;ILLEGAL&quot;</span>,
+<a name="l00010"></a>00010     <span class="stringliteral">&quot;CONDITION&quot;</span>,
+<a name="l00011"></a>00011     <span class="stringliteral">&quot;IMMEDIATE&quot;</span>,
+<a name="l00012"></a>00012     <span class="stringliteral">&quot;SEGTEXT&quot;</span>,
+<a name="l00013"></a>00013     <span class="stringliteral">&quot;SEGDATA&quot;</span>,
+<a name="l00014"></a>00014     <span class="stringliteral">&quot;SEGSTACK&quot;</span>,
+<a name="l00015"></a>00015 };
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="error_8h.html#a937bf66b297d74ac514599fdda38ac86">00017</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[] =
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019     <span class="stringliteral">&quot;HALT&quot;</span>,
+<a name="l00020"></a>00020 }; 
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">00022</a> <span class="keywordtype">void</span> <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5" title="Erreur d&#39;exécution.">Error</a> err, <span class="keywordtype">unsigned</span> addr){
+<a name="l00023"></a>00023     fprintf(stderr, <span class="stringliteral">&quot;ERROR: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[err], addr);
+<a name="l00024"></a>00024     exit(1);
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">00027</a> <span class="keywordtype">void</span> <a class="code" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed" title="Codes d&#39;avertissement.">Warning</a> warn, <span class="keywordtype">unsigned</span> addr){
+<a name="l00028"></a>00028     fprintf(stderr, <span class="stringliteral">&quot;WARNING: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[warn], addr);
+<a name="l00029"></a>00029 }
+<a name="l00030"></a>00030 
+</pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="error_8c.html">error.c</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 23:13:38 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 23:42:54 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
