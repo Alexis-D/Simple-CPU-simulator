@@ -5,6 +5,57 @@
 #include "instruction.h"
 #include "exec.h"
 
+void create_binary_file(Machine *pmach)
+{
+  FILE *file;
+  if((file = fopen("dump.bin", "w+")) == NULL){
+    perror("Ecriture du fichier dump.bin impossible !");
+    exit(1);
+  }
+
+  if(fwrite(&(pmach->_textsize), sizeof(unsigned int), 1, file) != 1){
+    fwrite("Erreur a l'ecriture de textesize\n", 33, 1, stderr);
+    exit(2);
+  }
+  
+  if(fwrite(&(pmach->_datasize), sizeof(unsigned int), 1, file) != 1){
+    fwrite("Erreur a l'ecriture de datasize\n", 32, 1, stderr);
+    exit(2);
+  }
+
+  if(fwrite(&(pmach->_dataend), sizeof(unsigned int), 1, file) != 1){
+    fwrite("Erreur a l'ecriture de dataend\n", 31, 1, stderr);
+    exit(2);
+  }
+
+  if(fwrite(&(pmach->_text->_raw), sizeof(uint32_t), pmach->_textsize, file) != pmach->_textsize){
+    fwrite("Erreur a l'ecriture des instructions\n", 37, 1, stderr);
+    exit(2);
+  }
+
+  if(fwrite(pmach->_data, sizeof(uint32_t), pmach->_datasize, file) != pmach->_datasize){
+    fwrite("Erreur a l'ecriture des donnees\n", 32, 1, stderr);
+    exit(2);
+  }
+
+  fclose(file);
+}
+
+void load_program(Machine *pmach,
+                  unsigned textsize, Instruction text[textsize],
+                  unsigned datasize, Word data[datasize],  unsigned dataend){
+  pmach->_textsize = textsize;//Taille du segment de texte
+  pmach->_datasize = datasize;//Taille du segment de données
+  pmach->_dataend = dataend;
+  pmach->_text = malloc((pmach->_textsize)*sizeof(Instruction));
+  pmach->_text = &text[0];
+  pmach->_data = malloc((pmach->_datasize)*sizeof(Word));
+  pmach->_data = &data[0];
+  pmach->_pc = 0;
+  pmach->_cc = LAST_CC;
+  pmach->_registers[NREGISTERS-1]=((pmach->_data)[pmach->_datasize]);
+}
+
 void read_program(Machine *mach, const char *programfile)
 {
   FILE *file = fopen(programfile, "r"); //ouverture du fichier en mode lecture
@@ -18,17 +69,17 @@ void read_program(Machine *mach, const char *programfile)
     
     mach->_text = malloc((mach->_textsize)*sizeof(Instruction));
      
-    fread((mach->_text)->_raw, sizeof(uint32_t),mach->_textsize, file);
+    fread(&(mach->_text->_raw), sizeof(uint32_t),mach->_textsize, file);
 
     mach->_data = malloc((mach->_datasize)*sizeof(Word));
     fread((mach->_data), sizeof(uint32_t), mach->_datasize, file);
     fclose(file);
-    mach->_pc = &(mach->_text);
+    mach->_pc = 0;
     mach->_cc = LAST_CC;
-    mach->_registers[NREGISTERS-1]=&((mach->_data)[mach->_datasize-1)]);
+    mach->_registers[NREGISTERS-1]=(mach->_data)[mach->_datasize];
   }
   else{
-    perror("Ouverture du fichier %s impossible\n", *programfile);
+    perror("Ouverture du fichier %s impossible\n");
     exit(1);
   }
 }
@@ -41,16 +92,16 @@ void dump_memory(Machine *pmach)
   for(int i = 0 ; i < pmach->_textsize ; i++)
     {
       if(cpt == 0){
-	printf("\t0x%08x,", (pmach->_text)[i]);
+	printf("\t0x%08x,", (pmach->_text)[i]._raw);
 	cpt++;
       }
       else{
 	if(cpt == 3){
-	  printf(" 0x%08x,\n", (pmach->_text)[i]);
+	  printf(" 0x%08x,\n", (pmach->_text)[i]._raw);
 	  cpt = 0;
 	}
 	else{
-	  printf(" 0x%08x,", (pmach->_text)[i]); 
+	  printf(" 0x%08x,", (pmach->_text)[i]._raw); 
 	  cpt++;
 	}
       }
@@ -62,7 +113,7 @@ void dump_memory(Machine *pmach)
 
   printf("};\nunsigned textsize = %d;\n", (pmach->_textsize));
   
-  print("\nWord data[] = {\n");
+  printf("\nWord data[] = {\n");
   for(int i = 0 ; i < pmach->_datasize ; i++)
     {
       if(cpt == 0){
@@ -88,44 +139,10 @@ void dump_memory(Machine *pmach)
   printf("};\nunsigned datasize = %d;\n", (pmach->_datasize));
   printf("unsigned dataend = %d;\n", (pmach->_dataend));
 
-  create_binary_file(&pmach);
+  create_binary_file(pmach);
 }
 
-void create_binary_file(Machine *pmach)
-{
-  FILE *file;
-  if((file = fopen("dump.bin", "w+")) == NULL){
-    perror("Ecriture du fichier dump.bin impossible !");
-    exit(1);
-  }
 
-  if(fwrite(pmach->_textsize, sizeof(unsigned int), 1, file) != 1){
-    fwrite("Erreur a l'ecriture de textesize\n", 33, 1, stderr);
-    exit(2);
-  }
-  
-  if(fwrite(pmach->_datasize, sizeof(unsigned int), 1, file) != 1){
-    fwrite("Erreur a l'ecriture de datasize\n", 32, 1, stderr);
-    exit(2);
-  }
-
-  if(fwrite(pmach->_dataend, sizeof(unsigned int), 1, file) != 1){
-    fwrite("Erreur a l'ecriture de dataend\n", 31, 1, stderr);
-    exit(2);
-  }
-
-  if(fwrite((pmach->_text)->_raw, sizeof(uint32_t), pmach->_textsize, file) != pmach->_textsize){
-    fwrite("Erreur a l'ecriture des instructions\n", 37, 1, stderr);
-    exit(2);
-  }
-
-  if(fwrite(pmach->_data, sizeof(uint32_t), pmach->_datasize, file) != pmach->_datasize){
-    fwrite("Erreur a l'ecriture des donnees\n", 32, 1, stderr);
-    exit(2);
-  }
-
-  fclose(file);
-}
 
 void print_data(Machine *pmach)
 {
