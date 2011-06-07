@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "machine.h"
-#include "instruction.h"
 #include "exec.h"
 #include "debug.h"
 
@@ -55,6 +54,9 @@ void load_program(Machine *pmach,
   pmach->_pc = 0;
   pmach->_cc = LAST_CC;
   pmach->_registers[NREGISTERS-1]=((pmach->_data)[pmach->_datasize]);
+  for(int i = 0 ; i < NREGISTERS-1 ; i++){
+    pmach->_registers[i] = 0;
+  } 
 }
 
 void read_program(Machine *mach, const char *programfile)
@@ -78,6 +80,9 @@ void read_program(Machine *mach, const char *programfile)
     mach->_pc = 0;
     mach->_cc = LAST_CC;
     mach->_registers[NREGISTERS-1]=(mach->_data)[mach->_datasize];
+    for(int i = 0 ; i < NREGISTERS-1 ; i++){
+      mach->_registers[i] = 0;
+    } 
   }
   else{
     perror("Ouverture du fichier %s impossible\n");
@@ -151,7 +156,7 @@ void print_program(Machine *pmach)
 	int i;
 	for(i = 0; i < pmach->_textsize; ++i)
 	{
-		printf("0x%04x: %0x\t",i,pmach->_text[i]._raw);
+		printf("0x%04x: 0x%08x\t",i,pmach->_text[i]._raw);
 		print_instruction(pmach->_text[i],i);
 		printf("\n");
 	}
@@ -163,7 +168,7 @@ void print_data(Machine *pmach)
 	int i;
 	for(i = 0; i < pmach->_datasize; ++i)
   {
-		printf("0x%04x: 0x%0x %i.\n",i,pmach->_data[i],pmach->_data[i]);
+		printf("0x%04x: 0x%08x %i\t",i,pmach->_data[i],pmach->_data[i]);
 		if(i%3 == 2) printf("\n");
   }
 	printf("\n");
@@ -193,7 +198,7 @@ void print_cpu(Machine *pmach)
 	int i;
 	for(i = 0; i < NREGISTERS; ++i)
 	{
-		printf("R%02i:\tOx%04x %i",i,pmach->_registers[i],pmach->_registers[i]);
+		printf("R%02i:\tOx%08x %i",i,pmach->_registers[i],pmach->_registers[i]);
 		if(i%3 == 2) printf("\n");
 	}
 	printf("\n");
@@ -205,9 +210,9 @@ void simul(Machine *pmach, bool debug)
 	{
 		if(debug)
 		{
-			debug = ask_debug(pmach);
+			debug = debug_ask(pmach);
 		}
-	} while(exec(pmach,pmach->_text[pmach->_pc++]));
+	} while(decode_execute(pmach,pmach->_text[pmach->_pc++]));
 
 	free(pmach->_text);
 	free(pmach->_data);
