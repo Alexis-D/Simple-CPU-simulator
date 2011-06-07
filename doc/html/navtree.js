@@ -9,10 +9,15 @@ var NAVTREE =
     [ "Index des structures de données", "classes.html", null ],
     [ "Champs de donnée", "functions.html", null ],
     [ "Liste des fichiers", "files.html", [
+      [ "debug.c", "debug_8c.html", null ],
       [ "debug.h", "debug_8h.html", null ],
+      [ "error.c", "error_8c.html", null ],
       [ "error.h", "error_8h.html", null ],
+      [ "exec.c", "exec_8c.html", null ],
       [ "exec.h", "exec_8h.html", null ],
+      [ "instruction.c", "instruction_8c.html", null ],
       [ "instruction.h", "instruction_8h.html", null ],
+      [ "machine.c", "machine_8c.html", null ],
       [ "machine.h", "machine_8h.html", null ],
       [ "test_simul.c", "test__simul_8c.html", null ],
       [ "Examples/prog_simple-bin.c", "prog__simple-bin_8c.html", null ],
@@ -21,7 +26,7 @@ var NAVTREE =
       [ "Examples/prog_subroutine.c", "prog__subroutine_8c.html", null ]
     ] ],
     [ "Répertoires", "dirs.html", [
-      [ "Examples", "dir_95f65ac89f7df8a536b20f69b7b41ea5.html", null ]
+      [ "Examples", "dir_24ed02cf54172d105457c197b09c4803.html", null ]
     ] ],
     [ "Portée globale", "globals.html", null ]
   ] ]

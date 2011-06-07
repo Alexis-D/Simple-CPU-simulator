@@ -200,6 +200,8 @@ Fonctions</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00014">14</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
 
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00018">print_cpu()</a>.</p>
+
 </div>
 </div>
 <hr/><h2>Documentation du type de l'énumération</h2>
@@ -386,8 +388,40 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00018">18</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
+<p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="machine_8h_source.html#l00031">CC_N</a>, <a class="el" href="machine_8h_source.html#l00030">CC_P</a>, <a class="el" href="machine_8h_source.html#l00028">CC_U</a>, <a class="el" href="machine_8h_source.html#l00029">CC_Z</a>, et <a class="el" href="machine_8h_source.html#l00014">NREGISTERS</a>.</p>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>, et <a class="el" href="machine_8c_source.html#l00048">simul()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    printf(<span class="stringliteral">&quot;***   CPU   ***\nPC:\t0x%x\tCC: &quot;</span>,pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>);
+    <span class="keywordflow">switch</span> (pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a>)
+    {
+        <span class="keywordflow">case</span> <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc" title="Signe du résultat inconnu.">CC_U</a> :
+            printf(<span class="stringliteral">&quot;U&quot;</span>);
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a> :
+            printf(<span class="stringliteral">&quot;Z&quot;</span>);
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a>
+            printf(<span class="stringliteral">&quot;P&quot;</span>);
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>
+            printf(<span class="stringliteral">&quot;N&quot;</span>);
+            <span class="keywordflow">break</span>;
+    }
+
+    printf(<span class="stringliteral">&quot;\n\n&quot;</span>);
+
+    <span class="keywordtype">int</span> i;
+    <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f" title="Nombre de resitres généraux.">NREGISTERS</a>; ++i)
+    {
+        printf(<span class="stringliteral">&quot;R%2i:\tOx%4x %i&quot;</span>,i,pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[i],pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[i]);
+        <span class="keywordflow">if</span>(i%3 == 2) printf(<span class="stringliteral">&quot;\n&quot;</span>);
+    }
+    printf(<span class="stringliteral">&quot;\n&quot;</span>);
+}
+</pre></div>
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -425,8 +459,22 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00006">6</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00079">Machine::_dataend</a>, et <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>.</p>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>, et <a class="el" href="machine_8c_source.html#l00048">simul()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    printf(<span class="stringliteral">&quot;***   DATA (size: %i, end = Ox%x (%i))   ***\n\n&quot;</span>,pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>,pmach-&gt;<a class="code" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0" title="Première adresse libre après les données statiques.">_dataend</a>,pmach-&gt;<a class="code" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0" title="Première adresse libre après les données statiques.">_dataend</a>);
+    <span class="keywordtype">int</span> i;
+    <span class="keywordflow">for</span>(i = 0; i &lt; pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>; ++i)
+  {
+        printf(<span class="stringliteral">&quot;0x%4x: 0x%x %i.\n&quot;</span>,i,pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[i],pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[i]);
+        <span class="keywordflow">if</span>(i%3 == 2) printf(<span class="stringliteral">&quot;\n&quot;</span>);
+  }
+    printf(<span class="stringliteral">&quot;\n&quot;</span>);
+}
+</pre></div>
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -464,7 +512,7 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>, et <a class="el" href="machine_8c_source.html#l00048">simul()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
@@ -574,13 +622,43 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00048">48</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="machine_8c_source.html#l00018">print_cpu()</a>, <a class="el" href="machine_8c_source.html#l00006">print_data()</a>, et <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">print_program()</a>.</p>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">do</span>
+    {
+        <span class="keywordflow">if</span>(debug)
+        {
+            <span class="comment">//printf(&quot;Valeur de PC : %i.\nValeur de SP : %i.\n\n&quot;,pmach-&gt;_pc,pmach-&gt;_sp);</span>
+            <a class="code" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme.">print_program</a>(&amp;pmach);
+            <a class="code" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;pmach);
+            <a class="code" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;pmach);
+        }
+    } <span class="keywordflow">while</span>(exec(&amp;mach,pmach-&gt;<a class="code" href="structMachine.html#a052e945d3eab840b58171c53a873aec3" title="Mémoire pour les instructions.">_text</a>[pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>])
+
+    printf(<span class="stringliteral">&quot;exécution terminée, sortie normale...\n&quot;</span>);
+
+}
+</pre></div>
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_cgraph.png" border="0" usemap="#machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_cgraph" alt=""/></div>
+<map name="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_cgraph" id="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph.png" border="0" usemap="#machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph" alt=""/></div>
 <map name="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph" id="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph">
 <area shape="rect" id="node3" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="111,5,164,35"/></map>
@@ -594,7 +672,7 @@ Fonctions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="machine_8h.html">machine.h</a>      </li>
-      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 11:51:34 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
