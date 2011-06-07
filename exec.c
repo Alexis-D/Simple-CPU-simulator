@@ -29,6 +29,33 @@ unsigned address(Machine *pmach, Instruction instr)
                 instr.instr_absolute._address;
 }
 
+void error_if_immediate(Machine *pmach, Instruction instr)
+{
+    if(instr.instr_generic._immediate)
+    {
+        free_segments(pmach);
+        error(ERR_IMMEDIATE, pmach->_pc - 1);
+    }
+}
+
+void error_if_segdata(Machine *pmach, unsigned addr)
+{
+    if(addr >= pmach->_datasize)
+    {
+        free_segments(pmach);
+        error(ERR_SEGDATA, pmach->_pc - 1);
+    }
+}
+
+void error_if_segstack(Machine *pmach, unsigned addr)
+{
+    if(addr < 0 || addr >= pmach->_datasize)
+    {
+        free_segments(pmach);
+        error(ERR_SEGSTACK, pmach->_pc - 1);
+    }
+}
+
 bool illop_func(Machine *pmach, Instruction instr)
 {
     free_segments(pmach);
@@ -48,15 +75,8 @@ bool load_func(Machine *pmach, Instruction instr)
     if(!instr.instr_generic._immediate)
     {
         unsigned addr = address(pmach, instr);
-
-        if(addr < pmach->_datasize)
-            pmach->_registers[r] = pmach->_data[addr];
-
-        else
-        {
-            free_segments(pmach);
-            error(ERR_SEGDATA, pmach->_pc - 1);
-        }
+        error_if_segdata(pmach, addr);
+        pmach->_registers[r] = pmach->_data[addr];
     }
 
     else
@@ -68,23 +88,13 @@ bool load_func(Machine *pmach, Instruction instr)
 
 bool store_func(Machine *pmach, Instruction instr)
 {
-    if(instr.instr_generic._immediate)
-    {
-        free_segments(pmach);
-        error(ERR_IMMEDIATE, pmach->_pc - 1);
-    }
+    error_if_immediate(pmach, instr);
 
     unsigned r = instr.instr_generic._regcond;
     unsigned addr = address(pmach, instr);
 
-    if(addr < pmach->_datasize)
-        pmach->_data[addr] = pmach->_registers[r];
-
-    else
-    {
-        free_segments(pmach);
-        error(ERR_SEGDATA, pmach->_pc - 1);
-    }
+    error_if_segdata(pmach, addr);
+    pmach->_data[addr] = pmach->_registers[r];
 
     return true;
 }
@@ -96,19 +106,13 @@ bool add_sub(Machine *pmach, Instruction instr, bool add)
     if(!instr.instr_generic._immediate)
     {
         unsigned addr = address(pmach, instr);
+        error_if_segdata(pmach, addr);
 
-        if(addr < pmach->_datasize)
-            if(add)
-                pmach->_registers[r] += pmach->_data[addr];
-
-            else
-                pmach->_registers[r] -= pmach->_data[addr];
+        if(add)
+            pmach->_registers[r] += pmach->_data[addr];
 
         else
-        {
-            free_segments(pmach);
-            error(ERR_SEGDATA, pmach->_pc - 1);
-        }
+            pmach->_registers[r] -= pmach->_data[addr];
     }
 
     else
@@ -173,11 +177,7 @@ bool should_jump(Machine *pmach, Instruction instr)
 
 bool branch_func(Machine *pmach, Instruction instr)
 {
-    if(instr.instr_generic._immediate)
-    {
-        free_segments(pmach);
-        error(ERR_IMMEDIATE, pmach->_pc - 1);
-    }
+    error_if_immediate(pmach, instr);
 
     if(should_jump(pmach, instr))
     {
@@ -189,11 +189,7 @@ bool branch_func(Machine *pmach, Instruction instr)
 
 bool call_func(Machine *pmach, Instruction instr)
 {
-    if(instr.instr_generic._immediate)
-    {
-        free_segments(pmach);
-        error(ERR_IMMEDIATE, pmach->_pc - 1);
-    }
+    error_if_immediate(pmach, instr);
 
     if(should_jump(pmach, instr))
     {
@@ -212,24 +208,13 @@ bool ret_func(Machine *pmach, Instruction instr)
 
 bool push_func(Machine *pmach, Instruction instr)
 {
-    if(pmach->_sp < 0)
-    {
-        free_segments(pmach);
-        error(ERR_SEGSTACK, pmach->_pc - 1);
-    }
+    error_if_segstack(pmach, pmach->_sp);
 
     if(!instr.instr_generic._immediate)
     {
         unsigned addr = address(pmach, instr);
-
-        if(addr < pmach->_datasize)
-            pmach->_data[pmach->_sp] = pmach->_data[addr];
-
-        else
-        {
-            free_segments(pmach);
-            error(ERR_SEGDATA, pmach->_pc - 1);
-        }
+        error_if_segdata(pmach, addr);
+        pmach->_data[pmach->_sp] = pmach->_data[addr];
     }
 
     else
@@ -241,17 +226,8 @@ bool push_func(Machine *pmach, Instruction instr)
 
 bool pop_func(Machine *pmach, Instruction instr)
 {
-    if(++pmach->_sp >= pmach->_datasize)
-    {
-        free_segments(pmach);
-        error(ERR_SEGSTACK, pmach->_pc - 1);
-    }
-
-    if(instr.instr_generic._immediate)
-    {
-        free_segments(pmach);
-        error(ERR_IMMEDIATE, pmach->_pc - 1);
-    }
+    error_if_segstack(pmach, ++pmach->_sp);
+    error_if_immediate(pmach, instr);
 
     unsigned addr = address(pmach, instr);
 
