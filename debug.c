@@ -35,7 +35,7 @@ void option_H() {
  */
 bool debug_ask(Machine *pmach) {
 
-	char cmd='';
+	char cmd='0';
 	char c;
 	
 	while (true) {
