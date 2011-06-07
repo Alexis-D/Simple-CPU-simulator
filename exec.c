@@ -45,8 +45,8 @@ void free_segments(Machine *pmach)
 unsigned address(Machine *pmach, Instruction instr)
 {
     return instr.instr_generic._indexed ?
-                pmach->_registers[instr.instr_indexed._rindex] + instr.instr_indexed._offset :
-                instr.instr_absolute._address;
+        pmach->_registers[instr.instr_indexed._rindex] + instr.instr_indexed._offset :
+        instr.instr_absolute._address;
 }
 
 //! Appelle error si l'instruction est en mode immédiat
@@ -216,12 +216,18 @@ bool sub_func(Machine *pmach, Instruction instr)
 /*!
  * \param pmach la machine/programme en cours d'exécution
  * \param instr l'instruction à exécuter
- * \return true si on doit sauter, false sinon
+ * \return true si on doit sauter, false sinon, ne retourne pas si erreur (CC_U)
  */
 bool should_jump(Machine *pmach, Instruction instr)
 {
     Condition regcond = instr.instr_generic._regcond;
     bool jump = false;
+
+    if(regcond != NC && pmach->_cc == CC_U)
+    {
+        free_segments(pmach);
+        error(ERR_CONDITION, pmach->_pc - 1);
+    }
 
     switch(regcond)
     {
@@ -302,7 +308,8 @@ bool call_func(Machine *pmach, Instruction instr)
  */
 bool ret_func(Machine *pmach, Instruction instr)
 {
-    error_if_segstack(++pmach->_sp);
+    ++pmach->_sp;
+    error_if_segstack(pmach);
     pmach->_pc = pmach->_data[pmach->_sp];
     return true;
 }
@@ -364,8 +371,8 @@ bool halt_func(Machine *pmach, Instruction instr)
 }
 
 bool decode_execute(Machine *pmach, Instruction instr) {
-    bool (*func[])(Machine *, Instruction) =
-        {
+    bool (*funcs[])(Machine *, Instruction) =
+    {
         illop_func,
         nop_func,
         load_func,
@@ -378,9 +385,9 @@ bool decode_execute(Machine *pmach, Instruction instr) {
         push_func,
         pop_func,
         halt_func,
-        };
+    };
 
-    return func[instr.instr_generic._cop](pmach, instr);
+    return funcs[instr.instr_generic._cop](pmach, instr);
 }
 
 void trace(const char *msg, Machine *pmach, Instruction instr, unsigned addr)
