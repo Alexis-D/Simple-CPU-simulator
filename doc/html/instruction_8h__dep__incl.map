@@ -1,12 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="203,80,284,107"/>
-<area shape="rect" id="node7" href="$debug_8c.html" title="debug.c" alt="" coords="5,229,72,256"/>
-<area shape="rect" id="node26" href="$instruction_8c.html" title="instruction.c" alt="" coords="309,80,403,107"/>
-<area shape="rect" id="node5" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="562,155,629,181"/>
-<area shape="rect" id="node11" href="$test__simul_8c.html" title="Test du simulateur." alt="" coords="585,229,679,256"/>
-<area shape="rect" id="node14" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="76,155,137,181"/>
-<area shape="rect" id="node20" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="161,155,325,181"/>
-<area shape="rect" id="node22" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="351,155,537,181"/>
-<area shape="rect" id="node9" href="$machine_8c.html" title="machine.c" alt="" coords="312,229,393,256"/>
-<area shape="rect" id="node17" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="97,229,159,256"/>
+<area shape="rect" id="node3" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="256,80,337,107"/>
+<area shape="rect" id="node24" href="$instruction_8c.html" title="instruction.c" alt="" coords="363,80,456,107"/>
+<area shape="rect" id="node5" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="191,155,259,181"/>
+<area shape="rect" id="node11" href="$test__simul_8c.html" title="Test du simulateur." alt="" coords="291,229,384,256"/>
+<area shape="rect" id="node13" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="100,155,161,181"/>
+<area shape="rect" id="node19" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="335,155,499,181"/>
+<area shape="rect" id="node21" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="524,155,711,181"/>
+<area shape="rect" id="node7" href="$debug_8c.html" title="debug.c" alt="" coords="91,229,159,256"/>
+<area shape="rect" id="node9" href="$machine_8c.html" title="machine.c" alt="" coords="184,229,265,256"/>
+<area shape="rect" id="node16" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,229,67,256"/>
 </map>

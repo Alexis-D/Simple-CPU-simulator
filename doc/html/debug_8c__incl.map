@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="35,80,103,107"/>
-<area shape="rect" id="node7" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="117,155,199,181"/>
-<area shape="rect" id="node10" href="$instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="192,229,285,256"/>
-<area shape="rect" id="node17" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="128,80,189,107"/>
+<area shape="rect" id="node3" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node15" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="97,80,159,107"/>
+<area shape="rect" id="node7" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="81,155,163,181"/>
+<area shape="rect" id="node10" href="$instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="127,229,220,256"/>
 </map>

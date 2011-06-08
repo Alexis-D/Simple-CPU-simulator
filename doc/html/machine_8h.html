@@ -124,7 +124,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="machine_8h__dep__incl.png" border="0" usemap="#machine_8hdep" alt=""/></div>
 <map name="machine_8hdep" id="machine_8hdep">
-<area shape="rect" id="node3" href="debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="211,80,279,107"/><area shape="rect" id="node5" href="debug_8c.html" title="debug.c" alt="" coords="91,155,159,181"/><area shape="rect" id="node9" href="test__simul_8c.html" title="Test du simulateur." alt="" coords="291,155,384,181"/><area shape="rect" id="node12" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="125,80,187,107"/><area shape="rect" id="node18" href="prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="355,80,519,107"/><area shape="rect" id="node20" href="prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="544,80,731,107"/><area shape="rect" id="node7" href="machine_8c.html" title="machine.c" alt="" coords="184,155,265,181"/><area shape="rect" id="node15" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,155,67,181"/></map>
+<area shape="rect" id="node3" href="debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="191,80,259,107"/><area shape="rect" id="node9" href="test__simul_8c.html" title="Test du simulateur." alt="" coords="291,155,384,181"/><area shape="rect" id="node11" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="100,80,161,107"/><area shape="rect" id="node17" href="prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="335,80,499,107"/><area shape="rect" id="node19" href="prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="524,80,711,107"/><area shape="rect" id="node5" href="debug_8c.html" title="debug.c" alt="" coords="91,155,159,181"/><area shape="rect" id="node7" href="machine_8c.html" title="machine.c" alt="" coords="184,155,265,181"/><area shape="rect" id="node14" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,155,67,181"/></map>
 </div>
 </div>
 <p><a href="machine_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -480,7 +480,7 @@ Variables</h2></td></tr>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="machine_8c_source.html#l00006">condition_code_names</a>, et <a class="el" href="machine_8h_source.html#l00014">NREGISTERS</a>.</p>
 
-<p>Référencé par <a class="el" href="debug_8c_source.html#l00035">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="debug_8c_source.html#l00031">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     printf(<span class="stringliteral">&quot;\n*** CPU ***\nPC:  0x%08x   CC: %s\n\n&quot;</span>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>, <a class="code" href="machine_8c.html#a555193bb718643e0c7962459993bce5e" title="Forme imprimable des codes conditions.">condition_code_names</a>[pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a>]);
 
@@ -538,7 +538,7 @@ Variables</h2></td></tr>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00079">Machine::_dataend</a>, et <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>.</p>
 
-<p>Référencé par <a class="el" href="debug_8c_source.html#l00035">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="debug_8c_source.html#l00031">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     printf(<span class="stringliteral">&quot;*** DATA (size: %i, end = 0x%08x (%i)) ***\n&quot;</span>, pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>, pmach-&gt;<a class="code" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0" title="Première adresse libre après les données statiques.">_dataend</a>, pmach-&gt;<a class="code" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0" title="Première adresse libre après les données statiques.">_dataend</a>);
 
@@ -596,7 +596,7 @@ Variables</h2></td></tr>
 
 <p>Références <a class="el" href="instruction_8h_source.html#l00055">Instruction::_raw</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="machine_8h_source.html#l00074">Machine::_textsize</a>, et <a class="el" href="instruction_8c_source.html#l00032">print_instruction()</a>.</p>
 
-<p>Référencé par <a class="el" href="debug_8c_source.html#l00035">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="debug_8c_source.html#l00031">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     printf(<span class="stringliteral">&quot;\n*** PROGRAM (size: %i) ***\n&quot;</span>, pmach-&gt;<a class="code" href="structMachine.html#a6a405b4b09d4e566cf27f0bed3505b11" title="Taille utilisée pour les instructions.">_textsize</a>);
     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; pmach-&gt;<a class="code" href="structMachine.html#a6a405b4b09d4e566cf27f0bed3505b11" title="Taille utilisée pour les instructions.">_textsize</a>; ++i)
@@ -780,7 +780,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00228">228</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="debug_8c_source.html#l00035">debug_ask()</a>, <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>, et <a class="el" href="exec_8c_source.html#l00385">trace()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="debug_8c_source.html#l00031">debug_ask()</a>, <a class="el" href="exec_8c_source.html#l00364">decode_execute()</a>, et <a class="el" href="exec_8c_source.html#l00385">trace()</a>.</p>
 
 <p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -842,7 +842,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="machine_8h.html">machine.h</a>      </li>
-      <li class="footer">Généré le Wed Jun 8 2011 15:10:15 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Wed Jun 8 2011 15:36:18 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
