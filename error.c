@@ -22,7 +22,7 @@ const char *warning_names[] =
 
 void error(Error err, unsigned addr)
 {
-    fprintf(stderr, "ERROR: %s reached at address 0x%x\n",
+    fprintf(stderr, "ERROR: %s at address 0x%x\n",
             error_names[err], addr);
     exit(1);
 }

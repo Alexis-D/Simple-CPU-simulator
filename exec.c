@@ -25,16 +25,6 @@ void set_cc(Machine *pmach, int res)
         pmach->_cc = CC_P;
 }
 
-//! Libère les segments de mémoires alloués dynamiquement
-/*!
- * \param pmach la machine/programme en cours d'exécution
- */
-void free_segments(Machine *pmach)
-{
-    free(pmach->_text);
-    free(pmach->_data);
-}
-
 //! Calcule l'adresse "réelle" d'une instruction en mode absolu/indexé
 /*!
  * \param pmach la machine/programme en cours d'exécution
@@ -58,10 +48,7 @@ unsigned address(Machine *pmach, Instruction instr)
 void error_if_immediate(Machine *pmach, Instruction instr)
 {
     if(instr.instr_generic._immediate)
-    {
-        free_segments(pmach);
         error(ERR_IMMEDIATE, pmach->_pc - 1);
-    }
 }
 
 /*!
@@ -75,10 +62,7 @@ void error_if_immediate(Machine *pmach, Instruction instr)
 void error_if_segdata(Machine *pmach, unsigned addr)
 {
     if(addr >= pmach->_datasize)
-    {
-        free_segments(pmach);
         error(ERR_SEGDATA, pmach->_pc - 1);
-    }
 }
 
 //! Appelle error si l'on veut sortir de la pile
@@ -88,10 +72,7 @@ void error_if_segdata(Machine *pmach, unsigned addr)
 void error_if_segstack(Machine *pmach)
 {
     if(pmach->_sp < 0 || pmach->_sp >= pmach->_datasize)
-    {
-        free_segments(pmach);
         error(ERR_SEGSTACK, pmach->_pc - 1);
-    }
 }
 
 //! Effectue un ILLOP sur la machine
@@ -102,7 +83,6 @@ void error_if_segstack(Machine *pmach)
  */
 bool illop_func(Machine *pmach, Instruction instr)
 {
-    free_segments(pmach);
     error(ERR_ILLEGAL, pmach->_pc - 1);
 }
 
@@ -203,10 +183,7 @@ bool should_jump(Machine *pmach, Instruction instr)
 {
     if((instr.instr_generic._regcond != NC && pmach->_cc == CC_U) ||
             instr.instr_generic._regcond > LAST_CONDITION)
-    {
-        free_segments(pmach);
         error(ERR_CONDITION, pmach->_pc - 1);
-    }
 
     switch(instr.instr_generic._regcond)
     {
@@ -232,7 +209,6 @@ bool should_jump(Machine *pmach, Instruction instr)
             return pmach->_cc == CC_N || pmach->_cc == CC_Z;
 
         default:
-            free_segments(pmach);
             error(ERR_CONDITION, pmach->_pc - 1);
     }
 }
@@ -245,6 +221,7 @@ bool should_jump(Machine *pmach, Instruction instr)
  */
 bool branch_func(Machine *pmach, Instruction instr)
 {
+
     error_if_immediate(pmach, instr);
 
     if(should_jump(pmach, instr))
@@ -265,7 +242,9 @@ bool call_func(Machine *pmach, Instruction instr)
 
     if(should_jump(pmach, instr))
     {
-        pmach->_data[pmach->_sp--] = pmach->_pc;
+        --pmach->_sp;
+        error_if_segstack(pmach);
+        pmach->_data[pmach->_sp] = pmach->_pc;
         pmach->_pc = address(pmach, instr);
     }
 
@@ -322,8 +301,8 @@ bool push_func(Machine *pmach, Instruction instr)
 bool pop_func(Machine *pmach, Instruction instr)
 {
     ++pmach->_sp;
-    error_if_segstack(pmach);
     error_if_immediate(pmach, instr);
+    error_if_segstack(pmach);
 
     unsigned addr = address(pmach, instr);
 
@@ -364,10 +343,7 @@ bool decode_execute(Machine *pmach, Instruction instr)
     };
 
     if(instr.instr_generic._cop > LAST_COP)
-    {
-        free_segments(pmach);
         error(ERR_ILLEGAL, pmach->_pc - 1);
-    }
 
     return funcs[instr.instr_generic._cop](pmach, instr);
 }
