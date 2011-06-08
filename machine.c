@@ -23,7 +23,7 @@ void create_binary_file(Machine *pmach)
     //On ouvre le fichier dump.prog avec les droits en lecture et en écriture. Si le fichier n'existe pas il sera créé. S'il existe déjà son contenu sera effacé.
     if(!(file = fopen("dump.bin", "w+")))
     {
-      //Problème survenu lors de l'ouverture ou de la création du fichier. On affiche l'erreur sur la sortie standart et on sort de la fonction
+        //Problème survenu lors de l'ouverture ou de la création du fichier. On affiche l'erreur sur la sortie standart et on sort de la fonction
         fprintf(stderr, "Ecriture du fichier impossible.\n");
         exit(1);
     }
@@ -35,7 +35,7 @@ void create_binary_file(Machine *pmach)
         fprintf(stderr, "Erreur durant l'écriture de _textsize.\n");
         exit(1);
     }
- 
+
     //Ecriture des instructions
     if(fwrite(&(pmach->_datasize), sizeof(unsigned), 1, file) != 1)
     {
@@ -43,11 +43,11 @@ void create_binary_file(Machine *pmach)
         fprintf(stderr, "Erreur durant l'écriture de _datasize.\n");
         exit(1);
     }
-    
+
     //Ecriture du dataend
     if(fwrite(&(pmach->_dataend), sizeof(unsigned int), 1, file) != 1)
-      {
-	//Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
+    {
+        //Problème pendant l'écriture : on l'écrit sur la sortie d'erreur standart et on sort de la fonction
         fprintf(stderr, "Erreur durant l'écriture de _dataend.\n");
         exit(1);
     }
@@ -59,7 +59,7 @@ void create_binary_file(Machine *pmach)
         fprintf(stderr, "Erreur durant l'écriture des instructions.\n");
         exit(1);
     }
-    
+
     //Ecriture des données
     if(fwrite(pmach->_data, sizeof(Word), pmach->_datasize, file) != pmach->_datasize)
     {
@@ -100,24 +100,22 @@ void read_program(Machine *mach, const char *programfile)
         fprintf(stderr, "Ouverture du fichier \"%s\" impossible.\n", programfile);
         exit(1);
     }
-    
+
     unsigned sizes[3]; //Tableau d'entiers non signés pour la récupération de textsize, datasize et dataend
     fread(sizes, sizeof(unsigned), 3, file); //Récupération des tailles des segments à allouer
 
-    printf("%d - %d - %d\n", sizes[0], sizes[1], sizes[2]);
-    
-    unsigned int static_size = sizes[1]-sizes[2]; //Place occupée par les données statiques
-    //On teste si malgré la quantité de données statiques il reste MINSTACKSIZE pour la pile d'execution
-    if(static_size < MINSTACKSIZE)
-      {
-	//Si c'est inférieur, on modifie la taille de manière à ce que la taille pile d'execution soit de la taille minimale imposée
-	sizes[1] += (MINSTACKSIZE - static_size);
-      }
+    unsigned int stack_size = sizes[1] - sizes[2]; //Place occupée par la pile
+    //On teste si on a assez de place pour la pile
+    if(stack_size < MINSTACKSIZE)
+    {
+        //Si c'est inférieur, on modifie la taille de manière à ce que la taille pile d'execution soit de la taille minimale imposée
+        stack_size = MINSTACKSIZE;
+    }
 
     //Allocation de l'espace nécessaire pour stocker les instructions du programme à simuler
     Instruction *text = malloc(sizes[0] * sizeof(Instruction));
     //Allocation de l'espace nécessaire pour stocker les données du programme
-    Word *data = malloc(sizes[1] * sizeof(Word));
+    Word *data = malloc((sizes[2] + stack_size) * sizeof(Word));
     //On extrait du fichier binaire les instructions du programme et on les place dans le segment de texte
     fread(text, sizeof(Instruction), sizes[0], file);
     //On extrait du fichier binaire les données du programme et on les place dans le segment de données
@@ -126,7 +124,7 @@ void read_program(Machine *mach, const char *programfile)
     fclose(file);
 
     //On appelle load_program pour initialiser la machine avec les données que l'on vient de récuperer
-    load_program(mach, sizes[0], text, sizes[1], data, sizes[2]);
+    load_program(mach, sizes[0], text, sizes[2] + stack_size, data, sizes[2]);
 }
 
 void dump_memory(Machine *pmach)
@@ -138,11 +136,11 @@ void dump_memory(Machine *pmach)
         switch(i % 4)
         {
             case 0:
-	        //Début de ligne donc on fait un alinéa
-	        printf("    0x%08x, ", pmach->_text[i]._raw);
+                //Début de ligne donc on fait un alinéa
+                printf("    0x%08x, ", pmach->_text[i]._raw);
                 break;
             case 3:
-	        //4 instructions sur une ligne donc on fait un saut de ligne
+                //4 instructions sur une ligne donc on fait un saut de ligne
                 printf("0x%08x, \n", pmach->_text[i]._raw);
                 break;
             default:
@@ -160,11 +158,11 @@ void dump_memory(Machine *pmach)
         switch(i % 4)
         {
             case 0:
-	        //Début de ligne donc on fait un alinéa	        
+                //Début de ligne donc on fait un alinéa
                 printf("    0x%08x, ", pmach->_data[i]);
                 break;
             case 3:
-	        //4 instructions sur une ligne donc on fait un saut de ligne
+                //4 instructions sur une ligne donc on fait un saut de ligne
                 printf("0x%08x, \n", pmach->_data[i]);
                 break;
             default:
