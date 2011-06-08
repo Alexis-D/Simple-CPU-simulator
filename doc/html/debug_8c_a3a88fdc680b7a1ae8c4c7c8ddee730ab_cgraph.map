@@ -2,6 +2,7 @@
 <area shape="rect" id="node3" href="$machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU." alt="" coords="152,5,227,32"/>
 <area shape="rect" id="node5" href="$machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme." alt="" coords="150,56,229,83"/>
 <area shape="rect" id="node7" href="$machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="139,107,240,133"/>
-<area shape="rect" id="node11" href="$debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="161,157,218,184"/>
+<area shape="rect" id="node13" href="$debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="161,157,218,184"/>
 <area shape="rect" id="node9" href="$instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="288,107,403,133"/>
+<area shape="rect" id="node11" href="$error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="451,107,499,133"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node5" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="37,80,119,107"/>
-<area shape="rect" id="node8" href="$instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="88,155,181,181"/>
+<area shape="rect" id="node5" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="83,80,164,107"/>
+<area shape="rect" id="node7" href="$instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="80,155,173,181"/>
 </map>
