@@ -115,7 +115,7 @@ function toggleVisibility(linkObj) {
 <a name="l00025"></a>00025 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a>;  
 <a name="l00026"></a>00026 
 <a name="l00028"></a>00028 
-<a name="l00031"></a>00031 <span class="keyword">static</span> <span class="keywordtype">void</span> usage()
+<a name="l00031"></a>00031 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante.">usage</a>()
 <a name="l00032"></a>00032 {
 <a name="l00033"></a>00033     printf(<span class="stringliteral">&quot;Usage: test_simul [options] [binfile]\n&quot;</span>);
 <a name="l00034"></a>00034     printf(<span class="stringliteral">&quot;where options are:\n&quot;</span>
@@ -154,11 +154,11 @@ function toggleVisibility(linkObj) {
 <a name="l00079"></a>00079                     no_exec = <span class="keyword">true</span>;
 <a name="l00080"></a>00080                     <span class="keywordflow">break</span>;
 <a name="l00081"></a>00081                   <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:
-<a name="l00082"></a>00082                     usage();
+<a name="l00082"></a>00082                     <a class="code" href="debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante.">usage</a>();
 <a name="l00083"></a>00083                     exit(EXIT_SUCCESS);
 <a name="l00084"></a>00084                 <span class="keywordflow">default</span>:
 <a name="l00085"></a>00085                     fprintf(stderr, <span class="stringliteral">&quot;Unknown option: %s\n&quot;</span>, argv[iarg]);
-<a name="l00086"></a>00086                     usage();
+<a name="l00086"></a>00086                     <a class="code" href="debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante.">usage</a>();
 <a name="l00087"></a>00087                     exit(EXIT_FAILURE);
 <a name="l00088"></a>00088                 }
 <a name="l00089"></a>00089             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (binfile)
@@ -200,7 +200,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="test__simul_8c.html">test_simul.c</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 23:42:54 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Wed Jun 8 2011 15:10:15 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

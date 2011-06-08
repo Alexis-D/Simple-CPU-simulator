@@ -118,21 +118,23 @@ function toggleVisibility(linkObj) {
 <a name="l00019"></a>00019     <span class="stringliteral">&quot;HALT&quot;</span>,
 <a name="l00020"></a>00020 }; 
 <a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">00022</a> <span class="keywordtype">void</span> <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5" title="Erreur d&#39;exécution.">Error</a> err, <span class="keywordtype">unsigned</span> addr){
-<a name="l00023"></a>00023     fprintf(stderr, <span class="stringliteral">&quot;ERROR: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[err], addr);
-<a name="l00024"></a>00024     exit(1);
-<a name="l00025"></a>00025 }
-<a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">00027</a> <span class="keywordtype">void</span> <a class="code" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed" title="Codes d&#39;avertissement.">Warning</a> warn, <span class="keywordtype">unsigned</span> addr){
-<a name="l00028"></a>00028     fprintf(stderr, <span class="stringliteral">&quot;WARNING: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[warn], addr);
-<a name="l00029"></a>00029 }
-<a name="l00030"></a>00030 
+<a name="l00022"></a><a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">00022</a> <span class="keywordtype">void</span> <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5" title="Erreur d&#39;exécution.">Error</a> err, <span class="keywordtype">unsigned</span> addr)
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024     fprintf(stderr, <span class="stringliteral">&quot;ERROR: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[err], addr);
+<a name="l00025"></a>00025     exit(1);
+<a name="l00026"></a>00026 }
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">00028</a> <span class="keywordtype">void</span> <a class="code" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed" title="Codes d&#39;avertissement.">Warning</a> warn, <span class="keywordtype">unsigned</span> addr)
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030     fprintf(stderr, <span class="stringliteral">&quot;WARNING: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[warn], addr);
+<a name="l00031"></a>00031 }
+<a name="l00032"></a>00032 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="error_8c.html">error.c</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 23:42:54 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Wed Jun 8 2011 15:10:14 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

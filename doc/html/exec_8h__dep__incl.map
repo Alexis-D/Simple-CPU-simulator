@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,80,67,107"/>
-<area shape="rect" id="node5" href="$machine_8c.html" title="machine.c" alt="" coords="91,80,172,107"/>
+<area shape="rect" id="node3" href="$debug_8c.html" title="debug.c" alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node5" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="97,80,159,107"/>
+<area shape="rect" id="node7" href="$machine_8c.html" title="machine.c" alt="" coords="183,80,264,107"/>
 </map>
