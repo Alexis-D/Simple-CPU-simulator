@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "error.h"
 #include "exec.h"
 #include "debug.h"
 
@@ -229,6 +230,9 @@ void simul(Machine *pmach, bool debug)
 {
     do
     {
+        if(pmach->_pc >= pmach->_textsize)
+            error(ERR_SEGTEXT, pmach->_pc);
+
         trace("Executing", pmach, pmach->_text[pmach->_pc], pmach->_pc);
 
         if(debug)
