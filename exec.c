@@ -315,6 +315,9 @@ bool push_func(Machine *pmach, Instruction instr)
 {
     error_if_segstack(pmach);
 
+    if(pmach->_sp < pmach->_dataend)
+        warning(WARN_PUSH_STATIC, pmach->_pc - 1);
+
     if(!instr.instr_generic._immediate)
     {
         unsigned addr = address(pmach, instr);
@@ -378,6 +381,12 @@ bool decode_execute(Machine *pmach, Instruction instr)
         pop_func,
         halt_func,
     };
+
+    if(instr.instr_generic._cop >= sizeof funcs / sizeof(bool (*)(Machine *, Instruction)))
+    {
+        free_segments(pmach);
+        error(ERR_ILLEGAL, pmach->_pc - 1);
+    }
 
     return funcs[instr.instr_generic._cop](pmach, instr);
 }

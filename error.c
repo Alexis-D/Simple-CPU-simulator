@@ -17,6 +17,7 @@ const char *error_names[] =
 const char *warning_names[] =
 {
     "HALT",
+    "PUSH_STATIC",
 }; 
 
 void error(Error err, unsigned addr)
