@@ -2,21 +2,21 @@
 <area shape="rect" id="node3" href="$exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="432,312,549,338"/>
 <area shape="rect" id="node5" href="$machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="597,514,651,541"/>
 <area shape="rect" id="node9" href="$exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="102,210,231,237"/>
-<area shape="rect" id="node23" href="$exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="109,413,224,440"/>
-<area shape="rect" id="node35" href="$exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="105,261,228,288"/>
-<area shape="rect" id="node43" href="$exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="128,58,205,85"/>
-<area shape="rect" id="node46" href="$instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="109,565,224,592"/>
-<area shape="rect" id="node57" href="$exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="119,160,214,186"/>
+<area shape="rect" id="node23" href="$exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="109,388,224,414"/>
+<area shape="rect" id="node36" href="$exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="105,261,228,288"/>
+<area shape="rect" id="node44" href="$exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="128,58,205,85"/>
+<area shape="rect" id="node47" href="$instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="109,565,224,592"/>
+<area shape="rect" id="node58" href="$exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="119,160,214,186"/>
 <area shape="rect" id="node7" href="$test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="699,565,749,592"/>
 <area shape="rect" id="node11" href="$exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="285,160,379,186"/>
 <area shape="rect" id="node14" href="$exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="295,210,369,237"/>
-<area shape="rect" id="node17" href="$exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="295,261,369,288"/>
-<area shape="rect" id="node20" href="$exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="291,312,373,338"/>
+<area shape="rect" id="node17" href="$exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="295,312,369,338"/>
+<area shape="rect" id="node20" href="$exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="291,362,373,389"/>
 <area shape="rect" id="node25" href="$exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="281,514,383,541"/>
 <area shape="rect" id="node28" href="$exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="293,464,371,490"/>
-<area shape="rect" id="node31" href="$exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="291,413,373,440"/>
-<area shape="rect" id="node40" href="$exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="297,362,367,389"/>
-<area shape="rect" id="node48" href="$machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="281,616,383,642"/>
-<area shape="rect" id="node54" href="$exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3" title="Trace de l&#39;exécution." alt="" coords="465,514,516,541"/>
-<area shape="rect" id="node50" href="$debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="448,565,533,592"/>
+<area shape="rect" id="node32" href="$exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="291,413,373,440"/>
+<area shape="rect" id="node41" href="$exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="297,261,367,288"/>
+<area shape="rect" id="node49" href="$machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="281,616,383,642"/>
+<area shape="rect" id="node55" href="$exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3" title="Trace de l&#39;exécution." alt="" coords="465,514,516,541"/>
+<area shape="rect" id="node51" href="$debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="448,565,533,592"/>
 </map>
