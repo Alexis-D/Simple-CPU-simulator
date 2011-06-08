@@ -31,14 +31,13 @@ void usage() {
 bool debug_ask(Machine *pmach) {
     int c;
 
-    while(true) {
+    while(true)
+    {
         printf("DEBUG? ");
         c = getchar();
 
         if(c == '\n')
-        {
             return true;
-        }
 
         int t;
 

@@ -5,7 +5,7 @@
 
 /*!
  * \file exec.c
- * \brief Implémentation de exec.h. Execute une intstruction.
+ * \brief Implémentation de exec.h. Execute une instruction.
  */
 
 //! Mets à jour CC
@@ -44,7 +44,9 @@ void free_segments(Machine *pmach)
 unsigned address(Machine *pmach, Instruction instr)
 {
     return instr.instr_generic._indexed ?
-        pmach->_registers[instr.instr_indexed._rindex] + instr.instr_indexed._offset :
+        pmach->_registers[instr.instr_indexed._rindex] +
+        instr.instr_indexed._offset
+        :
         instr.instr_absolute._address;
 }
 
@@ -62,7 +64,10 @@ void error_if_immediate(Machine *pmach, Instruction instr)
     }
 }
 
-//! Appelle error si l'on essayer d'accèder à une donnée en dehors du segment de données
+/*!
+ * Appelle error si l'on essayer d'accèder à une donnée en dehors
+ * du segment de données
+ */
 /*!
  * \param pmach la machine/programme en cours d'exécution
  * \param addr l'adresse de la donnée à laquelle on veut accèder
@@ -99,7 +104,6 @@ bool illop_func(Machine *pmach, Instruction instr)
 {
     free_segments(pmach);
     error(ERR_ILLEGAL, pmach->_pc - 1);
-    //never reached
 }
 
 //! Effectue un NOP sur la machine
@@ -123,15 +127,15 @@ bool load_func(Machine *pmach, Instruction instr)
 {
     unsigned r = instr.instr_generic._regcond;
 
-    if(!instr.instr_generic._immediate)
+    if(instr.instr_generic._immediate)
+        pmach->_registers[r] = instr.instr_immediate._value;
+
+    else
     {
         unsigned addr = address(pmach, instr);
         error_if_segdata(pmach, addr);
         pmach->_registers[r] = pmach->_data[addr];
     }
-
-    else
-        pmach->_registers[r] = instr.instr_immediate._value;
 
     set_cc(pmach, pmach->_registers[r]);
     return true;
@@ -147,8 +151,8 @@ bool store_func(Machine *pmach, Instruction instr)
 {
     error_if_immediate(pmach, instr);
 
-    unsigned r = instr.instr_generic._regcond;
-    unsigned addr = address(pmach, instr);
+    unsigned r = instr.instr_generic._regcond,
+             addr = address(pmach, instr);
 
     error_if_segdata(pmach, addr);
     pmach->_data[addr] = pmach->_registers[r];
@@ -162,11 +166,18 @@ bool store_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool add_sub(Machine *pmach, Instruction instr)
+bool add_sub_func(Machine *pmach, Instruction instr)
 {
     unsigned r = instr.instr_generic._regcond;
 
-    if(!instr.instr_generic._immediate)
+    if(instr.instr_generic._immediate)
+        if(instr.instr_generic._cop == ADD)
+            pmach->_registers[r] += instr.instr_immediate._value;
+
+        else
+            pmach->_registers[r] -= instr.instr_immediate._value;
+
+    else
     {
         unsigned addr = address(pmach, instr);
         error_if_segdata(pmach, addr);
@@ -178,48 +189,20 @@ bool add_sub(Machine *pmach, Instruction instr)
             pmach->_registers[r] -= pmach->_data[addr];
     }
 
-    else
-        if(instr.instr_generic._cop == ADD)
-            pmach->_registers[r] += instr.instr_immediate._value;
-
-        else
-            pmach->_registers[r] -= instr.instr_immediate._value;
-
     set_cc(pmach, pmach->_registers[r]);
     return true;
-}
-
-//! Effectue un ADD sur la machine
-/*!
- * \param pmach la machine/programme en cours d'exécution
- * \param instr l'instruction à exécuter
- * \return true si aucune erreur, pas de return sinon
- */
-bool add_func(Machine *pmach, Instruction instr)
-{
-    return add_sub(pmach, instr);
-}
-
-//! Effectue un SUB sur la machine
-/*!
- * \param pmach la machine/programme en cours d'exécution
- * \param instr l'instruction à exécuter
- * \return true si aucune erreur, pas de return sinon
- */
-bool sub_func(Machine *pmach, Instruction instr)
-{
-    return add_sub(pmach, instr);
 }
 
 //! Retourne vrai, si l'on doit sauter false sinon
 /*!
  * \param pmach la machine/programme en cours d'exécution
  * \param instr l'instruction à exécuter
- * \return true si on doit sauter, false sinon, ne retourne pas si erreur (CC_U)
+ * \return true si on doit sauter, false sinon, ne retourne pas si erreur
  */
 bool should_jump(Machine *pmach, Instruction instr)
 {
-    if((instr.instr_generic._regcond != NC && pmach->_cc == CC_U) || instr.instr_generic._regcond > LAST_CONDITION)
+    if((instr.instr_generic._regcond != NC && pmach->_cc == CC_U) ||
+            instr.instr_generic._regcond > LAST_CONDITION)
     {
         free_segments(pmach);
         error(ERR_CONDITION, pmach->_pc - 1);
@@ -265,9 +248,7 @@ bool branch_func(Machine *pmach, Instruction instr)
     error_if_immediate(pmach, instr);
 
     if(should_jump(pmach, instr))
-    {
         pmach->_pc = address(pmach, instr);
-    }
 
     return true;
 }
@@ -318,15 +299,15 @@ bool push_func(Machine *pmach, Instruction instr)
     if(pmach->_sp < pmach->_dataend)
         warning(WARN_PUSH_STATIC, pmach->_pc - 1);
 
-    if(!instr.instr_generic._immediate)
+    if(instr.instr_generic._immediate)
+        pmach->_data[pmach->_sp] = instr.instr_immediate._value;
+
+    else
     {
         unsigned addr = address(pmach, instr);
         error_if_segdata(pmach, addr);
         pmach->_data[pmach->_sp] = pmach->_data[addr];
     }
-
-    else
-        pmach->_data[pmach->_sp] = instr.instr_immediate._value;
 
     --pmach->_sp;
     return true;
@@ -372,8 +353,8 @@ bool decode_execute(Machine *pmach, Instruction instr)
         nop_func,
         load_func,
         store_func,
-        add_func,
-        sub_func,
+        add_sub_func,
+        add_sub_func,
         branch_func,
         call_func,
         ret_func,
