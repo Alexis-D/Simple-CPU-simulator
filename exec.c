@@ -305,6 +305,7 @@ bool pop_func(Machine *pmach, Instruction instr)
     error_if_segstack(pmach);
 
     unsigned addr = address(pmach, instr);
+    error_if_segdata(pmach, addr);
 
     if(addr < pmach->_datasize)
         pmach->_data[addr] = pmach->_data[pmach->_sp];
