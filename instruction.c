@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#include "error.h"
 #include "instruction.h"
 
 const char *cop_names[] =
@@ -33,6 +34,10 @@ void print_instruction(Instruction instr, unsigned addr)
 {
     Code_Op op = instr.instr_generic._cop;
 
+    // Opérateur inconnu
+    if(op >= sizeof cop_names / sizeof(char*))
+        error(ERR_UNKNOWN, addr);
+
     printf("%s ", cop_names[op]);
 
     if(op == RET || op == HALT || op == NOP || op == ILLOP)
@@ -42,6 +47,10 @@ void print_instruction(Instruction instr, unsigned addr)
 
     else if(op == BRANCH || op == CALL)
     {
+        // Condition inconnue
+        if(instr.instr_generic._regcond >= sizeof condition_names / sizeof(char*))
+            error(ERR_CONDITION, addr);
+
         printf("%s, ", condition_names[instr.instr_generic._regcond]);
     }
 
