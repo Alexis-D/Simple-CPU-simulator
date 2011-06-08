@@ -1,7 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="159,5,227,32"/>
-<area shape="rect" id="node5" href="$exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="129,107,258,133"/>
-<area shape="rect" id="node11" href="$exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="132,56,255,83"/>
-<area shape="rect" id="node7" href="$error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="337,56,385,83"/>
-<area shape="rect" id="node9" href="$exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="307,107,415,133"/>
+<area shape="rect" id="node5" href="$exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="129,56,258,83"/>
+<area shape="rect" id="node9" href="$exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="132,107,255,133"/>
+<area shape="rect" id="node7" href="$error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="307,81,355,108"/>
 </map>

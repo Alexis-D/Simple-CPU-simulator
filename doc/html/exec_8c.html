@@ -100,7 +100,7 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 
-<p>Implémentation de <a class="el" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>. Execute une intstruction.  
+<p>Implémentation de <a class="el" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>. Execute une instruction.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="error_8h_source.html">error.h</a>&quot;</code><br/>
@@ -112,7 +112,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c__incl.png" border="0" usemap="#exec_8c" alt=""/></div>
 <map name="exec_8c" id="exec_8c">
-<area shape="rect" id="node5" href="error_8h.html" title="Messages et codes d&#39;erreurs." alt="" coords="91,80,148,107"/><area shape="rect" id="node9" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="176,80,237,107"/><area shape="rect" id="node11" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="169,155,251,181"/><area shape="rect" id="node13" href="instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="164,229,257,256"/></map>
+<area shape="rect" id="node5" href="error_8h.html" title="Messages et codes d&#39;erreurs." alt="" coords="91,80,148,107"/><area shape="rect" id="node9" href="exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="176,80,237,107"/><area shape="rect" id="node11" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="169,155,251,181"/><area shape="rect" id="node15" href="instruction_8h.html" title="Description du jeu d&#39;instruction." alt="" coords="205,229,299,256"/></map>
 </div>
 </div>
 <p><a href="exec_8c_source.html">Aller au code source de ce fichier.</a></p>
@@ -121,14 +121,11 @@ function toggleVisibility(linkObj) {
 Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412">set_cc</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, int res)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jour CC.  <a href="#a2f6ea9301a2a863dc24613a987951412"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a22661afee2911cfaf182981895f61aea">free_segments</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère les segments de mémoires alloués dynamiquement.  <a href="#a22661afee2911cfaf182981895f61aea"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3">address</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule l'adresse "réelle" d'une instruction en mode absolu/indexé  <a href="#a5751857142f6901d08db5916ad3e11f3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940">error_if_immediate</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle error si l'instruction est en mode immédiat.  <a href="#a4ed705961a2433010bce56e832bfd940"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506">error_if_segdata</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, unsigned addr)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle error si l'on essayer d'accèder à une donnée en dehors du segment de données.  <a href="#af70d348f0f265bc6fdea42eb51a68506"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1">error_if_segstack</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle error si l'on veut sortir de la pile.  <a href="#a1f9b001b683d92d9f9c832790d2215f1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09">illop_func</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
@@ -139,12 +136,8 @@ Fonctions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue un LOAD sur la machine.  <a href="#a48f9af339e66e611892f50d9978ce42f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c">store_func</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue un STORE sur la machine.  <a href="#aa21e97e5f575411e85827012dc7f381c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d">add_sub</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une addition/soustraction.  <a href="#a100af22a8fba0083f7e9c3665076d89d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7">add_func</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue un ADD sur la machine.  <a href="#a703f62eae226447ca8982823454ff6b7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a">sub_func</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue un SUB sur la machine.  <a href="#ac1b0a93cf47e6645c6ed40411b26531a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951">add_sub_func</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une addition/soustraction.  <a href="#a35cc1455ae45ea7875b5356a2c91a951"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e">should_jump</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne vrai, si l'on doit sauter false sinon.  <a href="#ad3cf32b9917bf794da164cfd40b5063e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c">branch_func</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, <a class="el" href="unionInstruction.html">Instruction</a> instr)</td></tr>
@@ -165,84 +158,16 @@ Fonctions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Trace de l'exécution.  <a href="#aae353f8fd7ccdbebd6c37fc0f75d12d3"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
-<div class="textblock"><p>Implémentation de <a class="el" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>. Execute une intstruction. </p>
+<div class="textblock"><p>Implémentation de <a class="el" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>. Execute une instruction. </p>
 
 <p>Définition dans le fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 </div><hr/><h2>Documentation des fonctions</h2>
-<a class="anchor" id="a703f62eae226447ca8982823454ff6b7"></a><!-- doxytag: member="exec.c::add_func" ref="a703f62eae226447ca8982823454ff6b7" args="(Machine *pmach, Instruction instr)" -->
+<a class="anchor" id="a35cc1455ae45ea7875b5356a2c91a951"></a><!-- doxytag: member="exec.c::add_sub_func" ref="a35cc1455ae45ea7875b5356a2c91a951" args="(Machine *pmach, Instruction instr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool add_func </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
-          <td class="paramname"><em>pmach</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="unionInstruction.html">Instruction</a>&#160;</td>
-          <td class="paramname"><em>instr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Effectue un ADD sur la machine. </p>
-<dl><dt><b>Paramètres:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pmach</td><td>la machine/programme en cours d'exécution </td></tr>
-    <tr><td class="paramname">instr</td><td>l'instruction à exécuter </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
-
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00198">198</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
-
-<p>Références <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>.</p>
-
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(pmach, instr);
-}
-</pre></div>
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_a703f62eae226447ca8982823454ff6b7_cgraph.png" border="0" usemap="#exec_8c_a703f62eae226447ca8982823454ff6b7_cgraph" alt=""/></div>
-<map name="exec_8c_a703f62eae226447ca8982823454ff6b7_cgraph" id="exec_8c_a703f62eae226447ca8982823454ff6b7_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="129,56,199,83"/><area shape="rect" id="node5" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="271,5,339,32"/><area shape="rect" id="node7" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="248,56,363,83"/><area shape="rect" id="node13" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="275,107,336,133"/><area shape="rect" id="node9" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="441,31,489,57"/><area shape="rect" id="node11" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="411,81,519,108"/></map>
-</div>
-</p>
-
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_a703f62eae226447ca8982823454ff6b7_icgraph.png" border="0" usemap="#exec_8c_a703f62eae226447ca8982823454ff6b7_icgraph" alt=""/></div>
-<map name="exec_8c_a703f62eae226447ca8982823454ff6b7_icgraph" id="exec_8c_a703f62eae226447ca8982823454ff6b7_icgraph">
-<area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="128,5,245,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="293,5,347,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="395,5,445,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a100af22a8fba0083f7e9c3665076d89d"></a><!-- doxytag: member="exec.c::add_sub" ref="a100af22a8fba0083f7e9c3665076d89d" args="(Machine *pmach, Instruction instr)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool add_sub </td>
+          <td class="memname">bool add_sub_func </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
           <td class="paramname"><em>pmach</em>, </td>
@@ -272,18 +197,25 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00165">165</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00149">149</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="instruction_8h_source.html#l00019">ADD</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00016">set_cc()</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="instruction_8h_source.html#l00019">ADD</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00062">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00016">set_cc()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00198">add_func()</a>, et <a class="el" href="exec_8c_source.html#l00209">sub_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
 
-    <span class="keywordflow">if</span>(!instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+        <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>)
+            pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] += instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+
+        <span class="keywordflow">else</span>
+            pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] -= instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+
+    <span class="keywordflow">else</span>
     {
         <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
-        <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
+        <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506">error_if_segdata</a>(pmach, addr);
 
         <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>)
             pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] += pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
@@ -292,36 +224,29 @@ Fonctions</h2></td></tr>
             pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] -= pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
     }
 
-    <span class="keywordflow">else</span>
-        <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909" title="Addition à un registre.">ADD</a>)
-            pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] += instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
-
-        <span class="keywordflow">else</span>
-            pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] -= instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
-
     <a class="code" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC.">set_cc</a>(pmach, pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r]);
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_a100af22a8fba0083f7e9c3665076d89d_cgraph.png" border="0" usemap="#exec_8c_a100af22a8fba0083f7e9c3665076d89d_cgraph" alt=""/></div>
-<map name="exec_8c_a100af22a8fba0083f7e9c3665076d89d_cgraph" id="exec_8c_a100af22a8fba0083f7e9c3665076d89d_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="149,5,217,32"/><area shape="rect" id="node5" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="125,56,240,83"/><area shape="rect" id="node11" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="152,107,213,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="319,31,367,57"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="289,81,397,108"/></map>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="exec_8c_a35cc1455ae45ea7875b5356a2c91a951_cgraph.png" border="0" usemap="#exec_8c_a35cc1455ae45ea7875b5356a2c91a951_cgraph" alt=""/></div>
+<map name="exec_8c_a35cc1455ae45ea7875b5356a2c91a951_cgraph" id="exec_8c_a35cc1455ae45ea7875b5356a2c91a951_cgraph">
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="181,5,249,32"/><area shape="rect" id="node5" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="157,56,272,83"/><area shape="rect" id="node9" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="184,107,245,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="320,56,368,83"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_a100af22a8fba0083f7e9c3665076d89d_icgraph.png" border="0" usemap="#exec_8c_a100af22a8fba0083f7e9c3665076d89d_icgraph" alt=""/></div>
-<map name="exec_8c_a100af22a8fba0083f7e9c3665076d89d_icgraph" id="exec_8c_a100af22a8fba0083f7e9c3665076d89d_icgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="125,5,200,32"/><area shape="rect" id="node11" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="125,56,200,83"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="248,31,365,57"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="413,31,467,57"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="515,31,565,57"/></map>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="exec_8c_a35cc1455ae45ea7875b5356a2c91a951_icgraph.png" border="0" usemap="#exec_8c_a35cc1455ae45ea7875b5356a2c91a951_icgraph" alt=""/></div>
+<map name="exec_8c_a35cc1455ae45ea7875b5356a2c91a951_icgraph" id="exec_8c_a35cc1455ae45ea7875b5356a2c91a951_icgraph">
+<area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="157,5,275,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="323,5,376,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="424,5,475,32"/></map>
 </div>
 </p>
 
@@ -362,25 +287,27 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>l'adresse absolu en mode absolu, l'adresse indexée sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00044">44</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00034">34</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00074">Instruction::_address</a>, <a class="el" href="instruction_8h_source.html#l00062">Instruction::_indexed</a>, <a class="el" href="instruction_8h_source.html#l00095">Instruction::_offset</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00094">Instruction::_rindex</a>, <a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">Instruction::instr_absolute</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, et <a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">Instruction::instr_indexed</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00074">Instruction::_address</a>, <a class="el" href="instruction_8h_source.html#l00062">Instruction::_indexed</a>, <a class="el" href="instruction_8h_source.html#l00095">Instruction::_offset</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00094">Instruction::_rindex</a>, <a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">Instruction::instr_absolute</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, et <a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">Instruction::instr_indexed</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>, <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00341">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00146">store_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00149">add_sub_func()</a>, <a class="el" href="exec_8c_source.html#l00222">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00239">call_func()</a>, <a class="el" href="exec_8c_source.html#l00106">load_func()</a>, <a class="el" href="exec_8c_source.html#l00301">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00274">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00130">store_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a> ?
-        pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a>] + instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a> :
+        pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a>] +
+        instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a>
+        :
         instr.<a class="code" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a>.<a class="code" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b" title="Adresse absolue.">_address</a>;
 }
 </pre></div>
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a5751857142f6901d08db5916ad3e11f3_icgraph.png" border="0" usemap="#exec_8c_a5751857142f6901d08db5916ad3e11f3_icgraph" alt=""/></div>
 <map name="exec_8c_a5751857142f6901d08db5916ad3e11f3_icgraph" id="exec_8c_a5751857142f6901d08db5916ad3e11f3_icgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="129,56,199,83"/><area shape="rect" id="node16" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="253,107,347,133"/><area shape="rect" id="node19" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="263,157,337,184"/><area shape="rect" id="node22" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="261,208,339,235"/><area shape="rect" id="node25" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="127,259,201,285"/><area shape="rect" id="node28" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="123,309,205,336"/><area shape="rect" id="node31" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="123,360,205,387"/><area shape="rect" id="node5" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="263,5,337,32"/><area shape="rect" id="node13" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="263,56,337,83"/><area shape="rect" id="node7" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="395,183,512,209"/><area shape="rect" id="node9" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="560,183,613,209"/><area shape="rect" id="node11" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="661,183,712,209"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="123,5,226,32"/><area shape="rect" id="node11" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="128,56,221,83"/><area shape="rect" id="node14" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="137,107,212,133"/><area shape="rect" id="node17" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="135,157,214,184"/><area shape="rect" id="node20" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="137,208,212,235"/><area shape="rect" id="node23" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="133,259,216,285"/><area shape="rect" id="node26" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="133,309,216,336"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="275,157,392,184"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="440,157,493,184"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="541,157,592,184"/></map>
 </div>
 </p>
 
@@ -421,38 +348,37 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00263">263</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00222">222</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00048">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00182">should_jump()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
 
     <span class="keywordflow">if</span>(<a class="code" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon.">should_jump</a>(pmach, instr))
-    {
         pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
-    }
 
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_cgraph.png" border="0" usemap="#exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_cgraph" alt=""/></div>
 <map name="exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_cgraph" id="exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="178,5,246,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="147,107,277,133"/><area shape="rect" id="node11" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="165,56,259,83"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="356,56,404,83"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="326,107,434,133"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="178,5,246,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="147,56,277,83"/><area shape="rect" id="node9" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="165,107,259,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="325,81,373,108"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_icgraph.png" border="0" usemap="#exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_icgraph" alt=""/></div>
 <map name="exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_icgraph" id="exec_8c_a96f507eb9ac08c4db64a7b70162cd20c_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="147,5,264,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="312,5,365,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="413,5,464,32"/></map>
@@ -496,39 +422,41 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00281">281</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00239">239</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00048">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00072">error_if_segstack()</a>, et <a class="el" href="exec_8c_source.html#l00182">should_jump()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
 
     <span class="keywordflow">if</span>(<a class="code" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon.">should_jump</a>(pmach, instr))
     {
-        pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp--] = pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>;
+        --pmach-&gt;_sp;
+        <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
+        pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>;
         pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
     }
 
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_ae1df1803eeaf64e266b0342bccb400f2_cgraph.png" border="0" usemap="#exec_8c_ae1df1803eeaf64e266b0342bccb400f2_cgraph" alt=""/></div>
 <map name="exec_8c_ae1df1803eeaf64e266b0342bccb400f2_cgraph" id="exec_8c_ae1df1803eeaf64e266b0342bccb400f2_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="159,5,227,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="129,107,258,133"/><area shape="rect" id="node11" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="146,56,241,83"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="337,56,385,83"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="307,107,415,133"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="159,5,227,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="129,56,258,83"/><area shape="rect" id="node9" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="132,107,255,133"/><area shape="rect" id="node12" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="146,157,241,184"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="307,107,355,133"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_ae1df1803eeaf64e266b0342bccb400f2_icgraph.png" border="0" usemap="#exec_8c_ae1df1803eeaf64e266b0342bccb400f2_icgraph" alt=""/></div>
 <map name="exec_8c_ae1df1803eeaf64e266b0342bccb400f2_icgraph" id="exec_8c_ae1df1803eeaf64e266b0342bccb400f2_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="128,5,245,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="293,5,347,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="395,5,445,32"/></map>
@@ -572,11 +500,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>faux après l'exécution de <code>HALT</code> ; vrai sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00367">367</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00327">327</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00198">add_func()</a>, <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>, <a class="el" href="exec_8c_source.html#l00361">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00111">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00341">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, <a class="el" href="exec_8c_source.html#l00300">ret_func()</a>, <a class="el" href="exec_8c_source.html#l00146">store_func()</a>, et <a class="el" href="exec_8c_source.html#l00209">sub_func()</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00149">add_sub_func()</a>, <a class="el" href="exec_8c_source.html#l00222">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00239">call_func()</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="exec_8c_source.html#l00321">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00084">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00106">load_func()</a>, <a class="el" href="exec_8c_source.html#l00095">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00301">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00274">push_func()</a>, <a class="el" href="exec_8c_source.html#l00260">ret_func()</a>, et <a class="el" href="exec_8c_source.html#l00130">store_func()</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00228">simul()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00257">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     bool (*funcs[])(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>) =
     {
@@ -584,8 +512,8 @@ Fonctions</h2></td></tr>
         <a class="code" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine.">nop_func</a>,
         <a class="code" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine.">load_func</a>,
         <a class="code" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine.">store_func</a>,
-        <a class="code" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine.">add_func</a>,
-        <a class="code" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine.">sub_func</a>,
+        <a class="code" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction.">add_sub_func</a>,
+        <a class="code" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction.">add_sub_func</a>,
         <a class="code" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine.">branch_func</a>,
         <a class="code" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine.">call_func</a>,
         <a class="code" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine.">ret_func</a>,
@@ -594,31 +522,28 @@ Fonctions</h2></td></tr>
         <a class="code" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine.">halt_func</a>,
     };
 
-    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> &gt;= <span class="keyword">sizeof</span> funcs / <span class="keyword">sizeof</span>(bool (*)(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>)))
-    {
-        <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> &gt; LAST_COP)
         <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e" title="Instruction illégale.">ERR_ILLEGAL</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
-    }
 
     <span class="keywordflow">return</span> funcs[instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a>](pmach, instr);
 }
 </pre></div>
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a41471ced34d27777447c2609173af7de_cgraph.png" border="0" usemap="#exec_8c_a41471ced34d27777447c2609173af7de_cgraph" alt=""/></div>
 <map name="exec_8c_a41471ced34d27777447c2609173af7de_cgraph" id="exec_8c_a41471ced34d27777447c2609173af7de_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="171,232,245,259"/><area shape="rect" id="node11" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="644,207,692,233"/><area shape="rect" id="node13" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="614,308,722,335"/><area shape="rect" id="node17" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="293,80,387,107"/><area shape="rect" id="node28" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="303,29,377,56"/><area shape="rect" id="node35" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine." alt="" coords="171,435,245,461"/><area shape="rect" id="node39" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="461,435,539,461"/><area shape="rect" id="node43" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="301,283,379,309"/><area shape="rect" id="node48" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine." alt="" coords="171,587,245,613"/><area shape="rect" id="node50" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="303,181,377,208"/><area shape="rect" id="node58" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="299,333,381,360"/><area shape="rect" id="node64" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="173,384,243,411"/><area shape="rect" id="node67" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="299,131,381,157"/><area shape="rect" id="node72" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="171,181,245,208"/><area shape="rect" id="node5" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="305,232,375,259"/><area shape="rect" id="node7" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="466,181,534,208"/><area shape="rect" id="node9" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="443,283,557,309"/><area shape="rect" id="node15" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="469,232,531,259"/><area shape="rect" id="node20" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="435,131,565,157"/><area shape="rect" id="node24" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="453,80,547,107"/><area shape="rect" id="node37" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="467,384,533,411"/><area shape="rect" id="node54" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="439,333,561,360"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="171,447,274,473"/><area shape="rect" id="node9" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="501,168,549,195"/><area shape="rect" id="node13" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="176,193,269,220"/><area shape="rect" id="node22" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="185,92,260,119"/><area shape="rect" id="node31" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine." alt="" coords="185,497,260,524"/><area shape="rect" id="node35" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="349,16,427,43"/><area shape="rect" id="node38" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="183,295,262,321"/><area shape="rect" id="node43" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine." alt="" coords="185,345,260,372"/><area shape="rect" id="node45" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="185,143,260,169"/><area shape="rect" id="node50" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="181,396,264,423"/><area shape="rect" id="node56" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="188,41,257,68"/><area shape="rect" id="node59" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="181,244,264,271"/><area shape="rect" id="node5" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="354,244,422,271"/><area shape="rect" id="node7" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="331,295,445,321"/><area shape="rect" id="node11" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="357,371,419,397"/><area shape="rect" id="node16" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="323,193,453,220"/><area shape="rect" id="node19" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="341,143,435,169"/><area shape="rect" id="node26" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="327,92,449,119"/><area shape="rect" id="node33" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="355,472,421,499"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a41471ced34d27777447c2609173af7de_icgraph.png" border="0" usemap="#exec_8c_a41471ced34d27777447c2609173af7de_icgraph" alt=""/></div>
 <map name="exec_8c_a41471ced34d27777447c2609173af7de_icgraph" id="exec_8c_a41471ced34d27777447c2609173af7de_icgraph">
 <area shape="rect" id="node3" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="171,5,224,32"/><area shape="rect" id="node5" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="272,5,323,32"/></map>
@@ -661,35 +586,32 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00056">56</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00048">48</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00024">ERR_IMMEDIATE</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00024">ERR_IMMEDIATE</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00281">call_func()</a>, <a class="el" href="exec_8c_source.html#l00341">pop_func()</a>, et <a class="el" href="exec_8c_source.html#l00146">store_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00222">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00239">call_func()</a>, <a class="el" href="exec_8c_source.html#l00301">pop_func()</a>, et <a class="el" href="exec_8c_source.html#l00130">store_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
-    {
-        <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
         <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021" title="Valeur immédiate interdite.">ERR_IMMEDIATE</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
-    }
 }
 </pre></div>
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a4ed705961a2433010bce56e832bfd940_cgraph.png" border="0" usemap="#exec_8c_a4ed705961a2433010bce56e832bfd940_cgraph" alt=""/></div>
 <map name="exec_8c_a4ed705961a2433010bce56e832bfd940_cgraph" id="exec_8c_a4ed705961a2433010bce56e832bfd940_cgraph">
-<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="215,5,263,32"/><area shape="rect" id="node5" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="185,56,293,83"/></map>
+<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="184,5,232,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a4ed705961a2433010bce56e832bfd940_icgraph.png" border="0" usemap="#exec_8c_a4ed705961a2433010bce56e832bfd940_icgraph" alt=""/></div>
 <map name="exec_8c_a4ed705961a2433010bce56e832bfd940_icgraph" id="exec_8c_a4ed705961a2433010bce56e832bfd940_icgraph">
 <area shape="rect" id="node3" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="184,5,277,32"/><area shape="rect" id="node11" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="193,56,268,83"/><area shape="rect" id="node14" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="193,107,268,133"/><area shape="rect" id="node17" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="189,157,272,184"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="325,81,443,108"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="491,81,544,108"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="592,81,643,108"/></map>
@@ -722,8 +644,7 @@ Fonctions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Appelle error si l'on essayer d'accèder à une donnée en dehors du segment de données. </p>
+<p>Appelle error si l'on essayer d'accèder à une donnée en dehors du segment de données</p>
 <dl><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pmach</td><td>la machine/programme en cours d'exécution </td></tr>
@@ -732,38 +653,35 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00070">70</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00062">62</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00075">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00026">ERR_SEGDATA</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, et <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00026">ERR_SEGDATA</a>, et <a class="el" href="error_8c_source.html#l00023">error()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>, <a class="el" href="exec_8c_source.html#l00122">load_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00146">store_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00149">add_sub_func()</a>, <a class="el" href="exec_8c_source.html#l00106">load_func()</a>, <a class="el" href="exec_8c_source.html#l00274">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00130">store_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(addr &gt;= pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>)
-    {
-        <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
         <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915" title="Violation de taille du segment de données.">ERR_SEGDATA</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
-    }
 }
 </pre></div>
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_af70d348f0f265bc6fdea42eb51a68506_cgraph.png" border="0" usemap="#exec_8c_af70d348f0f265bc6fdea42eb51a68506_cgraph" alt=""/></div>
 <map name="exec_8c_af70d348f0f265bc6fdea42eb51a68506_cgraph" id="exec_8c_af70d348f0f265bc6fdea42eb51a68506_cgraph">
-<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="199,5,247,32"/><area shape="rect" id="node5" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="169,56,277,83"/></map>
+<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="168,5,216,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_af70d348f0f265bc6fdea42eb51a68506_icgraph.png" border="0" usemap="#exec_8c_af70d348f0f265bc6fdea42eb51a68506_icgraph" alt=""/></div>
 <map name="exec_8c_af70d348f0f265bc6fdea42eb51a68506_icgraph" id="exec_8c_af70d348f0f265bc6fdea42eb51a68506_icgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="174,56,245,83"/><area shape="rect" id="node16" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="299,107,378,133"/><area shape="rect" id="node19" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="168,157,251,184"/><area shape="rect" id="node22" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="168,208,251,235"/><area shape="rect" id="node5" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="301,5,376,32"/><area shape="rect" id="node13" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="301,56,376,83"/><area shape="rect" id="node7" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="427,107,544,133"/><area shape="rect" id="node9" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="592,107,645,133"/><area shape="rect" id="node11" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="693,107,744,133"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="169,5,271,32"/><area shape="rect" id="node11" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="181,56,259,83"/><area shape="rect" id="node14" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="179,107,261,133"/><area shape="rect" id="node17" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="179,157,261,184"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="320,81,437,108"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="485,81,539,108"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="587,81,637,108"/></map>
 </div>
 </p>
 
@@ -792,84 +710,35 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00083">83</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00072">72</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00075">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00027">ERR_SEGSTACK</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, et <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00027">ERR_SEGSTACK</a>, et <a class="el" href="error_8c_source.html#l00023">error()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00341">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00314">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00300">ret_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00239">call_func()</a>, <a class="el" href="exec_8c_source.html#l00301">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00274">push_func()</a>, et <a class="el" href="exec_8c_source.html#l00260">ret_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(pmach-&gt;_sp &lt; 0 || pmach-&gt;_sp &gt;= pmach-&gt;<a class="code" href="structMachine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>)
-    {
-        <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
         <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7" title="Violation de taille du segment de pile.">ERR_SEGSTACK</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
-    }
 }
 </pre></div>
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a1f9b001b683d92d9f9c832790d2215f1_cgraph.png" border="0" usemap="#exec_8c_a1f9b001b683d92d9f9c832790d2215f1_cgraph" alt=""/></div>
 <map name="exec_8c_a1f9b001b683d92d9f9c832790d2215f1_cgraph" id="exec_8c_a1f9b001b683d92d9f9c832790d2215f1_cgraph">
-<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="207,5,255,32"/><area shape="rect" id="node5" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="177,56,285,83"/></map>
+<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="176,5,224,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a1f9b001b683d92d9f9c832790d2215f1_icgraph.png" border="0" usemap="#exec_8c_a1f9b001b683d92d9f9c832790d2215f1_icgraph" alt=""/></div>
 <map name="exec_8c_a1f9b001b683d92d9f9c832790d2215f1_icgraph" id="exec_8c_a1f9b001b683d92d9f9c832790d2215f1_icgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="180,5,255,32"/><area shape="rect" id="node11" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="176,56,259,83"/><area shape="rect" id="node14" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="183,107,252,133"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="307,56,424,83"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="472,56,525,83"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="573,56,624,83"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a22661afee2911cfaf182981895f61aea"></a><!-- doxytag: member="exec.c::free_segments" ref="a22661afee2911cfaf182981895f61aea" args="(Machine *pmach)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void free_segments </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
-          <td class="paramname"><em>pmach</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Libère les segments de mémoires alloués dynamiquement. </p>
-<dl><dt><b>Paramètres:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pmach</td><td>la machine/programme en cours d'exécution </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00032">32</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
-
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, et <a class="el" href="machine_8h_source.html#l00071">Machine::_text</a>.</p>
-
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    free(pmach-&gt;<a class="code" href="structMachine.html#a052e945d3eab840b58171c53a873aec3" title="Mémoire pour les instructions.">_text</a>);
-    free(pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>);
-}
-</pre></div>
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_a22661afee2911cfaf182981895f61aea_icgraph.png" border="0" usemap="#exec_8c_a22661afee2911cfaf182981895f61aea_icgraph" alt=""/></div>
-<map name="exec_8c_a22661afee2911cfaf182981895f61aea_icgraph" id="exec_8c_a22661afee2911cfaf182981895f61aea_icgraph">
-<area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="645,255,763,281"/><area shape="rect" id="node9" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="326,153,455,180"/><area shape="rect" id="node23" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="163,305,277,332"/><area shape="rect" id="node40" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="329,255,452,281"/><area shape="rect" id="node47" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="181,432,259,459"/><area shape="rect" id="node50" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="343,103,438,129"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="811,255,864,281"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="912,255,963,281"/><area shape="rect" id="node11" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="504,103,597,129"/><area shape="rect" id="node14" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="513,52,588,79"/><area shape="rect" id="node17" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="513,204,588,231"/><area shape="rect" id="node20" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="509,153,592,180"/><area shape="rect" id="node25" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="355,407,426,433"/><area shape="rect" id="node33" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="351,356,430,383"/><area shape="rect" id="node36" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="509,305,592,332"/><area shape="rect" id="node27" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="513,457,588,484"/><area shape="rect" id="node30" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="513,407,588,433"/><area shape="rect" id="node44" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="516,255,585,281"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="180,5,255,32"/><area shape="rect" id="node11" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="180,56,255,83"/><area shape="rect" id="node14" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="176,107,259,133"/><area shape="rect" id="node17" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="183,157,252,184"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="307,81,424,108"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="472,81,525,108"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="573,81,624,108"/></map>
 </div>
 </p>
 
@@ -910,32 +779,32 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>false </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00361">361</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00321">321</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00040">WARN_HALT</a>, et <a class="el" href="error_8c_source.html#l00029">warning()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00040">WARN_HALT</a>, et <a class="el" href="error_8c_source.html#l00030">warning()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" title="Fin normale du programme (sur HALT)">WARN_HALT</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
     <span class="keywordflow">return</span> <span class="keyword">false</span>;
 }
 </pre></div>
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_cgraph.png" border="0" usemap="#exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_cgraph" alt=""/></div>
 <map name="exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_cgraph" id="exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_cgraph">
 <area shape="rect" id="node3" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="128,5,195,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_icgraph.png" border="0" usemap="#exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_icgraph" alt=""/></div>
 <map name="exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_icgraph" id="exec_8c_a0a96250bfd1ab2d6bda66ddfe7f2121f_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="128,5,245,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="293,5,347,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="395,5,445,32"/></map>
@@ -979,33 +848,31 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>cette fonction ne retourne jamais, puisqu'error non plus </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00098">98</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00084">84</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, et <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, et <a class="el" href="error_8c_source.html#l00023">error()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
     <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e" title="Instruction illégale.">ERR_ILLEGAL</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
-    <span class="comment">//never reached</span>
 }
 </pre></div>
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_cgraph.png" border="0" usemap="#exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_cgraph" alt=""/></div>
 <map name="exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_cgraph" id="exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_cgraph">
-<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="161,5,209,32"/><area shape="rect" id="node5" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="131,56,239,83"/></map>
+<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="131,5,179,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_icgraph.png" border="0" usemap="#exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_icgraph" alt=""/></div>
 <map name="exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_icgraph" id="exec_8c_ada9d7b0a091f09dd8ca9b282a62bac09_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="131,5,248,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="296,5,349,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="397,5,448,32"/></map>
@@ -1049,44 +916,44 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00122">122</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00106">106</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00016">set_cc()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00062">error_if_segdata()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, et <a class="el" href="exec_8c_source.html#l00016">set_cc()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
 
-    <span class="keywordflow">if</span>(!instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
-    {
-        <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
-        <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
-        pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
-    }
+    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+        pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] = instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
 
     <span class="keywordflow">else</span>
-        pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] = instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+    {
+        <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+        <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506">error_if_segdata</a>(pmach, addr);
+        pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
+    }
 
     <a class="code" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC.">set_cc</a>(pmach, pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r]);
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a48f9af339e66e611892f50d9978ce42f_cgraph.png" border="0" usemap="#exec_8c_a48f9af339e66e611892f50d9978ce42f_cgraph" alt=""/></div>
 <map name="exec_8c_a48f9af339e66e611892f50d9978ce42f_cgraph" id="exec_8c_a48f9af339e66e611892f50d9978ce42f_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="157,5,225,32"/><area shape="rect" id="node5" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="133,56,248,83"/><area shape="rect" id="node11" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="160,107,221,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="327,31,375,57"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="297,81,405,108"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="157,5,225,32"/><area shape="rect" id="node5" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="133,56,248,83"/><area shape="rect" id="node9" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="160,107,221,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="296,56,344,83"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a48f9af339e66e611892f50d9978ce42f_icgraph.png" border="0" usemap="#exec_8c_a48f9af339e66e611892f50d9978ce42f_icgraph" alt=""/></div>
 <map name="exec_8c_a48f9af339e66e611892f50d9978ce42f_icgraph" id="exec_8c_a48f9af339e66e611892f50d9978ce42f_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="133,5,251,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="299,5,352,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="400,5,451,32"/></map>
@@ -1130,18 +997,18 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00111">111</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00095">95</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a1353971eaa8e2c9a550937a634f89866_icgraph.png" border="0" usemap="#exec_8c_a1353971eaa8e2c9a550937a634f89866_icgraph" alt=""/></div>
 <map name="exec_8c_a1353971eaa8e2c9a550937a634f89866_icgraph" id="exec_8c_a1353971eaa8e2c9a550937a634f89866_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="128,5,245,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="293,5,347,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="395,5,445,32"/></map>
@@ -1185,15 +1052,15 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00341">341</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00301">301</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00048">error_if_immediate()</a>, et <a class="el" href="exec_8c_source.html#l00072">error_if_segstack()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ++pmach-&gt;_sp;
-    <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
+    <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
 
     <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
 
@@ -1203,22 +1070,22 @@ Fonctions</h2></td></tr>
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a65427fd4ba17a080334176670cc7c5e3_cgraph.png" border="0" usemap="#exec_8c_a65427fd4ba17a080334176670cc7c5e3_cgraph" alt=""/></div>
 <map name="exec_8c_a65427fd4ba17a080334176670cc7c5e3_cgraph" id="exec_8c_a65427fd4ba17a080334176670cc7c5e3_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="159,5,227,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="129,107,258,133"/><area shape="rect" id="node11" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="132,56,255,83"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="337,56,385,83"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="307,107,415,133"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="159,5,227,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="129,56,258,83"/><area shape="rect" id="node9" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="132,107,255,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="307,81,355,108"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a65427fd4ba17a080334176670cc7c5e3_icgraph.png" border="0" usemap="#exec_8c_a65427fd4ba17a080334176670cc7c5e3_icgraph" alt=""/></div>
 <map name="exec_8c_a65427fd4ba17a080334176670cc7c5e3_icgraph" id="exec_8c_a65427fd4ba17a080334176670cc7c5e3_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="128,5,245,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="293,5,347,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="395,5,445,32"/></map>
@@ -1262,47 +1129,47 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00314">314</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00274">274</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00077">Machine::_dataend</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, <a class="el" href="error_8h_source.html#l00042">WARN_PUSH_STATIC</a>, et <a class="el" href="error_8c_source.html#l00029">warning()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00079">Machine::_dataend</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00062">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00072">error_if_segstack()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, <a class="el" href="error_8h_source.html#l00041">WARN_PUSH_STATIC</a>, et <a class="el" href="error_8c_source.html#l00030">warning()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
 
     <span class="keywordflow">if</span>(pmach-&gt;_sp &lt; pmach-&gt;<a class="code" href="structMachine.html#a4cf57550abe18e1dece177fb8794d6c0" title="Première adresse libre après les données statiques.">_dataend</a>)
         <a class="code" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement.">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8edab719dc0e55febf511c6ff1386d3c2156" title="SP pointe sur des données statiques.">WARN_PUSH_STATIC</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
 
-    <span class="keywordflow">if</span>(!instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
-    {
-        <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
-        <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
-        pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
-    }
+    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
+        pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
 
     <span class="keywordflow">else</span>
-        pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>;
+    {
+        <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+        <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506">error_if_segdata</a>(pmach, addr);
+        pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[pmach-&gt;_sp] = pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr];
+    }
 
     --pmach-&gt;_sp;
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a38563637a890eec98396923e6dd82a7b_cgraph.png" border="0" usemap="#exec_8c_a38563637a890eec98396923e6dd82a7b_cgraph" alt=""/></div>
 <map name="exec_8c_a38563637a890eec98396923e6dd82a7b_cgraph" id="exec_8c_a38563637a890eec98396923e6dd82a7b_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="163,5,231,32"/><area shape="rect" id="node5" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="140,56,255,83"/><area shape="rect" id="node11" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="136,107,259,133"/><area shape="rect" id="node15" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="164,157,231,184"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="337,56,385,83"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="307,107,415,133"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="163,5,231,32"/><area shape="rect" id="node5" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="140,56,255,83"/><area shape="rect" id="node9" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="136,107,259,133"/><area shape="rect" id="node12" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="164,157,231,184"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="307,81,355,108"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a38563637a890eec98396923e6dd82a7b_icgraph.png" border="0" usemap="#exec_8c_a38563637a890eec98396923e6dd82a7b_icgraph" alt=""/></div>
 <map name="exec_8c_a38563637a890eec98396923e6dd82a7b_icgraph" id="exec_8c_a38563637a890eec98396923e6dd82a7b_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="136,5,253,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="301,5,355,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="403,5,453,32"/></map>
@@ -1346,11 +1213,11 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00300">300</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00260">260</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, et <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, et <a class="el" href="exec_8c_source.html#l00072">error_if_segstack()</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ++pmach-&gt;_sp;
     <a class="code" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile.">error_if_segstack</a>(pmach);
@@ -1358,22 +1225,22 @@ Fonctions</h2></td></tr>
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_cgraph.png" border="0" usemap="#exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_cgraph" alt=""/></div>
 <map name="exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_cgraph" id="exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="123,31,245,57"/><area shape="rect" id="node5" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="324,5,372,32"/><area shape="rect" id="node7" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="294,56,402,83"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="123,5,245,32"/><area shape="rect" id="node5" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="293,5,341,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_icgraph.png" border="0" usemap="#exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_icgraph" alt=""/></div>
 <map name="exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_icgraph" id="exec_8c_a2d7e5d63e6ec6598b297a7f83e4d32d8_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="123,5,240,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="288,5,341,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="389,5,440,32"/></map>
@@ -1418,9 +1285,9 @@ Fonctions</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00016">16</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00081">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00029">CC_N</a>, <a class="el" href="machine_8h_source.html#l00028">CC_P</a>, et <a class="el" href="machine_8h_source.html#l00027">CC_Z</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00031">CC_N</a>, <a class="el" href="machine_8h_source.html#l00030">CC_P</a>, et <a class="el" href="machine_8h_source.html#l00029">CC_Z</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>, et <a class="el" href="exec_8c_source.html#l00122">load_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00149">add_sub_func()</a>, et <a class="el" href="exec_8c_source.html#l00106">load_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span>(res &lt; 0)
         pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> = <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a>;
@@ -1432,14 +1299,14 @@ Fonctions</h2></td></tr>
         pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> = <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c" title="Résultat positif.">CC_P</a>;
 }
 </pre></div>
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_a2f6ea9301a2a863dc24613a987951412_icgraph.png" border="0" usemap="#exec_8c_a2f6ea9301a2a863dc24613a987951412_icgraph" alt=""/></div>
 <map name="exec_8c_a2f6ea9301a2a863dc24613a987951412_icgraph" id="exec_8c_a2f6ea9301a2a863dc24613a987951412_icgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="119,56,190,83"/><area shape="rect" id="node16" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="115,107,194,133"/><area shape="rect" id="node5" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="243,5,317,32"/><area shape="rect" id="node13" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="243,56,317,83"/><area shape="rect" id="node7" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="365,56,483,83"/><area shape="rect" id="node9" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="531,56,584,83"/><area shape="rect" id="node11" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="632,56,683,83"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="115,5,218,32"/><area shape="rect" id="node11" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="127,56,206,83"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="267,31,384,57"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="432,31,485,57"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="533,31,584,57"/></map>
 </div>
 </p>
 
@@ -1478,19 +1345,17 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>true si on doit sauter, false sinon, ne retourne pas si erreur (CC_U) </dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>true si on doit sauter, false sinon, ne retourne pas si erreur </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00220">220</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00182">182</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00081">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00080">Machine::_pc</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00029">CC_N</a>, <a class="el" href="machine_8h_source.html#l00028">CC_P</a>, <a class="el" href="machine_8h_source.html#l00026">CC_U</a>, <a class="el" href="machine_8h_source.html#l00027">CC_Z</a>, <a class="el" href="instruction_8h_source.html#l00112">EQ</a>, <a class="el" href="error_8h_source.html#l00023">ERR_CONDITION</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="exec_8c_source.html#l00032">free_segments()</a>, <a class="el" href="instruction_8h_source.html#l00115">GE</a>, <a class="el" href="instruction_8h_source.html#l00114">GT</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="instruction_8h_source.html#l00117">LE</a>, <a class="el" href="instruction_8h_source.html#l00116">LT</a>, <a class="el" href="instruction_8h_source.html#l00111">NC</a>, et <a class="el" href="instruction_8h_source.html#l00113">NE</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00031">CC_N</a>, <a class="el" href="machine_8h_source.html#l00030">CC_P</a>, <a class="el" href="machine_8h_source.html#l00028">CC_U</a>, <a class="el" href="machine_8h_source.html#l00029">CC_Z</a>, <a class="el" href="instruction_8h_source.html#l00112">EQ</a>, <a class="el" href="error_8h_source.html#l00023">ERR_CONDITION</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="instruction_8h_source.html#l00115">GE</a>, <a class="el" href="instruction_8h_source.html#l00114">GT</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="instruction_8h_source.html#l00117">LE</a>, <a class="el" href="instruction_8h_source.html#l00116">LT</a>, <a class="el" href="instruction_8h_source.html#l00111">NC</a>, et <a class="el" href="instruction_8h_source.html#l00113">NE</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00263">branch_func()</a>, et <a class="el" href="exec_8c_source.html#l00281">call_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00222">branch_func()</a>, et <a class="el" href="exec_8c_source.html#l00239">call_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> != <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a> &amp;&amp; pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc" title="Signe du résultat inconnu.">CC_U</a>)
-    {
-        <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
+    <span class="keywordflow">if</span>((instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> != <a class="code" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01" title="Pas de condition (nrachement inconditionnel)">NC</a> &amp;&amp; pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc" title="Signe du résultat inconnu.">CC_U</a>) ||
+            instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> &gt; LAST_CONDITION)
         <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab" title="Condition illégale.">ERR_CONDITION</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
-    }
 
     <span class="keywordflow">switch</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>)
     {
@@ -1516,27 +1381,26 @@ Fonctions</h2></td></tr>
             <span class="keywordflow">return</span> pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b" title="Résultat négatif.">CC_N</a> || pmach-&gt;<a class="code" href="structMachine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a> == <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f" title="Résultat nul.">CC_Z</a>;
 
         <span class="keywordflow">default</span>:
-            <a class="code" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement.">free_segments</a>(pmach);
             <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab" title="Condition illégale.">ERR_CONDITION</a>, pmach-&gt;<a class="code" href="structMachine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a> - 1);
     }
 }
 </pre></div>
-<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_ad3cf32b9917bf794da164cfd40b5063e_cgraph.png" border="0" usemap="#exec_8c_ad3cf32b9917bf794da164cfd40b5063e_cgraph" alt=""/></div>
 <map name="exec_8c_ad3cf32b9917bf794da164cfd40b5063e_cgraph" id="exec_8c_ad3cf32b9917bf794da164cfd40b5063e_cgraph">
-<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="180,5,228,32"/><area shape="rect" id="node5" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="150,56,258,83"/></map>
+<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="149,5,197,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_ad3cf32b9917bf794da164cfd40b5063e_icgraph.png" border="0" usemap="#exec_8c_ad3cf32b9917bf794da164cfd40b5063e_icgraph" alt=""/></div>
 <map name="exec_8c_ad3cf32b9917bf794da164cfd40b5063e_icgraph" id="exec_8c_ad3cf32b9917bf794da164cfd40b5063e_icgraph">
 <area shape="rect" id="node3" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="149,5,243,32"/><area shape="rect" id="node11" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="159,56,233,83"/><area shape="rect" id="node5" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="291,31,408,57"/><area shape="rect" id="node7" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="456,31,509,57"/><area shape="rect" id="node9" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="557,31,608,57"/></map>
@@ -1580,110 +1444,42 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00146">146</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00130">130</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8h_source.html#l00074">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_registers</a>, <a class="el" href="exec_8c_source.html#l00044">address()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
+<p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="exec_8c_source.html#l00034">address()</a>, <a class="el" href="exec_8c_source.html#l00048">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00062">error_if_segdata()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat.">error_if_immediate</a>(pmach, instr);
 
-    <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>;
-    <span class="keywordtype">unsigned</span> addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
+    <span class="keywordtype">unsigned</span> r = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>,
+             addr = <a class="code" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé">address</a>(pmach, instr);
 
-    <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données.">error_if_segdata</a>(pmach, addr);
+    <a class="code" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506">error_if_segdata</a>(pmach, addr);
     pmach-&gt;<a class="code" href="structMachine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>[addr] = pmach-&gt;<a class="code" href="structMachine.html#ab4a927b1e214bd40d2406f1080eaa6c4" title="Registres généraux (accumulateurs)">_registers</a>[r];
 
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
-<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-35-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_aa21e97e5f575411e85827012dc7f381c_cgraph.png" border="0" usemap="#exec_8c_aa21e97e5f575411e85827012dc7f381c_cgraph" alt=""/></div>
 <map name="exec_8c_aa21e97e5f575411e85827012dc7f381c_cgraph" id="exec_8c_aa21e97e5f575411e85827012dc7f381c_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="167,5,235,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="137,107,266,133"/><area shape="rect" id="node11" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="144,56,259,83"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="345,56,393,83"/><area shape="rect" id="node9" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="315,107,423,133"/></map>
+<area shape="rect" id="node3" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="167,5,235,32"/><area shape="rect" id="node5" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="137,56,266,83"/><area shape="rect" id="node9" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="144,107,259,133"/><area shape="rect" id="node7" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="315,81,363,108"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-36-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_aa21e97e5f575411e85827012dc7f381c_icgraph.png" border="0" usemap="#exec_8c_aa21e97e5f575411e85827012dc7f381c_icgraph" alt=""/></div>
 <map name="exec_8c_aa21e97e5f575411e85827012dc7f381c_icgraph" id="exec_8c_aa21e97e5f575411e85827012dc7f381c_icgraph">
 <area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="136,5,253,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="301,5,355,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="403,5,453,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ac1b0a93cf47e6645c6ed40411b26531a"></a><!-- doxytag: member="exec.c::sub_func" ref="ac1b0a93cf47e6645c6ed40411b26531a" args="(Machine *pmach, Instruction instr)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sub_func </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
-          <td class="paramname"><em>pmach</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="unionInstruction.html">Instruction</a>&#160;</td>
-          <td class="paramname"><em>instr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Effectue un SUB sur la machine. </p>
-<dl><dt><b>Paramètres:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pmach</td><td>la machine/programme en cours d'exécution </td></tr>
-    <tr><td class="paramname">instr</td><td>l'instruction à exécuter </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>true si aucune erreur, pas de return sinon </dd></dl>
-
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00209">209</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
-
-<p>Références <a class="el" href="exec_8c_source.html#l00165">add_sub()</a>.</p>
-
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction.">add_sub</a>(pmach, instr);
-}
-</pre></div>
-<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-37-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-37-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_cgraph.png" border="0" usemap="#exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_cgraph" alt=""/></div>
-<map name="exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_cgraph" id="exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="129,56,199,83"/><area shape="rect" id="node5" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="271,5,339,32"/><area shape="rect" id="node7" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="248,56,363,83"/><area shape="rect" id="node13" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="275,107,336,133"/><area shape="rect" id="node9" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="441,31,489,57"/><area shape="rect" id="node11" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="411,81,519,108"/></map>
-</div>
-</p>
-
-<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-38-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-38-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_icgraph.png" border="0" usemap="#exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_icgraph" alt=""/></div>
-<map name="exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_icgraph" id="exec_8c_ac1b0a93cf47e6645c6ed40411b26531a_icgraph">
-<area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="128,5,245,32"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="293,5,347,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="395,5,445,32"/></map>
 </div>
 </p>
 
@@ -1738,33 +1534,33 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00394">394</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00351">351</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
 <p>Références <a class="el" href="instruction_8c_source.html#l00033">print_instruction()</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00228">simul()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00257">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     printf(<span class="stringliteral">&quot;TRACE: %s: 0x%04x: &quot;</span>, msg, addr);
     <a class="code" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction</a>(instr, addr);
     printf(<span class="stringliteral">&quot;\n&quot;</span>);
 }
 </pre></div>
-<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-39-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-39-content" class="dyncontent" style="display:none;">
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_cgraph.png" border="0" usemap="#exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_cgraph" alt=""/></div>
 <map name="exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_cgraph" id="exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_cgraph">
 <area shape="rect" id="node3" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="104,5,219,32"/><area shape="rect" id="node5" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="267,5,315,32"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-40-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_icgraph.png" border="0" usemap="#exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_icgraph" alt=""/></div>
 <map name="exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_icgraph" id="exec_8c_aae353f8fd7ccdbebd6c37fc0f75d12d3_icgraph">
 <area shape="rect" id="node3" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="104,5,157,32"/><area shape="rect" id="node5" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="205,5,256,32"/></map>
@@ -1778,7 +1574,7 @@ Fonctions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="exec_8c.html">exec.c</a>      </li>
-      <li class="footer">Généré le Wed Jun 8 2011 18:28:12 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Wed Jun 8 2011 21:55:17 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

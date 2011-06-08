@@ -119,7 +119,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="error_8h__dep__incl.png" border="0" usemap="#error_8hdep" alt=""/></div>
 <map name="error_8hdep" id="error_8hdep">
-<area shape="rect" id="node3" href="error_8c.html" title="error.c" alt="" coords="5,80,63,107"/><area shape="rect" id="node5" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="88,80,149,107"/><area shape="rect" id="node7" href="instruction_8c.html" title="instruction.c" alt="" coords="173,80,267,107"/><area shape="rect" id="node9" href="machine_8c.html" title="machine.c" alt="" coords="291,80,372,107"/></map>
+<area shape="rect" id="node3" href="error_8c.html" title="error.c" alt="" coords="5,80,63,107"/><area shape="rect" id="node5" href="exec_8c.html" title="Implémentation de exec.h. Execute une instruction." alt="" coords="88,80,149,107"/><area shape="rect" id="node7" href="instruction_8c.html" title="instruction.c" alt="" coords="173,80,267,107"/><area shape="rect" id="node9" href="machine_8c.html" title="machine.c" alt="" coords="291,80,372,107"/></map>
 </div>
 </div>
 <p><a href="error_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -140,7 +140,6 @@ function toggleVisibility(linkObj) {
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erreur d'exécution.  <a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Plus de détails...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">Warning</a> { <a class="el" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">WARN_HALT</a>, 
-<a class="el" href="error_8h.html#af6ea07812363481c623a23ea26fbf8edafdae4eef3288d79dc2c66c324067b463">WARN_UNKOWN</a>, 
 <a class="el" href="error_8h.html#af6ea07812363481c623a23ea26fbf8edab719dc0e55febf511c6ff1386d3c2156">WARN_PUSH_STATIC</a>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Codes d'avertissement.  <a href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">Plus de détails...</a><br/></td></tr>
@@ -235,9 +234,6 @@ Variables</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77"></a><!-- doxytag: member="WARN_HALT" ref="af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" args="" -->WARN_HALT</em>&nbsp;</td><td>
 <p>Fin normale du programme (sur HALT) </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="af6ea07812363481c623a23ea26fbf8edafdae4eef3288d79dc2c66c324067b463"></a><!-- doxytag: member="WARN_UNKOWN" ref="af6ea07812363481c623a23ea26fbf8edafdae4eef3288d79dc2c66c324067b463" args="" -->WARN_UNKOWN</em>&nbsp;</td><td>
-<p>Problème inconnu, mais pas erreur. </p>
-</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="af6ea07812363481c623a23ea26fbf8edab719dc0e55febf511c6ff1386d3c2156"></a><!-- doxytag: member="WARN_PUSH_STATIC" ref="af6ea07812363481c623a23ea26fbf8edab719dc0e55febf511c6ff1386d3c2156" args="" -->WARN_PUSH_STATIC</em>&nbsp;</td><td>
 <p>SP pointe sur des données statiques. </p>
 </td></tr>
@@ -248,7 +244,6 @@ Variables</h2></td></tr>
 <p>Définition à la ligne <a class="el" href="error_8h_source.html#l00038">38</a> du fichier <a class="el" href="error_8h_source.html">error.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77" title="Fin normale du programme (sur HALT)">WARN_HALT</a>,        
-    <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8edafdae4eef3288d79dc2c66c324067b463" title="Problème inconnu, mais pas erreur.">WARN_UNKOWN</a>,      
     <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8edab719dc0e55febf511c6ff1386d3c2156" title="SP pointe sur des données statiques.">WARN_PUSH_STATIC</a>, 
 } <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed" title="Codes d&#39;avertissement.">Warning</a>;
 </pre></div>
@@ -294,9 +289,10 @@ Variables</h2></td></tr>
 
 <p>Références <a class="el" href="error_8c_source.html#l00005">error_names</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">decode_execute()</a>, <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, <a class="el" href="instruction_8c_source.html#l00033">print_instruction()</a>, <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>, et <a class="el" href="machine_8c_source.html#l00228">simul()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00327">decode_execute()</a>, <a class="el" href="exec_8c_source.html#l00048">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00062">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00072">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00084">illop_func()</a>, <a class="el" href="instruction_8c_source.html#l00033">print_instruction()</a>, <a class="el" href="exec_8c_source.html#l00182">should_jump()</a>, et <a class="el" href="machine_8c_source.html#l00257">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    fprintf(stderr, <span class="stringliteral">&quot;ERROR: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[err], addr);
+    fprintf(stderr, <span class="stringliteral">&quot;ERROR: %s at address 0x%x\n&quot;</span>,
+            <a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[err], addr);
     exit(1);
 }
 </pre></div>
@@ -307,7 +303,7 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="error_8h_a531bb138b38aef758b45a442aa53938a_icgraph.png" border="0" usemap="#error_8h_a531bb138b38aef758b45a442aa53938a_icgraph" alt=""/></div>
 <map name="error_8h_a531bb138b38aef758b45a442aa53938a_icgraph" id="error_8h_a531bb138b38aef758b45a442aa53938a_icgraph">
-<area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="592,376,709,403"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="757,98,811,124"/><area shape="rect" id="node9" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="265,300,394,327"/><area shape="rect" id="node23" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="101,503,216,530"/><area shape="rect" id="node40" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="268,439,391,466"/><area shape="rect" id="node47" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="120,148,197,175"/><area shape="rect" id="node50" href="instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="272,98,387,124"/><area shape="rect" id="node61" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="282,250,377,276"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="859,123,909,150"/><area shape="rect" id="node11" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="447,300,540,327"/><area shape="rect" id="node14" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="456,250,531,276"/><area shape="rect" id="node17" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="456,402,531,428"/><area shape="rect" id="node20" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="452,351,535,378"/><area shape="rect" id="node25" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="294,604,365,631"/><area shape="rect" id="node33" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="290,554,369,580"/><area shape="rect" id="node36" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="452,503,535,530"/><area shape="rect" id="node27" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="456,604,531,631"/><area shape="rect" id="node30" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="456,655,531,682"/><area shape="rect" id="node44" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="459,452,528,479"/><area shape="rect" id="node52" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="443,98,544,124"/><area shape="rect" id="node58" href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3" title="Trace de l&#39;exécution." alt="" coords="625,47,676,74"/><area shape="rect" id="node54" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="608,98,693,124"/></map>
+<area shape="rect" id="node3" href="exec_8h.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="432,312,549,338"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="597,514,651,541"/><area shape="rect" id="node9" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="102,210,231,237"/><area shape="rect" id="node23" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="109,413,224,440"/><area shape="rect" id="node35" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="105,261,228,288"/><area shape="rect" id="node43" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="128,58,205,85"/><area shape="rect" id="node46" href="instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="109,565,224,592"/><area shape="rect" id="node57" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="119,160,214,186"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="699,565,749,592"/><area shape="rect" id="node11" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="285,160,379,186"/><area shape="rect" id="node14" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="295,210,369,237"/><area shape="rect" id="node17" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="295,261,369,288"/><area shape="rect" id="node20" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="291,312,373,338"/><area shape="rect" id="node25" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="281,514,383,541"/><area shape="rect" id="node28" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="293,464,371,490"/><area shape="rect" id="node31" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="291,413,373,440"/><area shape="rect" id="node40" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="297,362,367,389"/><area shape="rect" id="node48" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="281,616,383,642"/><area shape="rect" id="node54" href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3" title="Trace de l&#39;exécution." alt="" coords="465,514,516,541"/><area shape="rect" id="node50" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="448,565,533,592"/></map>
 </div>
 </p>
 
@@ -347,13 +343,14 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="error_8c_source.html#l00029">29</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="error_8c_source.html#l00030">30</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
 
 <p>Références <a class="el" href="error_8c_source.html#l00017">warning_names</a>.</p>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00361">halt_func()</a>, et <a class="el" href="exec_8c_source.html#l00314">push_func()</a>.</p>
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00321">halt_func()</a>, et <a class="el" href="exec_8c_source.html#l00274">push_func()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    fprintf(stderr, <span class="stringliteral">&quot;WARNING: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[warn], addr);
+    fprintf(stderr, <span class="stringliteral">&quot;WARNING: %s reached at address 0x%x\n&quot;</span>,
+            <a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[warn], addr);
 }
 </pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -404,7 +401,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="error_8c_source.html#l00017">17</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
 
-<p>Référencé par <a class="el" href="error_8c_source.html#l00029">warning()</a>.</p>
+<p>Référencé par <a class="el" href="error_8c_source.html#l00030">warning()</a>.</p>
 
 </div>
 </div>
@@ -413,7 +410,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="error_8h.html">error.h</a>      </li>
-      <li class="footer">Généré le Wed Jun 8 2011 18:28:12 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Wed Jun 8 2011 21:55:17 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

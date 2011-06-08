@@ -1,12 +1,16 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="256,80,337,107"/>
-<area shape="rect" id="node24" href="$instruction_8c.html" title="instruction.c" alt="" coords="363,80,456,107"/>
+<area shape="rect" id="node3" href="$machine_8h.html" title="Description de la structure du processeur et de sa mémoire." alt="" coords="576,80,657,107"/>
+<area shape="rect" id="node32" href="$instruction_8c.html" title="instruction.c" alt="" coords="683,80,776,107"/>
 <area shape="rect" id="node5" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="191,155,259,181"/>
 <area shape="rect" id="node11" href="$test__simul_8c.html" title="Test du simulateur." alt="" coords="291,229,384,256"/>
 <area shape="rect" id="node13" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="100,155,161,181"/>
 <area shape="rect" id="node19" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="335,155,499,181"/>
 <area shape="rect" id="node21" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="524,155,711,181"/>
+<area shape="rect" id="node24" href="$branch__immediat_8c.html" title="tests/branch_immediat.c" alt="" coords="735,155,899,181"/>
+<area shape="rect" id="node26" href="$call__imm_8c.html" title="tests/call_imm.c" alt="" coords="923,155,1041,181"/>
+<area shape="rect" id="node28" href="$pop__imm_8c.html" title="tests/pop_imm.c" alt="" coords="1066,155,1184,181"/>
+<area shape="rect" id="node30" href="$store__imm_8c.html" title="tests/store_imm.c" alt="" coords="1209,155,1335,181"/>
 <area shape="rect" id="node7" href="$debug_8c.html" title="debug.c" alt="" coords="91,229,159,256"/>
 <area shape="rect" id="node9" href="$machine_8c.html" title="machine.c" alt="" coords="184,229,265,256"/>
-<area shape="rect" id="node16" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,229,67,256"/>
+<area shape="rect" id="node16" href="$exec_8c.html" title="Implémentation de exec.h. Execute une instruction." alt="" coords="5,229,67,256"/>
 </map>

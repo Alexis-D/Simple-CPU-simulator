@@ -23,10 +23,15 @@ var NAVTREE =
       [ "Examples/prog_simple-bin.c", "prog__simple-bin_8c.html", null ],
       [ "Examples/prog_simple.c", "prog__simple_8c.html", null ],
       [ "Examples/prog_subroutine-bin.c", "prog__subroutine-bin_8c.html", null ],
-      [ "Examples/prog_subroutine.c", "prog__subroutine_8c.html", null ]
+      [ "Examples/prog_subroutine.c", "prog__subroutine_8c.html", null ],
+      [ "tests/branch_immediat.c", "branch__immediat_8c.html", null ],
+      [ "tests/call_imm.c", "call__imm_8c.html", null ],
+      [ "tests/pop_imm.c", "pop__imm_8c.html", null ],
+      [ "tests/store_imm.c", "store__imm_8c.html", null ]
     ] ],
     [ "Répertoires", "dirs.html", [
-      [ "Examples", "dir_192c559c90b1f1569493bcd2f5b2db7f.html", null ]
+      [ "Examples", "dir_192c559c90b1f1569493bcd2f5b2db7f.html", null ],
+      [ "tests", "dir_3aa3f431bce0b69ec875fcf7c15b43da.html", null ]
     ] ],
     [ "Portée globale", "globals.html", null ]
   ] ]

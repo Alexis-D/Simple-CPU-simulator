@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$error_8c.html" title="error.c" alt="" coords="5,80,63,107"/>
-<area shape="rect" id="node5" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="88,80,149,107"/>
+<area shape="rect" id="node5" href="$exec_8c.html" title="Implémentation de exec.h. Execute une instruction." alt="" coords="88,80,149,107"/>
 <area shape="rect" id="node7" href="$instruction_8c.html" title="instruction.c" alt="" coords="173,80,267,107"/>
 <area shape="rect" id="node9" href="$machine_8c.html" title="machine.c" alt="" coords="291,80,372,107"/>
 </map>

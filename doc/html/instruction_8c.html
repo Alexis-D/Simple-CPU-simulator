@@ -165,49 +165,40 @@ Variables</h2></td></tr>
 
 <p>Références <a class="el" href="instruction_8h_source.html#l00074">Instruction::_address</a>, <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="instruction_8h_source.html#l00061">Instruction::_immediate</a>, <a class="el" href="instruction_8h_source.html#l00062">Instruction::_indexed</a>, <a class="el" href="instruction_8h_source.html#l00095">Instruction::_offset</a>, <a class="el" href="instruction_8h_source.html#l00063">Instruction::_regcond</a>, <a class="el" href="instruction_8h_source.html#l00094">Instruction::_rindex</a>, <a class="el" href="instruction_8h_source.html#l00084">Instruction::_value</a>, <a class="el" href="instruction_8h_source.html#l00021">BRANCH</a>, <a class="el" href="instruction_8h_source.html#l00022">CALL</a>, <a class="el" href="instruction_8c_source.html#l00022">condition_names</a>, <a class="el" href="instruction_8c_source.html#l00006">cop_names</a>, <a class="el" href="error_8h_source.html#l00023">ERR_CONDITION</a>, <a class="el" href="error_8h_source.html#l00021">ERR_UNKNOWN</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="instruction_8h_source.html#l00026">HALT</a>, <a class="el" href="instruction_8h_source.html#l00015">ILLOP</a>, <a class="el" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">Instruction::instr_absolute</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">Instruction::instr_immediate</a>, <a class="el" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">Instruction::instr_indexed</a>, <a class="el" href="instruction_8h_source.html#l00016">NOP</a>, <a class="el" href="instruction_8h_source.html#l00024">PUSH</a>, et <a class="el" href="instruction_8h_source.html#l00023">RET</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00181">print_program()</a>, et <a class="el" href="exec_8c_source.html#l00394">trace()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00207">print_program()</a>, et <a class="el" href="exec_8c_source.html#l00351">trace()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6" title="Codes opérations.">Code_Op</a> op = instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a>;
 
     <span class="comment">// Opérateur inconnu</span>
-    <span class="keywordflow">if</span>(op &gt;= <span class="keyword">sizeof</span> <a class="code" href="instruction_8c.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3" title="Forme imprimable des codes opérations.">cop_names</a> / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*))
+    <span class="keywordflow">if</span>(op &gt; LAST_COP)
         <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1" title="Instruction inconnue.">ERR_UNKNOWN</a>, addr);
 
     printf(<span class="stringliteral">&quot;%s &quot;</span>, <a class="code" href="instruction_8c.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3" title="Forme imprimable des codes opérations.">cop_names</a>[op]);
 
     <span class="keywordflow">if</span>(op == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464" title="Retour de sous-programme.">RET</a> || op == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c" title="Arrêt (normal) du programme.">HALT</a> || op == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026" title="Instruction sans effet.">NOP</a> || op == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2" title="Instruction illégale.">ILLOP</a>)
-    {
         <span class="keywordflow">return</span>;
-    }
 
     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(op == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e" title="Branchement conditionnel ou non.">BRANCH</a> || op == <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8" title="Appel de sous-programme.">CALL</a>)
     {
         <span class="comment">// Condition inconnue</span>
-        <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> &gt;= <span class="keyword">sizeof</span> <a class="code" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0" title="Forme imprimable des conditions.">condition_names</a> / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*))
+        <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a> &gt; LAST_CONDITION)
             <a class="code" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur.">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab" title="Condition illégale.">ERR_CONDITION</a>, addr);
 
         printf(<span class="stringliteral">&quot;%s, &quot;</span>, <a class="code" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0" title="Forme imprimable des conditions.">condition_names</a>[instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>]);
     }
 
     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(op != <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493" title="Empilement sur la pile d&#39;exécution.">PUSH</a>)
-    {
         printf(<span class="stringliteral">&quot;R%02u, &quot;</span>, instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>);
-    }
 
     <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
-    {
         printf(<span class="stringliteral">&quot;#%u&quot;</span>, instr.<a class="code" href="unionInstruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a>.<a class="code" href="unionInstruction.html#aa0cc705f1610955cf6ac0b15efbcca8a" title="Valeur immédiate.">_value</a>);
-    }
 
     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5d3ae850423e6d91f7fe54111c3f766c" title="Adressage indirect ?">_indexed</a>)
-    {
-        printf(<span class="stringliteral">&quot;%d[R%02u]&quot;</span>, instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a>, instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a>);
-    }
+        printf(<span class="stringliteral">&quot;%d[R%02u]&quot;</span>, instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#abb5834e4f338c8e0411467130a1a4b50" title="Déplacement.">_offset</a>,
+                instr.<a class="code" href="unionInstruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a>.<a class="code" href="unionInstruction.html#a057a22a377dd83f2e63a8b6e34df7164" title="Numéro du registre d&#39;index.">_rindex</a>);
 
     <span class="keywordflow">else</span>
-    {
         printf(<span class="stringliteral">&quot;@0x%04x&quot;</span>, instr.<a class="code" href="unionInstruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a>.<a class="code" href="unionInstruction.html#a46298af10c7133abf77f4d86f44b549b" title="Adresse absolue.">_address</a>);
-    }
 }
 </pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -303,7 +294,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="instruction_8c.html">instruction.c</a>      </li>
-      <li class="footer">Généré le Wed Jun 8 2011 18:28:12 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Wed Jun 8 2011 21:55:17 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
