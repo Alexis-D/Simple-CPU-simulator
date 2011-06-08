@@ -2,7 +2,6 @@
 
 #include "error.h"
 #include "exec.h"
-#include "instruction.h"
 
 /*!
  * \file exec.c
@@ -220,47 +219,39 @@ bool sub_func(Machine *pmach, Instruction instr)
  */
 bool should_jump(Machine *pmach, Instruction instr)
 {
-    Condition regcond = instr.instr_generic._regcond;
-    bool jump = false;
-
-    if(regcond != NC && pmach->_cc == CC_U)
+    if(instr.instr_generic._regcond != NC && pmach->_cc == CC_U)
     {
         free_segments(pmach);
         error(ERR_CONDITION, pmach->_pc - 1);
     }
 
-    switch(regcond)
+    switch(instr.instr_generic._regcond)
     {
         case NC:
-            jump = true;
-            break;
+            return true;
 
         case EQ:
-            jump = pmach->_cc == CC_Z;
-            break;
+            return pmach->_cc == CC_Z;
 
         case NE:
-            jump = pmach->_cc != CC_Z;
-            break;
+            return pmach->_cc != CC_Z;
 
         case GT:
-            jump = pmach->_cc == CC_P;
-            break;
+            return pmach->_cc == CC_P;
 
         case GE:
-            jump = pmach->_cc == CC_P || pmach->_cc == CC_Z;
-            break;
+            return pmach->_cc == CC_P || pmach->_cc == CC_Z;
 
         case LT:
-            jump = pmach->_cc == CC_N;
-            break;
+            return pmach->_cc == CC_N;
 
         case LE:
-            jump = pmach->_cc == CC_N || pmach->_cc == CC_Z;
-            break;
+            return pmach->_cc == CC_N || pmach->_cc == CC_Z;
+        
+        default:
+            free_segments(pmach);
+            error(ERR_CONDITION, pmach->_pc - 1);
     }
-
-    return jump;
 }
 
 //! Effectue un BRANCH sur la machine

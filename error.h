@@ -66,4 +66,10 @@ void error(Error err, unsigned addr);
  */
 void warning(Warning warn, unsigned addr);
 
+//! Forme imprimable des erreurs
+extern const char *error_names[];
+
+//! Forme imprimable des warnings
+extern const char *warning_names[];
+
 #endif

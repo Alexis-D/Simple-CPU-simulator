@@ -1,9 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="155,80,223,107"/>
-<area shape="rect" id="node5" href="$machine_8c.html" title="machine.c" alt="" coords="91,155,172,181"/>
-<area shape="rect" id="node7" href="$test__simul_8c.html" title="Test du simulateur." alt="" coords="199,155,292,181"/>
-<area shape="rect" id="node9" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="299,80,463,107"/>
-<area shape="rect" id="node11" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="488,80,675,107"/>
-<area shape="rect" id="node13" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="19,80,80,107"/>
-<area shape="rect" id="node15" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,155,67,181"/>
+<area shape="rect" id="node3" href="$debug_8h.html" title="Fonctions de mise au point interactive." alt="" coords="54,80,121,107"/>
+<area shape="rect" id="node7" href="$test__simul_8c.html" title="Test du simulateur." alt="" coords="5,155,99,181"/>
+<area shape="rect" id="node9" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="145,80,309,107"/>
+<area shape="rect" id="node11" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="335,80,521,107"/>
+<area shape="rect" id="node13" href="$exec_8h.html" title="Exécution d&#39;une instruction." alt="" coords="545,80,607,107"/>
+<area shape="rect" id="node5" href="$machine_8c.html" title="machine.c" alt="" coords="281,155,363,181"/>
+<area shape="rect" id="node15" href="$exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="545,155,607,181"/>
 </map>

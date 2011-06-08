@@ -95,7 +95,8 @@ function toggleVisibility(linkObj) {
 <div class="header">
   <div class="summary">
 <a href="#enum-members">Énumérations</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier error.h</div>  </div>
 </div>
@@ -118,7 +119,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="error_8h__dep__incl.png" border="0" usemap="#error_8hdep" alt=""/></div>
 <map name="error_8hdep" id="error_8hdep">
-<area shape="rect" id="node3" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="5,80,67,107"/></map>
+<area shape="rect" id="node3" href="error_8c.html" title="error.c" alt="" coords="5,80,63,107"/><area shape="rect" id="node5" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction." alt="" coords="88,80,149,107"/></map>
 </div>
 </div>
 <p><a href="error_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -147,6 +148,12 @@ Fonctions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage d'une erreur et fin du simulateur.  <a href="#a531bb138b38aef758b45a442aa53938a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">warning</a> (<a class="el" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">Warning</a> warn, unsigned addr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage d'un avertissement.  <a href="#aec2872edfc57849ea2557178dc2b2673"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#afe6ae39b65175368d8e12772e950f6ca">error_names</a> []</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme imprimable des erreurs.  <a href="#afe6ae39b65175368d8e12772e950f6ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a937bf66b297d74ac514599fdda38ac86">warning_names</a> []</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme imprimable des warnings.  <a href="#a937bf66b297d74ac514599fdda38ac86"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Messages et codes d'erreurs. </p>
@@ -273,8 +280,16 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00057">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00071">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00084">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00099">illop_func()</a>, et <a class="el" href="exec_8c_source.html#l00221">should_jump()</a>.</p>
+<p>Définition à la ligne <a class="el" href="error_8c_source.html#l00022">22</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
 
+<p>Références <a class="el" href="error_8c_source.html#l00005">error_names</a>.</p>
+
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00056">error_if_immediate()</a>, <a class="el" href="exec_8c_source.html#l00070">error_if_segdata()</a>, <a class="el" href="exec_8c_source.html#l00083">error_if_segstack()</a>, <a class="el" href="exec_8c_source.html#l00098">illop_func()</a>, et <a class="el" href="exec_8c_source.html#l00220">should_jump()</a>.</p>
+<div class="fragment"><pre class="fragment">                                    {
+    fprintf(stderr, <span class="stringliteral">&quot;ERROR: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca" title="Forme imprimable des erreurs.">error_names</a>[err], addr);
+    exit(1);
+}
+</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -322,8 +337,15 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Référencé par <a class="el" href="exec_8c_source.html#l00367">halt_func()</a>.</p>
+<p>Définition à la ligne <a class="el" href="error_8c_source.html#l00027">27</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
 
+<p>Références <a class="el" href="error_8c_source.html#l00017">warning_names</a>.</p>
+
+<p>Référencé par <a class="el" href="exec_8c_source.html#l00358">halt_func()</a>.</p>
+<div class="fragment"><pre class="fragment">                                         {
+    fprintf(stderr, <span class="stringliteral">&quot;WARNING: %s reached at address 0x%x\n&quot;</span>, <a class="code" href="error_8c.html#a937bf66b297d74ac514599fdda38ac86" title="Forme imprimable des warnings.">warning_names</a>[warn], addr);
+}
+</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -337,12 +359,51 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Documentation des variables</h2>
+<a class="anchor" id="afe6ae39b65175368d8e12772e950f6ca"></a><!-- doxytag: member="error.h::error_names" ref="afe6ae39b65175368d8e12772e950f6ca" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="error_8h.html#afe6ae39b65175368d8e12772e950f6ca">error_names</a>[]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Forme imprimable des erreurs. </p>
+
+<p>Définition à la ligne <a class="el" href="error_8c_source.html#l00005">5</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
+
+<p>Référencé par <a class="el" href="error_8c_source.html#l00022">error()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a937bf66b297d74ac514599fdda38ac86"></a><!-- doxytag: member="error.h::warning_names" ref="a937bf66b297d74ac514599fdda38ac86" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="error_8h.html#a937bf66b297d74ac514599fdda38ac86">warning_names</a>[]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Forme imprimable des warnings. </p>
+
+<p>Définition à la ligne <a class="el" href="error_8c_source.html#l00017">17</a> du fichier <a class="el" href="error_8c_source.html">error.c</a>.</p>
+
+<p>Référencé par <a class="el" href="error_8c_source.html#l00027">warning()</a>.</p>
+
+</div>
+</div>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="error_8h.html">error.h</a>      </li>
-      <li class="footer">Généré le Tue Jun 7 2011 15:49:33 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 23:42:54 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

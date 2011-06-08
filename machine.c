@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include "machine.h"
 #include "exec.h"
 #include "debug.h"
+
+const char *condition_code_names[] =
+{
+    "U",
+    "Z",
+    "P",
+    "N",
+};
 
 //! Ecriture du programme et des données dans le fichier dump.prog
 /*!
@@ -189,7 +195,7 @@ void print_program(Machine *pmach)
 
 void print_data(Machine *pmach)
 {
-    printf("*** DATA (size: %i, end = Ox%08x (%i)) ***\n", pmach->_datasize, pmach->_dataend, pmach->_dataend);
+    printf("*** DATA (size: %i, end = 0x%08x (%i)) ***\n", pmach->_datasize, pmach->_dataend, pmach->_dataend);
 
     for(int i = 0; i < pmach->_datasize; ++i)
     {
@@ -206,28 +212,11 @@ void print_data(Machine *pmach)
 
 void print_cpu(Machine *pmach)
 {
-    printf("\n*** CPU ***\nPC:  0x%08x   CC: ", pmach->_pc);
-    switch (pmach->_cc)
-    {
-        case CC_U :
-            printf("U");
-            break;
-        case CC_Z :
-            printf("Z");
-            break;
-        case CC_P :
-            printf("P");
-            break;
-        case CC_N :
-            printf("N");
-            break;
-    }
-
-    printf("\n\n");
+    printf("\n*** CPU ***\nPC:  0x%08x   CC: %s\n\n", pmach->_pc, condition_code_names[pmach->_cc]);
 
     for(int i = 0; i < NREGISTERS; ++i)
     {
-        printf("R%02i: Ox%08x %-6i ", i, pmach->_registers[i], pmach->_registers[i]);
+        printf("R%02i: 0x%08x %-6i ", i, pmach->_registers[i], pmach->_registers[i]);
         if(i % 3 == 2)
             printf("\n");
     }
