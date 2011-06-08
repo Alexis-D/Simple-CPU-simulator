@@ -181,7 +181,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="test__simul_8c_source.html#l00058">58</a> du fichier <a class="el" href="test__simul_8c_source.html">test_simul.c</a>.</p>
 
-<p>Références <a class="el" href="prog__simple-bin_8c_source.html#l00010">data</a>, <a class="el" href="prog__simple_8c_source.html#l00038">dataend</a>, <a class="el" href="prog__simple-bin_8c_source.html#l00015">datasize</a>, <a class="el" href="machine_8h.html#aa69650bbdba0125402a22c4451755412">dump_memory()</a>, <a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">load_program()</a>, <a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">print_cpu()</a>, <a class="el" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">print_data()</a>, <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">print_program()</a>, <a class="el" href="machine_8h.html#ac59b88844961c2479108151e24dd555a">read_program()</a>, <a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">simul()</a>, et <a class="el" href="prog__simple-bin_8c_source.html#l00008">textsize</a>.</p>
+<p>Références <a class="el" href="prog__simple-bin_8c_source.html#l00010">data</a>, <a class="el" href="prog__simple_8c_source.html#l00038">dataend</a>, <a class="el" href="prog__simple-bin_8c_source.html#l00015">datasize</a>, <a class="el" href="machine_8c_source.html#l00095">dump_memory()</a>, <a class="el" href="machine_8c_source.html#l00050">load_program()</a>, <a class="el" href="machine_8c_source.html#l00170">print_cpu()</a>, <a class="el" href="machine_8c_source.html#l00153">print_data()</a>, <a class="el" href="machine_8c_source.html#l00140">print_program()</a>, <a class="el" href="machine_8c_source.html#l00069">read_program()</a>, <a class="el" href="machine_8c_source.html#l00204">simul()</a>, et <a class="el" href="prog__simple-bin_8c_source.html#l00008">textsize</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">bool</span> debug = <span class="keyword">false</span>;
     <span class="keywordtype">bool</span> binfile = <span class="keyword">false</span>;
@@ -222,27 +222,27 @@ Variables</h2></td></tr>
     <a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> mach;
 
     <span class="keywordflow">if</span> (!binfile) 
-        <a class="code" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df" title="Chargement d&#39;un programme.">load_program</a>(&amp;mach, <a class="code" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48" title="Taille utile du programme.">textsize</a>, <a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a>, <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a>, <a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>, <a class="code" href="prog__simple_8c.html#ad74734ae58f284f6cc955dfecf50f0d0" title="Fin de la zone de données utiles.">dataend</a>);
+        <a class="code" href="machine_8c.html#a9ac26e6f927cf2956823b4f9588d44df" title="Chargement d&#39;un programme.">load_program</a>(&amp;mach, <a class="code" href="prog__simple-bin_8c.html#a09c9805cec0364d715497e6564245c48" title="Taille utile du programme.">textsize</a>, <a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a>, <a class="code" href="prog__simple-bin_8c.html#a5c7949e884a8b9b3d1ab9f070267bf33" title="Taille utile du segment de données.">datasize</a>, <a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a>, <a class="code" href="prog__simple_8c.html#ad74734ae58f284f6cc955dfecf50f0d0" title="Fin de la zone de données utiles.">dataend</a>);
     <span class="keywordflow">else</span> 
-        <a class="code" href="machine_8h.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire.">read_program</a>(&amp;mach, programfile);   
+        <a class="code" href="machine_8c.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire.">read_program</a>(&amp;mach, programfile);   
 
     printf(<span class="stringliteral">&quot;\n*** Sauvegarde des programmes et données initiales en format binaire ***\n\n&quot;</span>);
-    <a class="code" href="machine_8h.html#aa69650bbdba0125402a22c4451755412" title="Affichage du programme et des données.">dump_memory</a>(&amp;mach);
+    <a class="code" href="machine_8c.html#aa69650bbdba0125402a22c4451755412" title="Affichage du programme et des données.">dump_memory</a>(&amp;mach);
 
     printf(<span class="stringliteral">&quot;\n*** Machine state before execution ***\n&quot;</span>);
-    <a class="code" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme.">print_program</a>(&amp;mach);
-    <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
-    <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
+    <a class="code" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme.">print_program</a>(&amp;mach);
+    <a class="code" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
+    <a class="code" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
 
     <span class="keywordflow">if</span> (no_exec) 
         <span class="keywordflow">return</span> 0;
 
     printf(<span class="stringliteral">&quot;\n*** Execution trace ***\n\n&quot;</span>);
-    <a class="code" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation.">simul</a>(&amp;mach, debug);
+    <a class="code" href="machine_8c.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation.">simul</a>(&amp;mach, debug);
 
     printf(<span class="stringliteral">&quot;\n*** Machine state after execution ***\n&quot;</span>);
-    <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
-    <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
+    <a class="code" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU.">print_cpu</a>(&amp;mach);
+    <a class="code" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme.">print_data</a>(&amp;mach);
 
     <span class="keywordflow">return</span> 0; 
 }
@@ -254,7 +254,7 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
 <map name="test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
-<area shape="rect" id="node3" href="machine_8h.html#aa69650bbdba0125402a22c4451755412" title="Affichage du programme et des données." alt="" coords="109,5,232,35"/><area shape="rect" id="node5" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df" title="Chargement d&#39;un programme." alt="" coords="116,59,225,88"/><area shape="rect" id="node7" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU." alt="" coords="129,112,212,141"/><area shape="rect" id="node9" href="machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme." alt="" coords="125,165,216,195"/><area shape="rect" id="node11" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="113,219,228,248"/><area shape="rect" id="node13" href="machine_8h.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire." alt="" coords="113,272,228,301"/><area shape="rect" id="node15" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="143,325,199,355"/></map>
+<area shape="rect" id="node3" href="machine_8c.html#aa69650bbdba0125402a22c4451755412" title="Affichage du programme et des données." alt="" coords="105,5,213,32"/><area shape="rect" id="node7" href="machine_8c.html#a9ac26e6f927cf2956823b4f9588d44df" title="Chargement d&#39;un programme." alt="" coords="273,81,373,108"/><area shape="rect" id="node9" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU." alt="" coords="121,157,196,184"/><area shape="rect" id="node11" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme." alt="" coords="119,208,198,235"/><area shape="rect" id="node13" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="272,245,373,272"/><area shape="rect" id="node17" href="machine_8c.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire." alt="" coords="108,56,209,83"/><area shape="rect" id="node20" href="machine_8c.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="132,335,185,361"/><area shape="rect" id="node5" href="machine_8c.html#a6db56efc2b1721aa062d67d060b5b771" title="create_binary_file" alt="" coords="261,5,384,32"/><area shape="rect" id="node15" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="432,245,547,272"/><area shape="rect" id="node22" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="280,347,365,373"/><area shape="rect" id="node24" href="exec_8c.html#a41471ced34d27777447c2609173af7de" title="Décodage et exécution d&#39;une instruction." alt="" coords="264,549,381,576"/><area shape="rect" id="node95" href="exec_8c.html#aae353f8fd7ccdbebd6c37fc0f75d12d3" title="Trace de l&#39;exécution." alt="" coords="297,296,348,323"/><area shape="rect" id="node26" href="exec_8c.html#a703f62eae226447ca8982823454ff6b7" title="Effectue un ADD sur la machine." alt="" coords="452,499,527,525"/><area shape="rect" id="node40" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="595,803,688,829"/><area shape="rect" id="node51" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="604,853,679,880"/><area shape="rect" id="node56" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine." alt="" coords="452,296,527,323"/><area shape="rect" id="node60" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="763,499,840,525"/><area shape="rect" id="node64" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="602,549,681,576"/><area shape="rect" id="node69" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine." alt="" coords="452,347,527,373"/><area shape="rect" id="node71" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="604,752,679,779"/><area shape="rect" id="node79" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="600,651,683,677"/><area shape="rect" id="node84" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="455,600,524,627"/><area shape="rect" id="node87" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="600,701,683,728"/><area shape="rect" id="node92" href="exec_8c.html#ac1b0a93cf47e6645c6ed40411b26531a" title="Effectue un SUB sur la machine." alt="" coords="452,448,527,475"/><area shape="rect" id="node28" href="exec_8c.html#a100af22a8fba0083f7e9c3665076d89d" title="Effectue une addition/soustraction." alt="" coords="606,499,677,525"/><area shape="rect" id="node30" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="767,701,835,728"/><area shape="rect" id="node32" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="Appelle error si l&#39;on essayer d&#39;accèder à une donnée en dehors du segment de données." alt="" coords="744,600,859,627"/><area shape="rect" id="node38" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="771,549,832,576"/><area shape="rect" id="node34" href="error_8h.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="945,625,993,652"/><area shape="rect" id="node36" href="exec_8c.html#a22661afee2911cfaf182981895f61aea" title="Libère les segments de mémoires alloués dynamiquement." alt="" coords="915,676,1023,703"/><area shape="rect" id="node43" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="737,752,866,779"/><area shape="rect" id="node47" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="754,803,849,829"/><area shape="rect" id="node58" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="608,296,675,323"/><area shape="rect" id="node75" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="740,651,863,677"/></map>
 </div>
 </p>
 
@@ -276,7 +276,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00010">10</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00050">load_program()</a>, <a class="el" href="test__simul_8c_source.html#l00058">main()</a>, et <a class="el" href="machine_8c_source.html#l00069">read_program()</a>.</p>
 
 </div>
 </div>
@@ -295,7 +295,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="prog__simple_8c_source.html#l00038">38</a> du fichier <a class="el" href="prog__simple_8c_source.html">prog_simple.c</a>.</p>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00050">load_program()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 
 </div>
 </div>
@@ -314,7 +314,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00015">15</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00050">load_program()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 
 </div>
 </div>
@@ -335,6 +335,8 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00001">1</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
 
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00050">load_program()</a>, et <a class="el" href="machine_8c_source.html#l00069">read_program()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab06365569505a01a31c5b0da6227d724"></a><!-- doxytag: member="test_simul.c::textsize" ref="ab06365569505a01a31c5b0da6227d724" args="" -->
@@ -352,7 +354,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="prog__simple-bin_8c_source.html#l00008">8</a> du fichier <a class="el" href="prog__simple-bin_8c_source.html">prog_simple-bin.c</a>.</p>
 
-<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00050">load_program()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
 
 </div>
 </div>
@@ -361,7 +363,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="test__simul_8c.html">test_simul.c</a>      </li>
-      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 15:49:33 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

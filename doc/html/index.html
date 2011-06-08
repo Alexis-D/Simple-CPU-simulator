@@ -97,23 +97,23 @@ Organisation des fichiers source et objets</h2>
 <p>Le code est fourni sous forme de fichiers d'entête (<code></code>.h) et d'une bibliothèque binaire (<b>libsimul.a</b>). Le seul fichier <code></code>.c fourni (<code><a class="el" href="test__simul_8c.html" title="Test du simulateur.">test_simul.c</a></code>) contient la fonction <a class="el" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test.">main()</a>.</p>
 <p>Le code original complet est composé de 5 modules. Chaque module comporte un fichier <code></code>.h et un <code></code>.c de même nom. Le fichier-source <code></code>.c n'est pas fourni mais le fichier-objet correspondant figure dans la bibliothèque <code>libsimul.a</code>.</p>
 <dl>
-<dt>Module <code>machine</code> (<a class="el" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire.">machine.h</a>, machine.c, machine.o) </dt>
+<dt>Module <code>machine</code> (<a class="el" href="machine_8h.html" title="Description de la structure du processeur et de sa mémoire.">machine.h</a>, <a class="el" href="machine_8c.html">machine.c</a>, machine.o) </dt>
 <dd><p class="startdd">Ce module décrit la structure générale de la machine préchargée avec un programme et des données. Ce module décrit et permet d'initialiser les mémoires d'instruction et de données et d'imprimer l'état courant de la machine (instruction, données, registres). </p>
 <p class="enddd"></p>
 </dd>
-<dt>Module <code>instruction</code> (<a class="el" href="instruction_8h.html" title="Description du jeu d&#39;instruction.">instruction.h</a>, instruction.c, instruction.o) </dt>
-<dd><p class="startdd">La structure (le format) des instructions de la machine est décrit dans ce module qui fournit aussi une fonction de "désassemblage" (<a class="el" href="instruction_8h.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction()</a>) c'est-à-dire d'impression d'une instruction sous une forme humainement sympathique. </p>
+<dt>Module <code>instruction</code> (<a class="el" href="instruction_8h.html" title="Description du jeu d&#39;instruction.">instruction.h</a>, <a class="el" href="instruction_8c.html">instruction.c</a>, instruction.o) </dt>
+<dd><p class="startdd">La structure (le format) des instructions de la machine est décrit dans ce module qui fournit aussi une fonction de "désassemblage" (<a class="el" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction()</a>) c'est-à-dire d'impression d'une instruction sous une forme humainement sympathique. </p>
 <p class="enddd"></p>
 </dd>
-<dt>Module <code>exec</code> (<a class="el" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>, exec.c, exec.o) </dt>
+<dt>Module <code>exec</code> (<a class="el" href="exec_8h.html" title="Exécution d&#39;une instruction.">exec.h</a>, <a class="el" href="exec_8c.html" title="Implémentation de exec.h. Execute une intstruction.">exec.c</a>, exec.o) </dt>
 <dd><p class="startdd">On trouve dans ce module le code permettant le décodage et l'exécution des instructions. </p>
 <p class="enddd"></p>
 </dd>
-<dt>Module <code>error</code> (<a class="el" href="error_8h.html" title="Messages et codes d&#39;erreurs.">error.h</a>, error.c, error.o) </dt>
+<dt>Module <code>error</code> (<a class="el" href="error_8h.html" title="Messages et codes d&#39;erreurs.">error.h</a>, <a class="el" href="error_8c.html">error.c</a>, error.o) </dt>
 <dd><p class="startdd">C'est le module d'affichage (en clair) des messages d'erreurs et autre <em>warnings</em>. </p>
 <p class="enddd"></p>
 </dd>
-<dt>Module <code>debug</code> (<a class="el" href="debug_8h.html" title="Fonctions de mise au point interactive.">debug.h</a>, debug.c, debug.o) </dt>
+<dt>Module <code>debug</code> (<a class="el" href="debug_8h.html" title="Fonctions de mise au point interactive.">debug.h</a>, <a class="el" href="debug_8c.html">debug.c</a>, debug.o) </dt>
 <dd><p class="startdd">Ce module permet l'exécution interactive en pas à pas. Sa fonction <a class="el" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante.">debug_ask()</a> est invoquée après l'exécution de chaque instruction de la machine et gère un dialogue permettant à l'utilisateur d'afficher l'état de la machine (contenu des mémoires et des registres) ou de passer à l'exécution de l'instruction suivante. </p>
 <p class="enddd"></p>
 </dd>
@@ -145,7 +145,7 @@ Organisation des fichiers source et objets</h2>
 <p class="enddd"></p>
 </dd>
 <dt>-b </dt>
-<dd><p class="startdd">Le dernier argument de la ligne de commande doit être le nom d'un fichier <em>binaire</em> contenant une représentation du programme et de ses données. Le format de ce fichier est décrit avec la fonction <a class="el" href="machine_8h.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire.">read_program()</a>. On en trouvera des exemples dans le repertoire Examples (fichiers <code></code>.bin).</p>
+<dd><p class="startdd">Le dernier argument de la ligne de commande doit être le nom d'un fichier <em>binaire</em> contenant une représentation du programme et de ses données. Le format de ce fichier est décrit avec la fonction <a class="el" href="machine_8c.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire.">read_program()</a>. On en trouvera des exemples dans le repertoire Examples (fichiers <code></code>.bin).</p>
 <p>Sans option <b>-b</b> la fonction <a class="el" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test.">main()</a> choisit et exécute un programme prédéfini (dans le fichier <code>prog.o</code> de la bibliothèque <code>libsimul.a</code>).</p>
 <p></p>
 <dl>
@@ -201,7 +201,7 @@ Intégration de votre propre code</h3>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="footer">Généré le Tue May 31 2011 11:25:42 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Tue Jun 7 2011 15:49:33 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
