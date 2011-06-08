@@ -8,19 +8,18 @@
 
 //! Dialogue de mise au point interactive pour l'instruction courante.
 
-void option_H() {
-
-	printf("\tAvailable commands:\n");
-	printf("\t\th\thelp\n");
-	printf("\t\tc\tcontinue (exit interactive debug mode)\n");
-	printf("\t\ts\t\tstep by step (next instruction)\n");
-	printf("\t\tRET\t\tstep by step (next instruction)\n");
-	printf("\t\tr\t\tprint registers\n");
-	printf("\t\td\t\tprint data memory\n");
-	printf("\tt\t\tprint text (program) memory\n");
-	printf("\t\tp\t\tprint text (program) memory\n");
-	printf("\t\tm\t\tprint registers and data memory\n");
-
+//! Affiche les commandes disponibles dans le debuggueur.
+void usage() {
+    printf("Available commands:\n");
+    printf("\th\thelp\n");
+    printf("\tc\tcontinue (exit interactive debug mode)\n");
+    printf("\ts\tstep by step (next instruction)\n");
+    printf("\tRET\tstep by step (next instruction)\n");
+    printf("\tr\tprint registers\n");
+    printf("\td\tprint data memory\n");
+    printf("\tt\tprint text (program) memory\n");
+    printf("\tp\tprint text (program) memory\n");
+    printf("\tm\tprint registers and data memory\n");
 }
 
 /*!
@@ -34,51 +33,63 @@ void option_H() {
  * \return vrai si l'on doit continuer en mode debug, faux sinon
  */
 bool debug_ask(Machine *pmach) {
+    int c;
 
-	char cmd='0';
-	char c;
-	
-	while (true) {
-		printf("DEBUG?");
-		scanf("%d", &cmd);
-		c = cmd;
-		while (c != '\n') {
-			c = getchar();
-		}
-			switch (cmd) {
-			case 'h':
-				option_H();
-				break;
-			case 'c':
-				return false;
-				break;
-			case 's':
-				return true;
-				break;
-			case '\r':
-				return true;
-				break;
-			case 'r':
-				print_cpu(pmach);
-				break;
-			case 'd':
-				print_data(pmach);
-				break;
-			case 't':
-				print_program(pmach);
-				break;
-			case 'p':
-				print_program(pmach);
-				break;
-			case 'm':
-				print_data(mach);
-				print_cpu(mach);
-				break;
-			default:
-				break;
-			}
-			
-	}
-	return false;
+    while(true) {
+        printf("DEBUG? ");
+        c = getchar();
+
+        if(c == '\n')
+        {
+            return true;
+        }
+
+        int t;
+
+        do
+        {
+            //vide le buffer d'stdin
+            //fflush(stdin) non portable (ne fonctionne pas avec gcc
+            //par exemple)
+            t = getchar();
+        } while(t != '\n' && t != EOF);
+
+        switch(c)
+        {
+            case 'h':
+                usage();
+                break;
+
+            case 'c':
+                return false;
+
+            case 's':
+                return true;
+
+            case 'r':
+                print_cpu(pmach);
+                break;
+
+            case 'd':
+                print_data(pmach);
+                break;
+
+            case 'p':
+            case 't':
+                print_program(pmach);
+                break;
+
+            case 'm':
+                print_cpu(pmach);
+                print_data(pmach);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    printf("\n");
+    return false;
 }
 
