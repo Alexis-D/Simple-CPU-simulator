@@ -219,7 +219,7 @@ bool sub_func(Machine *pmach, Instruction instr)
  */
 bool should_jump(Machine *pmach, Instruction instr)
 {
-    if(instr.instr_generic._regcond != NC && pmach->_cc == CC_U)
+    if((instr.instr_generic._regcond != NC && pmach->_cc == CC_U) || instr.instr_generic._regcond > LAST_CONDITION)
     {
         free_segments(pmach);
         error(ERR_CONDITION, pmach->_pc - 1);
@@ -382,7 +382,7 @@ bool decode_execute(Machine *pmach, Instruction instr)
         halt_func,
     };
 
-    if(instr.instr_generic._cop >= sizeof funcs / sizeof(bool (*)(Machine *, Instruction)))
+    if(instr.instr_generic._cop > LAST_COP)
     {
         free_segments(pmach);
         error(ERR_ILLEGAL, pmach->_pc - 1);

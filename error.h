@@ -38,12 +38,11 @@ static const unsigned LAST_ERROR = ERR_SEGSTACK;
 typedef enum 
 {
     WARN_HALT,		  //!< Fin normale du programme (sur HALT)
-    WARN_UNKOWN,      //!< Problème inconnu, mais pas erreur
     WARN_PUSH_STATIC, //!< SP pointe sur des données statiques
 } Warning;
 
 //! Dernière valeur possible du code d'avertissement
-static const unsigned LAST_WARNING = WARN_HALT;
+static const unsigned LAST_WARNING = WARN_PUSH_STATIC;
 
 //! Affichage d'une erreur et fin du simulateur
 /*!
