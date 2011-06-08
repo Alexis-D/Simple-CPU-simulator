@@ -247,7 +247,7 @@ bool should_jump(Machine *pmach, Instruction instr)
 
         case LE:
             return pmach->_cc == CC_N || pmach->_cc == CC_Z;
-        
+
         default:
             free_segments(pmach);
             error(ERR_CONDITION, pmach->_pc - 1);

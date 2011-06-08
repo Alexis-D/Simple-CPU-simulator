@@ -32,14 +32,14 @@ static void usage()
 {
     printf("Usage: test_simul [options] [binfile]\n");
     printf("where options are:\n"
-           "\t-d\tDebug mode (interactive execution)\n"
-           "\t-b\tA binary file is provided\n"
-           "\t-l\tDo not execute; just display the listing\n"
-           "\t-h\tprint this help message\n"
-           "If -b is given, the next argument must be a file name containing\n"
-           "a valid program in binary format. Otherwise an internally defined\n"
-           "example program is used; the program is also dumped in binary into\n"
-           "the file dump.bin\n");
+            "\t-d\tDebug mode (interactive execution)\n"
+            "\t-b\tA binary file is provided\n"
+            "\t-l\tDo not execute; just display the listing\n"
+            "\t-h\tprint this help message\n"
+            "If -b is given, the next argument must be a file name containing\n"
+            "a valid program in binary format. Otherwise an internally defined\n"
+            "example program is used; the program is also dumped in binary into\n"
+            "the file dump.bin\n");
 }
 
 //! Programme de test
@@ -69,22 +69,22 @@ int main(int argc, char *argv[])
             if (argv[iarg][0] == '-')
                 switch (argv[iarg][1])
                 {
-                case 'd':
-                    debug = true;
-                    break;
-                case 'b': 
-                    binfile = true;
-                    break;
-                 case 'l': 
-                    no_exec = true;
-                    break;
-                  case 'h':
-                    usage();
-                    exit(EXIT_SUCCESS);
-                default:
-                    fprintf(stderr, "Unknown option: %s\n", argv[iarg]);
-                    usage();
-                    exit(EXIT_FAILURE);
+                    case 'd':
+                        debug = true;
+                        break;
+                    case 'b': 
+                        binfile = true;
+                        break;
+                    case 'l': 
+                        no_exec = true;
+                        break;
+                    case 'h':
+                        usage();
+                        exit(EXIT_SUCCESS);
+                    default:
+                        fprintf(stderr, "Unknown option: %s\n", argv[iarg]);
+                        usage();
+                        exit(EXIT_FAILURE);
                 }
             else if (binfile)
                 programfile = argv[iarg];

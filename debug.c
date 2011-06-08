@@ -1,25 +1,21 @@
 #include "debug.h"
-#include "instruction.h"
-#include "machine.h"
 #include "exec.h"
-#include <stdbool.h>
-#include <stdint.h>
 #include <stdio.h>
 
 //! Dialogue de mise au point interactive pour l'instruction courante.
 
 //! Affiche les commandes disponibles dans le debuggueur.
 void usage() {
-    printf("Available commands:\n");
-    printf("\th\thelp\n");
-    printf("\tc\tcontinue (exit interactive debug mode)\n");
-    printf("\ts\tstep by step (next instruction)\n");
-    printf("\tRET\tstep by step (next instruction)\n");
-    printf("\tr\tprint registers\n");
-    printf("\td\tprint data memory\n");
-    printf("\tt\tprint text (program) memory\n");
-    printf("\tp\tprint text (program) memory\n");
-    printf("\tm\tprint registers and data memory\n");
+    printf("Available commands:\n"
+           "\th\thelp\n"
+           "\tc\tcontinue (exit interactive debug mode)\n"
+           "\ts\tstep by step (next instruction)\n"
+           "\tRET\tstep by step (next instruction)\n"
+           "\tr\tprint registers\n"
+           "\td\tprint data memory\n"
+           "\tt\tprint text (program) memory\n"
+           "\tp\tprint text (program) memory\n"
+           "\tm\tprint registers and data memory\n");
 }
 
 /*!
