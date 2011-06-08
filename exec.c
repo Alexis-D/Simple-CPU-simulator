@@ -242,10 +242,10 @@ bool call_func(Machine *pmach, Instruction instr)
 
     if(should_jump(pmach, instr))
     {
-        --pmach->_sp;
         error_if_segstack(pmach);
         pmach->_data[pmach->_sp] = pmach->_pc;
         pmach->_pc = address(pmach, instr);
+        --pmach->_sp;
     }
 
     return true;
