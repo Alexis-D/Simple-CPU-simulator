@@ -168,7 +168,7 @@ Variables</h2></td></tr>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00079">Machine::_dataend</a>, <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="instruction_8h_source.html#l00055">Instruction::_raw</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, et <a class="el" href="machine_8h_source.html#l00074">Machine::_textsize</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00152">dump_memory()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00150">dump_memory()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     FILE *file;
     <span class="comment">//On ouvre le fichier dump.prog avec les droits en lecture et en écriture.</span>
@@ -270,7 +270,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00152">152</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00150">150</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00079">Machine::_dataend</a>, <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>, <a class="el" href="instruction_8h_source.html#l00055">Instruction::_raw</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="machine_8h_source.html#l00074">Machine::_textsize</a>, et <a class="el" href="machine_8c_source.html#l00020">create_binary_file()</a>.</p>
 
@@ -475,7 +475,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00238">238</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00236">236</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00083">Machine::_cc</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00084">Machine::_registers</a>, <a class="el" href="machine_8c_source.html#l00006">condition_code_names</a>, et <a class="el" href="machine_8h_source.html#l00014">NREGISTERS</a>.</p>
 
@@ -535,7 +535,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00220">220</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00218">218</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00076">Machine::_data</a>, <a class="el" href="machine_8h_source.html#l00079">Machine::_dataend</a>, et <a class="el" href="machine_8h_source.html#l00077">Machine::_datasize</a>.</p>
 
@@ -594,7 +594,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00207">207</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00205">205</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
 <p>Références <a class="el" href="instruction_8h_source.html#l00055">Instruction::_raw</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="machine_8h_source.html#l00074">Machine::_textsize</a>, et <a class="el" href="instruction_8c_source.html#l00033">print_instruction()</a>.</p>
 
@@ -706,17 +706,15 @@ Variables</h2></td></tr>
     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> stack_size = sizes[1] - sizes[2]; <span class="comment">//Place occupée par la pile</span>
     <span class="comment">//On teste si on a assez de place pour la pile</span>
     <span class="keywordflow">if</span>(stack_size &lt; MINSTACKSIZE)
-    {
         <span class="comment">//Si c&#39;est inférieur, on modifie la taille de manière à ce</span>
         <span class="comment">//que la taille pile d&#39;execution soit de la taille minimale imposée</span>
         stack_size = MINSTACKSIZE;
-    }
 
     <span class="comment">//Allocation de l&#39;espace nécessaire pour stocker les instructions</span>
     <span class="comment">//du programme à simuler</span>
     <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a> *<a class="code" href="prog__simple-bin_8c.html#a53ae7c86b11d9a664628491ba41ca09d" title="Segment de texte.">text</a> = malloc(sizes[0] * <span class="keyword">sizeof</span>(<a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>));
     <span class="comment">//Allocation de l&#39;espace nécessaire pour stocker les données du programme</span>
-    <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> *<a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a> = malloc((sizes[2] + stack_size) * <span class="keyword">sizeof</span>(<a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a>));
+    <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> *<a class="code" href="prog__simple-bin_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699" title="Premier exemple de segment de données initial.">data</a> = calloc(sizes[2] + stack_size, <span class="keyword">sizeof</span>(<a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a>));
     <span class="comment">//On extrait du fichier binaire les instructions du programme</span>
     <span class="comment">//et on les place dans le segment de texte</span>
     fread(text, <span class="keyword">sizeof</span>(<a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>), sizes[0], file);
@@ -790,7 +788,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00257">257</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00255">255</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
 <p>Références <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="machine_8h_source.html#l00073">Machine::_text</a>, <a class="el" href="machine_8h_source.html#l00074">Machine::_textsize</a>, <a class="el" href="debug_8c_source.html#l00031">debug_ask()</a>, <a class="el" href="exec_8c_source.html#l00328">decode_execute()</a>, <a class="el" href="error_8h_source.html#l00025">ERR_SEGTEXT</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, et <a class="el" href="exec_8c_source.html#l00352">trace()</a>.</p>
 
@@ -855,7 +853,7 @@ Variables</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="machine_8c_source.html#l00006">6</a> du fichier <a class="el" href="machine_8c_source.html">machine.c</a>.</p>
 
-<p>Référencé par <a class="el" href="machine_8c_source.html#l00238">print_cpu()</a>.</p>
+<p>Référencé par <a class="el" href="machine_8c_source.html#l00236">print_cpu()</a>.</p>
 
 </div>
 </div>
@@ -864,7 +862,7 @@ Variables</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="machine_8c.html">machine.c</a>      </li>
-      <li class="footer">Généré le Wed Jun 8 2011 22:39:01 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Thu Jun 9 2011 14:03:20 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -151,7 +151,7 @@ function toggleVisibility(linkObj) {
 <a name="l00052"></a>00052         printf(<span class="stringliteral">&quot;%s, &quot;</span>, <a class="code" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0" title="Forme imprimable des conditions.">condition_names</a>[instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>]);
 <a name="l00053"></a>00053     }
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(op != <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493" title="Empilement sur la pile d&#39;exécution.">PUSH</a>)
+<a name="l00055"></a>00055     <span class="keywordflow">else</span> <span class="keywordflow">if</span>(op != <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493" title="Empilement sur la pile d&#39;exécution.">PUSH</a> &amp;&amp; op != <a class="code" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa" title="Dépilement de la pile d&#39;exécution.">POP</a>)
 <a name="l00056"></a>00056         printf(<span class="stringliteral">&quot;R%02u, &quot;</span>, instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a8f5f38c91d2c3443dcd962101bfe19e2" title="Numéro de registre ou condition.">_regcond</a>);
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058     <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a350ef9c256c24b90297798b15164db13" title="Adressage immédiat ?">_immediate</a>)
@@ -170,7 +170,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="instruction_8c.html">instruction.c</a>      </li>
-      <li class="footer">Généré le Wed Jun 8 2011 22:39:01 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Thu Jun 9 2011 14:03:19 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
