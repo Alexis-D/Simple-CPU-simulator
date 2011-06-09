@@ -52,7 +52,7 @@ void print_instruction(Instruction instr, unsigned addr)
         printf("%s, ", condition_names[instr.instr_generic._regcond]);
     }
 
-    else if(op != PUSH)
+    else if(op != PUSH && op != POP)
         printf("R%02u, ", instr.instr_generic._regcond);
 
     if(instr.instr_generic._immediate)
