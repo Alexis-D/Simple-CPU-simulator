@@ -124,17 +124,15 @@ void read_program(Machine *mach, const char *programfile)
     unsigned int stack_size = sizes[1] - sizes[2]; //Place occupée par la pile
     //On teste si on a assez de place pour la pile
     if(stack_size < MINSTACKSIZE)
-    {
         //Si c'est inférieur, on modifie la taille de manière à ce
         //que la taille pile d'execution soit de la taille minimale imposée
         stack_size = MINSTACKSIZE;
-    }
 
     //Allocation de l'espace nécessaire pour stocker les instructions
     //du programme à simuler
     Instruction *text = malloc(sizes[0] * sizeof(Instruction));
     //Allocation de l'espace nécessaire pour stocker les données du programme
-    Word *data = malloc((sizes[2] + stack_size) * sizeof(Word));
+    Word *data = calloc(sizes[2] + stack_size, sizeof(Word));
     //On extrait du fichier binaire les instructions du programme
     //et on les place dans le segment de texte
     fread(text, sizeof(Instruction), sizes[0], file);
