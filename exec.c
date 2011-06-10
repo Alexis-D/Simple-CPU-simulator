@@ -13,7 +13,7 @@
  * \param pmach la machine/programme en cours d'exécution
  * \param res le dernier résultat
  */
-void set_cc(Machine *pmach, int res)
+static void set_cc(Machine *pmach, int res)
 {
     if(res < 0)
         pmach->_cc = CC_N;
@@ -31,7 +31,7 @@ void set_cc(Machine *pmach, int res)
  * \param instr l'instruction à exécuter
  * \return l'adresse absolu en mode absolu, l'adresse indexée sinon
  */
-unsigned address(Machine *pmach, Instruction instr)
+static unsigned address(Machine *pmach, Instruction instr)
 {
     return instr.instr_generic._indexed ?
         pmach->_registers[instr.instr_indexed._rindex] +
@@ -45,7 +45,7 @@ unsigned address(Machine *pmach, Instruction instr)
  * \param pmach la machine/programme en cours d'exécution
  * \param instr l'instruction à exécuter
  */
-void error_if_immediate(Machine *pmach, Instruction instr)
+static void error_if_immediate(Machine *pmach, Instruction instr)
 {
     if(instr.instr_generic._immediate)
         error(ERR_IMMEDIATE, pmach->_pc - 1);
@@ -59,7 +59,7 @@ void error_if_immediate(Machine *pmach, Instruction instr)
  * \param pmach la machine/programme en cours d'exécution
  * \param addr l'adresse de la donnée à laquelle on veut accèder
  */
-void error_if_segdata(Machine *pmach, unsigned addr)
+static void error_if_segdata(Machine *pmach, unsigned addr)
 {
     if(addr >= pmach->_datasize)
         error(ERR_SEGDATA, pmach->_pc - 1);
@@ -69,7 +69,7 @@ void error_if_segdata(Machine *pmach, unsigned addr)
 /*!
  * \param pmach la machine/programme en cours d'exécution
  */
-void error_if_segstack(Machine *pmach)
+static void error_if_segstack(Machine *pmach)
 {
     if(pmach->_sp < 0 || pmach->_sp >= pmach->_datasize)
         error(ERR_SEGSTACK, pmach->_pc - 1);
@@ -81,7 +81,7 @@ void error_if_segstack(Machine *pmach)
  * \param instr l'instruction à exécuter
  * \return cette fonction ne retourne jamais, puisqu'error non plus
  */
-bool illop_func(Machine *pmach, Instruction instr)
+static bool illop_func(Machine *pmach, Instruction instr)
 {
     error(ERR_ILLEGAL, pmach->_pc - 1);
 }
@@ -92,7 +92,7 @@ bool illop_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true
  */
-bool nop_func(Machine *pmach, Instruction instr)
+static bool nop_func(Machine *pmach, Instruction instr)
 {
     return true;
 }
@@ -103,7 +103,7 @@ bool nop_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool load_func(Machine *pmach, Instruction instr)
+static bool load_func(Machine *pmach, Instruction instr)
 {
     unsigned r = instr.instr_generic._regcond;
 
@@ -127,7 +127,7 @@ bool load_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool store_func(Machine *pmach, Instruction instr)
+static bool store_func(Machine *pmach, Instruction instr)
 {
     error_if_immediate(pmach, instr);
 
@@ -146,7 +146,7 @@ bool store_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool add_sub_func(Machine *pmach, Instruction instr)
+static bool add_sub_func(Machine *pmach, Instruction instr)
 {
     unsigned r = instr.instr_generic._regcond;
 
@@ -179,7 +179,7 @@ bool add_sub_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si on doit sauter, false sinon, ne retourne pas si erreur
  */
-bool should_jump(Machine *pmach, Instruction instr)
+static bool should_jump(Machine *pmach, Instruction instr)
 {
     if((instr.instr_generic._regcond != NC && pmach->_cc == CC_U) ||
             instr.instr_generic._regcond > LAST_CONDITION)
@@ -219,7 +219,7 @@ bool should_jump(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool branch_func(Machine *pmach, Instruction instr)
+static bool branch_func(Machine *pmach, Instruction instr)
 {
 
     error_if_immediate(pmach, instr);
@@ -236,7 +236,7 @@ bool branch_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool call_func(Machine *pmach, Instruction instr)
+static bool call_func(Machine *pmach, Instruction instr)
 {
     error_if_immediate(pmach, instr);
 
@@ -257,7 +257,7 @@ bool call_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool ret_func(Machine *pmach, Instruction instr)
+static bool ret_func(Machine *pmach, Instruction instr)
 {
     ++pmach->_sp;
     error_if_segstack(pmach);
@@ -271,7 +271,7 @@ bool ret_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool push_func(Machine *pmach, Instruction instr)
+static bool push_func(Machine *pmach, Instruction instr)
 {
     error_if_segstack(pmach);
 
@@ -298,7 +298,7 @@ bool push_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return true si aucune erreur, pas de return sinon
  */
-bool pop_func(Machine *pmach, Instruction instr)
+static bool pop_func(Machine *pmach, Instruction instr)
 {
     ++pmach->_sp;
     error_if_immediate(pmach, instr);
@@ -319,7 +319,7 @@ bool pop_func(Machine *pmach, Instruction instr)
  * \param instr l'instruction à exécuter
  * \return false
  */
-bool halt_func(Machine *pmach, Instruction instr)
+static bool halt_func(Machine *pmach, Instruction instr)
 {
     warning(WARN_HALT, pmach->_pc - 1);
     return false;

@@ -5,7 +5,7 @@
 //! Dialogue de mise au point interactive pour l'instruction courante.
 
 //! Affiche les commandes disponibles dans le debuggueur.
-void usage() {
+static void usage() {
     printf("Available commands:\n"
            "\th\thelp\n"
            "\tc\tcontinue (exit interactive debug mode)\n"
