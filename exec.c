@@ -327,7 +327,7 @@ static bool halt_func(Machine *pmach, Instruction instr)
 
 bool decode_execute(Machine *pmach, Instruction instr)
 {
-    bool (*funcs[])(Machine *, Instruction) =
+    static bool (*funcs[])(Machine *, Instruction) =
     {
         illop_func,
         nop_func,
