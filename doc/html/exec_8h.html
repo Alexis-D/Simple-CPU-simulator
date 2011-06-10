@@ -173,24 +173,24 @@ Fonctions</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="exec_8c_source.html#l00328">328</a> du fichier <a class="el" href="exec_8c_source.html">exec.c</a>.</p>
 
-<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="exec_8c_source.html#l00149">add_sub_func()</a>, <a class="el" href="exec_8c_source.html#l00222">branch_func()</a>, <a class="el" href="exec_8c_source.html#l00239">call_func()</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, <a class="el" href="exec_8c_source.html#l00322">halt_func()</a>, <a class="el" href="exec_8c_source.html#l00084">illop_func()</a>, <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>, <a class="el" href="exec_8c_source.html#l00106">load_func()</a>, <a class="el" href="exec_8c_source.html#l00095">nop_func()</a>, <a class="el" href="exec_8c_source.html#l00301">pop_func()</a>, <a class="el" href="exec_8c_source.html#l00274">push_func()</a>, <a class="el" href="exec_8c_source.html#l00260">ret_func()</a>, et <a class="el" href="exec_8c_source.html#l00130">store_func()</a>.</p>
+<p>Références <a class="el" href="instruction_8h_source.html#l00060">Instruction::_cop</a>, <a class="el" href="machine_8h_source.html#l00082">Machine::_pc</a>, <a class="el" href="error_8h_source.html#l00022">ERR_ILLEGAL</a>, <a class="el" href="error_8c_source.html#l00023">error()</a>, et <a class="el" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">Instruction::instr_generic</a>.</p>
 
 <p>Référencé par <a class="el" href="machine_8c_source.html#l00255">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     bool (*funcs[])(<a class="code" href="structMachine.html" title="Structure générale de la machine.">Machine</a> *, <a class="code" href="unionInstruction.html" title="Structure d&#39;une instruction.">Instruction</a>) =
     {
-        <a class="code" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine.">illop_func</a>,
-        <a class="code" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine.">nop_func</a>,
-        <a class="code" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine.">load_func</a>,
-        <a class="code" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine.">store_func</a>,
-        <a class="code" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction.">add_sub_func</a>,
-        <a class="code" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction.">add_sub_func</a>,
-        <a class="code" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine.">branch_func</a>,
-        <a class="code" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine.">call_func</a>,
-        <a class="code" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine.">ret_func</a>,
-        <a class="code" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine.">push_func</a>,
-        <a class="code" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine.">pop_func</a>,
-        <a class="code" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine.">halt_func</a>,
+        illop_func,
+        nop_func,
+        load_func,
+        store_func,
+        add_sub_func,
+        add_sub_func,
+        branch_func,
+        call_func,
+        ret_func,
+        push_func,
+        pop_func,
+        halt_func,
     };
 
     <span class="keywordflow">if</span>(instr.<a class="code" href="unionInstruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a>.<a class="code" href="unionInstruction.html#a5682ffc6f762bda7a50e41ea9042cb39" title="Code opération.">_cop</a> &gt; LAST_COP)
@@ -206,7 +206,7 @@ Fonctions</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="exec_8h_a41471ced34d27777447c2609173af7de_cgraph.png" border="0" usemap="#exec_8h_a41471ced34d27777447c2609173af7de_cgraph" alt=""/></div>
 <map name="exec_8h_a41471ced34d27777447c2609173af7de_cgraph" id="exec_8h_a41471ced34d27777447c2609173af7de_cgraph">
-<area shape="rect" id="node3" href="exec_8c.html#a35cc1455ae45ea7875b5356a2c91a951" title="Effectue une addition/soustraction." alt="" coords="171,56,274,83"/><area shape="rect" id="node9" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="501,284,549,311"/><area shape="rect" id="node13" href="exec_8c.html#a96f507eb9ac08c4db64a7b70162cd20c" title="Effectue un BRANCH sur la machine." alt="" coords="176,208,269,235"/><area shape="rect" id="node22" href="exec_8c.html#ae1df1803eeaf64e266b0342bccb400f2" title="Effectue un CALL sur la machine." alt="" coords="185,309,260,336"/><area shape="rect" id="node31" href="exec_8c.html#a0a96250bfd1ab2d6bda66ddfe7f2121f" title="Effectue un HALT sur la machine." alt="" coords="185,461,260,488"/><area shape="rect" id="node35" href="exec_8c.html#ada9d7b0a091f09dd8ca9b282a62bac09" title="Effectue un ILLOP sur la machine." alt="" coords="349,563,427,589"/><area shape="rect" id="node38" href="exec_8c.html#a48f9af339e66e611892f50d9978ce42f" title="Effectue un LOAD sur la machine." alt="" coords="183,5,262,32"/><area shape="rect" id="node43" href="exec_8c.html#a1353971eaa8e2c9a550937a634f89866" title="Effectue un NOP sur la machine." alt="" coords="185,360,260,387"/><area shape="rect" id="node45" href="exec_8c.html#a65427fd4ba17a080334176670cc7c5e3" title="Effectue un POP sur la machine." alt="" coords="185,157,260,184"/><area shape="rect" id="node51" href="exec_8c.html#a38563637a890eec98396923e6dd82a7b" title="Effectue un PUSH sur la machine." alt="" coords="181,259,264,285"/><area shape="rect" id="node57" href="exec_8c.html#a2d7e5d63e6ec6598b297a7f83e4d32d8" title="Effectue un RET sur la machine." alt="" coords="188,411,257,437"/><area shape="rect" id="node60" href="exec_8c.html#aa21e97e5f575411e85827012dc7f381c" title="Effectue un STORE sur la machine." alt="" coords="181,107,264,133"/><area shape="rect" id="node5" href="exec_8c.html#a5751857142f6901d08db5916ad3e11f3" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="354,157,422,184"/><area shape="rect" id="node7" href="exec_8c.html#af70d348f0f265bc6fdea42eb51a68506" title="error_if_segdata" alt="" coords="331,107,445,133"/><area shape="rect" id="node11" href="exec_8c.html#a2f6ea9301a2a863dc24613a987951412" title="Mets à jour CC." alt="" coords="357,31,419,57"/><area shape="rect" id="node16" href="exec_8c.html#a4ed705961a2433010bce56e832bfd940" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="323,208,453,235"/><area shape="rect" id="node19" href="exec_8c.html#ad3cf32b9917bf794da164cfd40b5063e" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="341,259,435,285"/><area shape="rect" id="node26" href="exec_8c.html#a1f9b001b683d92d9f9c832790d2215f1" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="327,309,449,336"/><area shape="rect" id="node33" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="355,411,421,437"/></map>
+<area shape="rect" id="node3" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="171,5,219,32"/></map>
 </div>
 </p>
 
@@ -312,7 +312,7 @@ Fonctions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="exec_8h.html">exec.h</a>      </li>
-      <li class="footer">Généré le Thu Jun 9 2011 14:03:20 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Fri Jun 10 2011 15:26:47 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

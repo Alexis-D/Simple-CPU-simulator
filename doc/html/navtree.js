@@ -30,8 +30,8 @@ var NAVTREE =
       [ "tests/store_imm.c", "store__imm_8c.html", null ]
     ] ],
     [ "Répertoires", "dirs.html", [
-      [ "Examples", "dir_192c559c90b1f1569493bcd2f5b2db7f.html", null ],
-      [ "tests", "dir_3aa3f431bce0b69ec875fcf7c15b43da.html", null ]
+      [ "Examples", "dir_24ed02cf54172d105457c197b09c4803.html", null ],
+      [ "tests", "dir_b5c586ff8f9e11c3bde5e0c92634613c.html", null ]
     ] ],
     [ "Portée globale", "globals.html", null ]
   ] ]

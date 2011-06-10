@@ -116,8 +116,6 @@ function toggleVisibility(linkObj) {
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialogue de mise au point interactive pour l'instruction courante.  <a href="#a2ef30c42cbc289d899a8be5d2d8f77d0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab">debug_ask</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialogue de mise au point interactive pour l'instruction courante.  <a href="#a3a88fdc680b7a1ae8c4c7c8ddee730ab"></a><br/></td></tr>
 </table>
@@ -149,7 +147,7 @@ Fonctions</h2></td></tr>
 
 <p>Définition à la ligne <a class="el" href="debug_8c_source.html#l00031">31</a> du fichier <a class="el" href="debug_8c_source.html">debug.c</a>.</p>
 
-<p>Références <a class="el" href="machine_8c_source.html#l00236">print_cpu()</a>, <a class="el" href="machine_8c_source.html#l00218">print_data()</a>, <a class="el" href="machine_8c_source.html#l00205">print_program()</a>, et <a class="el" href="debug_8c_source.html#l00008">usage()</a>.</p>
+<p>Références <a class="el" href="machine_8c_source.html#l00236">print_cpu()</a>, <a class="el" href="machine_8c_source.html#l00218">print_data()</a>, et <a class="el" href="machine_8c_source.html#l00205">print_program()</a>.</p>
 
 <p>Référencé par <a class="el" href="machine_8c_source.html#l00255">simul()</a>.</p>
 <div class="fragment"><pre class="fragment">                               {
@@ -176,7 +174,7 @@ Fonctions</h2></td></tr>
         <span class="keywordflow">switch</span>(c)
         {
             <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:
-                <a class="code" href="debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante.">usage</a>();
+                usage();
                 <span class="keywordflow">break</span>;
 
             <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:
@@ -219,7 +217,7 @@ Fonctions</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab_cgraph.png" border="0" usemap="#debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab_cgraph" alt=""/></div>
 <map name="debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab_cgraph" id="debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab_cgraph">
-<area shape="rect" id="node3" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU." alt="" coords="152,5,227,32"/><area shape="rect" id="node5" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme." alt="" coords="150,56,229,83"/><area shape="rect" id="node7" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="139,107,240,133"/><area shape="rect" id="node13" href="debug_8c.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="161,157,218,184"/><area shape="rect" id="node9" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="288,107,403,133"/><area shape="rect" id="node11" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="451,107,499,133"/></map>
+<area shape="rect" id="node3" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU." alt="" coords="152,5,227,32"/><area shape="rect" id="node5" href="machine_8c.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme." alt="" coords="150,56,229,83"/><area shape="rect" id="node7" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme." alt="" coords="139,107,240,133"/><area shape="rect" id="node9" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)" alt="" coords="288,107,403,133"/><area shape="rect" id="node11" href="error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="451,107,499,133"/></map>
 </div>
 </p>
 
@@ -236,58 +234,12 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2ef30c42cbc289d899a8be5d2d8f77d0"></a><!-- doxytag: member="debug.c::usage" ref="a2ef30c42cbc289d899a8be5d2d8f77d0" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void usage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Dialogue de mise au point interactive pour l'instruction courante. </p>
-<p>Affiche les commandes disponibles dans le debuggueur. </p>
-
-<p>Définition à la ligne <a class="el" href="debug_8c_source.html#l00008">8</a> du fichier <a class="el" href="debug_8c_source.html">debug.c</a>.</p>
-
-<p>Référencé par <a class="el" href="debug_8c_source.html#l00031">debug_ask()</a>, et <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
-<div class="fragment"><pre class="fragment">             {
-    printf(<span class="stringliteral">&quot;Available commands:\n&quot;</span>
-           <span class="stringliteral">&quot;\th\thelp\n&quot;</span>
-           <span class="stringliteral">&quot;\tc\tcontinue (exit interactive debug mode)\n&quot;</span>
-           <span class="stringliteral">&quot;\ts\tstep by step (next instruction)\n&quot;</span>
-           <span class="stringliteral">&quot;\tRET\tstep by step (next instruction)\n&quot;</span>
-           <span class="stringliteral">&quot;\tr\tprint registers\n&quot;</span>
-           <span class="stringliteral">&quot;\td\tprint data memory\n&quot;</span>
-           <span class="stringliteral">&quot;\tt\tprint text (program) memory\n&quot;</span>
-           <span class="stringliteral">&quot;\tp\tprint text (program) memory\n&quot;</span>
-           <span class="stringliteral">&quot;\tm\tprint registers and data memory\n&quot;</span>);
-}
-</pre></div>
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png"/> Voici le graphe d'appel pour cette fonction :</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="debug_8c_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph.png" border="0" usemap="#debug_8c_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph" alt=""/></div>
-<map name="debug_8c_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph" id="debug_8c_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph">
-<area shape="rect" id="node3" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab" title="Dialogue de mise au point interactive pour l&#39;instruction courante." alt="" coords="112,5,197,32"/><area shape="rect" id="node7" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test." alt="" coords="347,31,397,57"/><area shape="rect" id="node5" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation." alt="" coords="245,5,299,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="debug_8c.html">debug.c</a>      </li>
-      <li class="footer">Généré le Thu Jun 9 2011 14:03:20 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Fri Jun 10 2011 15:26:47 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
