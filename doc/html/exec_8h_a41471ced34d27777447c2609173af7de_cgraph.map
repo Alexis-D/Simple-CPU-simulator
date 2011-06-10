@@ -1,3 +1,21 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="171,5,219,32"/>
+<area shape="rect" id="node3" href="$exec_8c.html#a7f26495b2639078f4604d7917d172a45" title="Effectue une addition/soustraction." alt="" coords="171,56,274,83"/>
+<area shape="rect" id="node9" href="$error_8c.html#a531bb138b38aef758b45a442aa53938a" title="Affichage d&#39;une erreur et fin du simulateur." alt="" coords="501,284,549,311"/>
+<area shape="rect" id="node13" href="$exec_8c.html#aaa7d422a6a916a1e46da2b56d9819f5b" title="Effectue un BRANCH sur la machine." alt="" coords="176,208,269,235"/>
+<area shape="rect" id="node22" href="$exec_8c.html#ac2ed3c18093d514203bcef4317e0dda4" title="Effectue un CALL sur la machine." alt="" coords="185,309,260,336"/>
+<area shape="rect" id="node31" href="$exec_8c.html#a39b26e2e3a7caac522a97c14b110ed68" title="Effectue un HALT sur la machine." alt="" coords="185,461,260,488"/>
+<area shape="rect" id="node35" href="$exec_8c.html#a5fe3edd0c21d18dca4e3dde065788c24" title="Effectue un ILLOP sur la machine." alt="" coords="349,563,427,589"/>
+<area shape="rect" id="node38" href="$exec_8c.html#ad69a9f1ad8de0b45fc03993e55899273" title="Effectue un LOAD sur la machine." alt="" coords="183,5,262,32"/>
+<area shape="rect" id="node43" href="$exec_8c.html#a23ecf89921bdbb687478f95b09b7fdf9" title="Effectue un NOP sur la machine." alt="" coords="185,360,260,387"/>
+<area shape="rect" id="node45" href="$exec_8c.html#afec4311079bd9c7ac0a24bbb70ed9b81" title="Effectue un POP sur la machine." alt="" coords="185,157,260,184"/>
+<area shape="rect" id="node51" href="$exec_8c.html#a1bac06c734031847e5433b34e2359a3b" title="Effectue un PUSH sur la machine." alt="" coords="181,259,264,285"/>
+<area shape="rect" id="node57" href="$exec_8c.html#ab82450db9b7f3bc4a4f9a7e0c36a6808" title="Effectue un RET sur la machine." alt="" coords="188,411,257,437"/>
+<area shape="rect" id="node60" href="$exec_8c.html#a00f83f34255b99333aa8ea060eebf112" title="Effectue un STORE sur la machine." alt="" coords="181,107,264,133"/>
+<area shape="rect" id="node5" href="$exec_8c.html#ada0544a0457c78014e1a945aa4addf8e" title="Calcule l&#39;adresse &quot;réelle&quot; d&#39;une instruction en mode absolu/indexé" alt="" coords="354,157,422,184"/>
+<area shape="rect" id="node7" href="$exec_8c.html#a4958fdd72610d4b3d41fa85c4ac8a820" title="error_if_segdata" alt="" coords="331,107,445,133"/>
+<area shape="rect" id="node11" href="$exec_8c.html#a495b83fe6a66c72baf6cbab62215da0c" title="Mets à jour CC." alt="" coords="357,31,419,57"/>
+<area shape="rect" id="node16" href="$exec_8c.html#a7fa1d0813678f503ffa0942e63f9dc5b" title="Appelle error si l&#39;instruction est en mode immédiat." alt="" coords="323,208,453,235"/>
+<area shape="rect" id="node19" href="$exec_8c.html#a5698a1c265d4ccf2419b8b2343f2a5bb" title="Retourne vrai, si l&#39;on doit sauter false sinon." alt="" coords="341,259,435,285"/>
+<area shape="rect" id="node26" href="$exec_8c.html#ad0726c62e9cf789fdb68f32e72b3ad76" title="Appelle error si l&#39;on veut sortir de la pile." alt="" coords="327,309,449,336"/>
+<area shape="rect" id="node33" href="$error_8c.html#aec2872edfc57849ea2557178dc2b2673" title="Affichage d&#39;un avertissement." alt="" coords="355,411,421,437"/>
 </map>

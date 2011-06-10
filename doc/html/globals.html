@@ -107,6 +107,7 @@ function toggleVisibility(linkObj) {
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
       <li><a href="#index_w"><span>w</span></a></li>
     </ul>
   </div>
@@ -138,6 +139,12 @@ function toggleVisibility(linkObj) {
 <li>ADD
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909">instruction.h</a>
 </li>
+<li>add_sub_func()
+: <a class="el" href="exec_8c.html#a7f26495b2639078f4604d7917d172a45">exec.c</a>
+</li>
+<li>address()
+: <a class="el" href="exec_8c.html#ada0544a0457c78014e1a945aa4addf8e">exec.c</a>
+</li>
 </ul>
 
 
@@ -145,12 +152,18 @@ function toggleVisibility(linkObj) {
 <li>BRANCH
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e">instruction.h</a>
 </li>
+<li>branch_func()
+: <a class="el" href="exec_8c.html#aaa7d422a6a916a1e46da2b56d9819f5b">exec.c</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>CALL
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8">instruction.h</a>
+</li>
+<li>call_func()
+: <a class="el" href="exec_8c.html#ac2ed3c18093d514203bcef4317e0dda4">exec.c</a>
 </li>
 <li>CC_N
 : <a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b">machine.h</a>
@@ -178,8 +191,8 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="machine_8h.html#a555193bb718643e0c7962459993bce5e">machine.h</a>
 </li>
 <li>condition_names
-: <a class="el" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0">instruction.c</a>
-, <a class="el" href="instruction_8h.html#a4cf35570c7b75e596c642031544688e0">instruction.h</a>
+: <a class="el" href="instruction_8h.html#a4cf35570c7b75e596c642031544688e0">instruction.h</a>
+, <a class="el" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0">instruction.c</a>
 </li>
 <li>cop_names
 : <a class="el" href="instruction_8h.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3">instruction.h</a>
@@ -267,17 +280,26 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1">error.h</a>
 </li>
 <li>error()
-: <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error.h</a>
+: <a class="el" href="error_8c.html#a531bb138b38aef758b45a442aa53938a">error.c</a>
 </li>
 <li>Error
 : <a class="el" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">error.h</a>
 </li>
 <li>error()
-: <a class="el" href="error_8c.html#a531bb138b38aef758b45a442aa53938a">error.c</a>
+: <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error.h</a>
+</li>
+<li>error_if_immediate()
+: <a class="el" href="exec_8c.html#a7fa1d0813678f503ffa0942e63f9dc5b">exec.c</a>
+</li>
+<li>error_if_segdata()
+: <a class="el" href="exec_8c.html#a4958fdd72610d4b3d41fa85c4ac8a820">exec.c</a>
+</li>
+<li>error_if_segstack()
+: <a class="el" href="exec_8c.html#ad0726c62e9cf789fdb68f32e72b3ad76">exec.c</a>
 </li>
 <li>error_names
-: <a class="el" href="error_8h.html#afe6ae39b65175368d8e12772e950f6ca">error.h</a>
-, <a class="el" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca">error.c</a>
+: <a class="el" href="error_8c.html#afe6ae39b65175368d8e12772e950f6ca">error.c</a>
+, <a class="el" href="error_8h.html#afe6ae39b65175368d8e12772e950f6ca">error.h</a>
 </li>
 </ul>
 
@@ -296,6 +318,9 @@ function toggleVisibility(linkObj) {
 <li>HALT
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c">instruction.h</a>
 </li>
+<li>halt_func()
+: <a class="el" href="exec_8c.html#a39b26e2e3a7caac522a97c14b110ed68">exec.c</a>
+</li>
 </ul>
 
 
@@ -303,19 +328,40 @@ function toggleVisibility(linkObj) {
 <li>ILLOP
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2">instruction.h</a>
 </li>
+<li>illop_func()
+: <a class="el" href="exec_8c.html#a5fe3edd0c21d18dca4e3dde065788c24">exec.c</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>LAST_CC
+: <a class="el" href="machine_8h.html#a4a6aa3d21f7d37a3a2c05a94cc15ef8f">machine.h</a>
+</li>
+<li>LAST_CONDITION
+: <a class="el" href="instruction_8h.html#a04af73463853d80bd9bd7a547c7d2eaa">instruction.h</a>
+</li>
+<li>LAST_COP
+: <a class="el" href="instruction_8h.html#a891bec49f5a9add29aec44ae8719fff4">instruction.h</a>
+</li>
+<li>LAST_ERROR
+: <a class="el" href="error_8h.html#a859c41744b783165bd53ba593328c067">error.h</a>
+</li>
+<li>LAST_WARNING
+: <a class="el" href="error_8h.html#ace9568d4e2c133b0968d42f7689d1092">error.h</a>
+</li>
 <li>LE
 : <a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61">instruction.h</a>
 </li>
 <li>LOAD
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391">instruction.h</a>
 </li>
+<li>load_func()
+: <a class="el" href="exec_8c.html#ad69a9f1ad8de0b45fc03993e55899273">exec.c</a>
+</li>
 <li>load_program()
-: <a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">machine.h</a>
-, <a class="el" href="machine_8c.html#a9ac26e6f927cf2956823b4f9588d44df">machine.c</a>
+: <a class="el" href="machine_8c.html#a9ac26e6f927cf2956823b4f9588d44df">machine.c</a>
+, <a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">machine.h</a>
 </li>
 <li>LT
 : <a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571">instruction.h</a>
@@ -326,6 +372,9 @@ function toggleVisibility(linkObj) {
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>main()
 : <a class="el" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">test_simul.c</a>
+</li>
+<li>MINSTACKSIZE
+: <a class="el" href="machine_8h.html#a326b27d7e3e0aa43b08491be4b1bbfb4">machine.h</a>
 </li>
 </ul>
 
@@ -340,6 +389,9 @@ function toggleVisibility(linkObj) {
 <li>NOP
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026">instruction.h</a>
 </li>
+<li>nop_func()
+: <a class="el" href="exec_8c.html#a23ecf89921bdbb687478f95b09b7fdf9">exec.c</a>
+</li>
 <li>NREGISTERS
 : <a class="el" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f">machine.h</a>
 </li>
@@ -350,9 +402,12 @@ function toggleVisibility(linkObj) {
 <li>POP
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa">instruction.h</a>
 </li>
+<li>pop_func()
+: <a class="el" href="exec_8c.html#afec4311079bd9c7ac0a24bbb70ed9b81">exec.c</a>
+</li>
 <li>print_cpu()
-: <a class="el" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9">machine.c</a>
-, <a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">machine.h</a>
+: <a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">machine.h</a>
+, <a class="el" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9">machine.c</a>
 </li>
 <li>print_data()
 : <a class="el" href="machine_8c.html#a549be6eaf631d871e9357513c748640d">machine.c</a>
@@ -363,11 +418,14 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f">instruction.c</a>
 </li>
 <li>print_program()
-: <a class="el" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7">machine.c</a>
-, <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">machine.h</a>
+: <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">machine.h</a>
+, <a class="el" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7">machine.c</a>
 </li>
 <li>PUSH
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493">instruction.h</a>
+</li>
+<li>push_func()
+: <a class="el" href="exec_8c.html#a1bac06c734031847e5433b34e2359a3b">exec.c</a>
 </li>
 </ul>
 
@@ -380,16 +438,28 @@ function toggleVisibility(linkObj) {
 <li>RET
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464">instruction.h</a>
 </li>
+<li>ret_func()
+: <a class="el" href="exec_8c.html#ab82450db9b7f3bc4a4f9a7e0c36a6808">exec.c</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>set_cc()
+: <a class="el" href="exec_8c.html#a495b83fe6a66c72baf6cbab62215da0c">exec.c</a>
+</li>
+<li>should_jump()
+: <a class="el" href="exec_8c.html#a5698a1c265d4ccf2419b8b2343f2a5bb">exec.c</a>
+</li>
 <li>simul()
-: <a class="el" href="machine_8c.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.c</a>
-, <a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.h</a>
+: <a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.h</a>
+, <a class="el" href="machine_8c.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.c</a>
 </li>
 <li>STORE
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480">instruction.h</a>
+</li>
+<li>store_func()
+: <a class="el" href="exec_8c.html#a00f83f34255b99333aa8ea060eebf112">exec.c</a>
 </li>
 <li>SUB
 : <a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da">instruction.h</a>
@@ -427,6 +497,14 @@ function toggleVisibility(linkObj) {
 </ul>
 
 
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>usage()
+: <a class="el" href="debug_8c.html#a64a6014565bb3e03294ec4a952d5add0">debug.c</a>
+, <a class="el" href="test__simul_8c.html#a64a6014565bb3e03294ec4a952d5add0">test_simul.c</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
 <li>WARN_HALT
 : <a class="el" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">error.h</a>
@@ -455,7 +533,7 @@ function toggleVisibility(linkObj) {
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="footer">Généré le Fri Jun 10 2011 16:07:10 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
+      <li class="footer">Généré le Fri Jun 10 2011 17:56:36 pour Simulateur du jeu d'instructions d'un processeur simple par&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
